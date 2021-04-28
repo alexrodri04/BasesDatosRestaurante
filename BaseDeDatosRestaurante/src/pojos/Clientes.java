@@ -48,5 +48,10 @@ public class Clientes {
 	public void setEmail(String email) {
 		this.email = email;
 	}
+	
+	public String toString() {
+		String string ="ID: "+ getId()+ " Nombre: "+ getNombre()+ " Telefono: "+getTelefono()+ " Email: "+getEmail();
+		return string;
+		}
 
 }

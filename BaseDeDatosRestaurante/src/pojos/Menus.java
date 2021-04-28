@@ -9,7 +9,12 @@ public class Menus {
 		super();
 	}
 	
-	public Menus(int id, String plato, int precio) {
+	public Menus (String plato, float precio) {
+		this.plato=plato;
+		this.precio=precio;
+	}
+	
+	public Menus(int id, String plato, float precio) {
 		this.id=id;
 		this.plato=plato;
 		this.precio=precio;
@@ -41,6 +46,6 @@ public class Menus {
 	
 	@Override
 	public String toString() {
-		return "Plato [id=" + id + ", plato=" + plato + " precio=" + "precio]";
+		return "Plato [id=" + id + ", plato=" + plato + " precio=" + precio+"]";
 	}
 }

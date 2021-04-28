@@ -14,12 +14,15 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.sql.Time;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Logger;
+import java.util.logging.Level;
 
 import pojos.Clientes;
 import pojos.Empleados;
+import pojos.Menus;
 import pojos.Pedidos;
 import interfaz.MenuServidor;
 import jdbc.DBManager;
@@ -28,13 +31,19 @@ import jdbc.DBManager;
 public class JDBCManager implements DBManager{
 	
 	final static Logger LOGGER = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
-	private final String addEmpleado = "INSERT INTO Empleados (Nombre, Salario,CargoId) VALUES (?,?,?);";
-	private final String addCliente = "INSERT INTO Clientes (Nombre, Telefono,Email) VALUES (?,?,?);";
-	private final String addPedido = "INSERT INTO Pedidos (Cliente_Id, Fecha,Coste, Direccion, Hora) VALUES (?,?,?)";
+	private final String addEmpleado = "INSERT INTO Empleados (Nombre,Salario,Cargo_Id) VALUES (?,?,?);";
+	private final String addCliente = "INSERT INTO Clientes (Nombre,Telefono,Email) VALUES (?,?,?);";
+	private final String addPedido = "INSERT INTO Pedidos (Cliente_Id, Fecha,Coste, Direccion,Hora) VALUES (?,?,?)";
+	private final String addMenu = "INSERT INTO Menus (Plato,Precio) VALUES (?,?)";
 	private final String searchEmpleado = "SELECT * FROM Empleados;";
 	private final String searchCliente = "SELECT * FROM Clientes;";
 	private final String searchPedido = "SELECT * FROM Pedidos;";
+	private final String searchMenu = "SELECT * FROM Menus;";
 	private final String searchEmpleadoById = "SELECT * FROM Empleados WHERE Id = ?;";
+	private final String searchEmpleadoByNombre = "SELECT * FROM Empleados WHERE Nombre = ?;";
+	private final String searchMenuByNombre = "SELECT * FROM Menus WHERE Plato = ?;";
+	private final String eliminarEmpleado = "DELETE FROM Empleados WHERE Nombre LIKE ?;";
+	private final String eliminarMenu = "DELETE FROM Menus WHERE Plato LIKE ?;";
 	private Connection c;
 	
 	
@@ -42,9 +51,9 @@ public class JDBCManager implements DBManager{
 		try {
 			Statement stmt = c.createStatement();
 			stmt.executeUpdate("CREATE TABLE IF NOT EXISTS "
-					+ "Empleados (Id INTEGER PRIMARY KEY, Nombre STRING, Salario INTEGER, CargoId INTEGER)");
+					+ "Empleados (Id INTEGER PRIMARY KEY, Nombre STRING, Salario INTEGER, Cargo_Id INTEGER)");
 			stmt.executeUpdate("CREATE TABLE IF NOT EXISTS "
-					+ "Menu (Id INTEGER PRIMARY KEY, Plato STRING, Precio INTEGER)");
+					+ "Menus (Id INTEGER PRIMARY KEY, Plato STRING, Precio FLOAT)");
 			stmt.executeUpdate("CREATE TABLE IF NOT EXISTS "
 					+ "Clientes (Id INTEGER PRIMARY KEY, Nombre STRING, Telefono INTEGER, Email STRING)");
 			stmt.executeUpdate("CREATE TABLE IF NOT EXISTS "
@@ -133,6 +142,19 @@ public class JDBCManager implements DBManager{
 		}
 	}
 
+	public void addMenu(Menus menu) {
+		try {
+			PreparedStatement prep = c.prepareStatement(addMenu);
+			prep.setString(1, menu.getPlato());
+			prep.setFloat(2, menu.getPrecio());
+			prep.executeUpdate();
+			prep.close();
+		} catch (SQLException e) {
+			LOGGER.severe("Error al insertar el menu: " + menu);
+			e.printStackTrace();
+		}
+	}
+
 	
 	@Override
 	public List<Empleados> searchEmpleados() {
@@ -144,7 +166,7 @@ public class JDBCManager implements DBManager{
 				int id = rs.getInt("Id");
 				String nombre = rs.getString("Nombre");
 				int salario = rs.getInt("Salario");
-				int cargoid = rs.getInt("CargoId");
+				int cargoid = rs.getInt("Cargo_Id");
 				Empleados empleado = new Empleados (id, nombre, salario , cargoid);
 				empleados.add(empleado);
 				LOGGER.fine("Empleado: " + empleado);
@@ -177,6 +199,28 @@ public class JDBCManager implements DBManager{
 			e.printStackTrace();
 		}
 		return empleado;
+	}
+	
+	public List<Empleados> searchEmpleadoByNombre(String nombre) {
+		List<Empleados> empleados = new ArrayList<Empleados>();
+		try {
+			PreparedStatement prep = c.prepareStatement(searchEmpleadoByNombre);
+			prep.setString(1,nombre + "");
+			ResultSet rs = prep.executeQuery();
+			while(rs.next()) {
+				int id = rs.getInt("Id");
+				int salario = rs.getInt("Salario");
+				int cargoid = rs.getInt("Cargo_Id");
+				Empleados empleado = new Empleados (id, nombre, salario , cargoid);
+				empleados.add(empleado);
+				LOGGER.fine("Empleado: " + empleado);
+			}
+			prep.close();
+		} catch (SQLException e) {
+			LOGGER.severe("Error al hacer un SELECT");
+			e.printStackTrace();
+		}
+		return empleados;
 	}
 	
 	
@@ -228,7 +272,85 @@ public class JDBCManager implements DBManager{
 			e.printStackTrace();
 		}
 		return pedidos;
+		
 	}
+		
+	public List<Menus> searchMenu() {
+		List<Menus> menus = new ArrayList<Menus>();
+		try {
+			Statement stmt = c.createStatement();
+			ResultSet rs = stmt.executeQuery(searchMenu);
+			while(rs.next()){
+				int id = rs.getInt("Id");
+				String plato = rs.getString("Plato");
+				float precio = rs.getFloat("Precio");
+				Menus menu = new Menus(id,plato,precio);
+				menus.add(menu);
+				LOGGER.fine("Menu: " + menu);
+			}
+			rs.close();
+			stmt.close();
+		} catch (SQLException e) {
+			LOGGER.severe("Error al hacer un SELECT");
+			e.printStackTrace();
+		}
+		return menus;
+	}
+	
+	public List<Menus> searchMenuByNombre(String menu) {
+		List<Menus> menus = new ArrayList<Menus>();
+		try {
+			PreparedStatement prep = c.prepareStatement(searchMenuByNombre);
+			prep.setString(1,menu + "");
+			ResultSet rs = prep.executeQuery();
+			while(rs.next()) {
+				int id = rs.getInt("Id");
+				String plato = rs.getString("Plato");
+				int precio = rs.getInt("Precio");
+				Menus menu1 = new Menus (id,plato,precio);
+				menus.add(menu1);
+				LOGGER.fine("Menu: " + menu1);
+			}
+			prep.close();
+		} catch (SQLException e) {
+			LOGGER.severe("Error al hacer un SELECT");
+			e.printStackTrace();
+		}
+		return menus;
+	}
+	
+	public boolean eliminarEmpleado(String nombreEmpleado) {
+		boolean existe = false;
+		try {
+			PreparedStatement prep = c.prepareStatement(eliminarEmpleado);
+			prep.setString(1,"%" + nombreEmpleado + "%");
+			int res = prep.executeUpdate();
+			if(res > 0)
+				existe = true;
+			prep.close();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return existe;
+	}
+	
+	public boolean eliminarMenu(String nombreMenu) {
+		boolean existe = false;
+		try {
+			PreparedStatement prep = c.prepareStatement(eliminarMenu);
+			prep.setString(1,"%" + nombreMenu + "%");
+			int res = prep.executeUpdate();
+			if(res > 0)
+				existe = true;
+			prep.close();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return existe;
+	}
+	
 
 	
 

@@ -100,5 +100,9 @@ public class Pedidos {
 	public void setRepartidor(Empleados repartidor) {
 		this.repartidor=repartidor;
 	}
-
+	
+	public String toString() {
+		String string ="ID: "+ getId()+ " Cliente_id: "+ getClienteId()+ " Fecha: "+getFecha()+ "Coste: "+getCoste()+ "Direccion: "+getDireccion()+"Hora: "+getHora()+"Repartidor: "+getRepartidor()+"\n";
+		return string;
+	}
 }

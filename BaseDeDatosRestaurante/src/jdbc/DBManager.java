@@ -17,6 +17,8 @@ public interface DBManager {
 	
 	public void addCliente(Clientes cliente);
 	
+	public void addMenu(Menus menu);
+	
 	public List<Empleados> searchEmpleados();
 	
 	public Empleados searchEmpleadoById(int id);
@@ -26,5 +28,15 @@ public interface DBManager {
 	public List<Pedidos> searchPedidos();
 
 	void addPedido(Pedidos pedido);
+
+	public List<Menus> searchMenu();
+
+	public boolean eliminarEmpleado(String nombreEmpleado);
+
+	public List<Empleados> searchEmpleadoByNombre(String nombreEmpleado);
+
+	public List<Menus> searchMenuByNombre(String nombreMenu);
+
+	public boolean eliminarMenu(String nombreMenu);
 
 }

@@ -46,6 +46,7 @@ public class MenuServidor {
 			System.out.println("2. Mostrar Empleados");
 			System.out.println("3. Mostrar Clientes");
 			System.out.println("4. Mostrar Pedidos");
+			System.out.println("5. Mostrar Menu");
 			try {
 				respuesta=Integer.parseInt(reader.readLine());
 				LOGGER.info("El usuario elige " + respuesta);
@@ -62,12 +63,19 @@ public class MenuServidor {
 				break;
 			case 2:
 				mostrarEmpleados();
+				eliminarEmpleado();
+				mostrarEmpleados();
 				break;
 			case 3: 
 				mostrarClientes();
 				break;
 			case 4:
+				crearPedido();
 				mostrarPedidos();
+				break;
+			case 5:
+				mostrarMenu();
+				eliminarMenu();
 				break;
 			}
 		} while (respuesta != 0);
@@ -81,7 +89,7 @@ public class MenuServidor {
 			String nombre = reader.readLine();
 			System.out.println("Sueldo: ");
 			int sueldo = Integer.parseInt(reader.readLine());
-			System.out.println("CargoId: ");
+			System.out.println("Cargo_Id: ");
 			int cargoid = Integer.parseInt(reader.readLine());
 			Empleados empleado = new Empleados(nombre, sueldo, cargoid);
 			dbman.addEmpleado(empleado);
@@ -101,6 +109,20 @@ public class MenuServidor {
 			String email = reader.readLine();
 			Clientes cliente = new Clientes(nombre, telefono , email );
 			dbman.addCliente(cliente);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	private static void crearMenu() {
+		try {
+			System.out.println("Nombre del plato:");
+			String plato = reader.readLine();
+			System.out.println("Precio: ");
+			float coste = Float.parseFloat(reader.readLine());
+			Menus menu = new Menus(plato,coste);
+			dbman.addMenu(menu);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -162,5 +184,79 @@ public class MenuServidor {
 			System.out.println(pedido);
 		}
 	}
+	
+	private static void mostrarMenu() {
+		List<Menus> menus = dbman.searchMenu();
+		System.out.println("\nMenu: \n");
+		for(Menus menu : menus) {
+			System.out.println(menu);
+		}
+	}
+	
+	private static void eliminarEmpleado() {
+		mostrarEmpleados();
+		System.out.println("Introduzca nombre del empleado:");
+		try {
+			String nombreEmpleado = reader.readLine();
+			List<Empleados> empleados = dbman.searchEmpleadoByNombre(nombreEmpleado);
+			if (empleados.size() > 0) {
+				System.out.println("Se va a borrar el siguiente empleado: ");
+				for(Empleados empleado : empleados) {
+					System.out.println(empleado);
+				}
+				System.out.println("¿Confirmar borrado?(s/n)");
+				String respuesta = reader.readLine();
+				if(respuesta.equalsIgnoreCase("s")) {
+					boolean exiteEmpleado = dbman.eliminarEmpleado(nombreEmpleado);
+					if(exiteEmpleado) {
+						System.out.println("El empleado se ha borrado con éxito");
+					} else {
+						System.out.println("Ha habido un error al intentar eliminar el empleado");
+					}
+				} else {
+					System.out.println("Se ha cancelado la operación de borrado");
+				}
+			} else {
+				System.out.println("El empleado no existe");
+			}
+		} catch (NumberFormatException | IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	private static void eliminarMenu() {
+		mostrarMenu();
+		System.out.println("Introduzca nombre del plato:");
+		try {
+			String nombreMenu = reader.readLine();
+			List<Menus> menus = dbman.searchMenuByNombre(nombreMenu);
+			if (menus.size() > 0) {
+				System.out.println("Se va a borrar el siguiente plato: ");
+				for(Menus menu : menus) {
+					System.out.println(menu);
+				}
+				System.out.println("¿Confirmar borrado?(s/n)");
+				String respuesta = reader.readLine();
+				if(respuesta.equalsIgnoreCase("s")) {
+					boolean exiteMenu = dbman.eliminarMenu(nombreMenu);
+					if(exiteMenu) {
+						System.out.println("El plato se ha borrado con éxito");
+					} else {
+						System.out.println("Ha habido un error al intentar eliminar el plato");
+					}
+				} else {
+					System.out.println("Se ha cancelado la operación de borrado");
+				}
+			} else {
+				System.out.println("El plato no existe");
+			}
+		} catch (NumberFormatException | IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	
 		
 }
