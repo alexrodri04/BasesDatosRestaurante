@@ -1,16 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
 	<classpathentry kind="src" path="src"/>
-<<<<<<< HEAD
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-15">
 		<attributes>
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="lib" path="/JDBC-1/src/lib/sqlite-jdbc-3.34.0.jar"/>
-=======
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry kind="lib" path="lib/sqlite-jdbc-3.34.0.jar"/>
->>>>>>> fc6d3c0dd0951ad098f71af30cafafa7c5361997
 	<classpathentry kind="output" path="bin"/>
 </classpath>
