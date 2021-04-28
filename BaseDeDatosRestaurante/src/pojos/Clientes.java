@@ -24,6 +24,12 @@ public class Clientes {
 		this.email=email;
 	}
 	
+	public Clientes(int id, int telefono, String email) {
+		this.id=id;
+		this.telefono=telefono;
+		this.email=email;
+	}
+	
 	public int getId() {
 		return id;
 	}

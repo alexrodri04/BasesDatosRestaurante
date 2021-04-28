@@ -39,4 +39,8 @@ public interface DBManager {
 
 	public boolean eliminarMenu(String nombreMenu);
 
+	public List<Clientes> searchClienteByNombre(String nombreCliente);
+
+	public boolean eliminarCliente(String nombreCliente);
+
 }

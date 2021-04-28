@@ -41,9 +41,12 @@ public class JDBCManager implements DBManager{
 	private final String searchMenu = "SELECT * FROM Menus;";
 	private final String searchEmpleadoById = "SELECT * FROM Empleados WHERE Id = ?;";
 	private final String searchEmpleadoByNombre = "SELECT * FROM Empleados WHERE Nombre = ?;";
+	private final String searchClienteByNombre = "SELECT * FROM Clientes WHERE Nombre = ?;";
 	private final String searchMenuByNombre = "SELECT * FROM Menus WHERE Plato = ?;";
 	private final String eliminarEmpleado = "DELETE FROM Empleados WHERE Nombre LIKE ?;";
 	private final String eliminarMenu = "DELETE FROM Menus WHERE Plato LIKE ?;";
+	private final String eliminarCliente = "DELETE FROM Clientes WHERE Nombre"
+			+ " LIKE ?;";
 	private Connection c;
 	
 	
@@ -297,6 +300,29 @@ public class JDBCManager implements DBManager{
 		return menus;
 	}
 	
+	public List<Clientes> searchCliente() {
+		List<Clientes> clientes = new ArrayList<Clientes>();
+		try {
+			Statement stmt = c.createStatement();
+			ResultSet rs = stmt.executeQuery(searchCliente);
+			while(rs.next()){
+				int id = rs.getInt("Id");
+				String nombre = rs.getString("Nombre");
+				int telefono=rs.getInt("Telefono"); 
+				String email = rs.getString("Email");
+				Clientes cliente = new Clientes(id,nombre,telefono,email);
+				clientes.add(cliente);
+				LOGGER.fine("Cliente: " + cliente);
+			}
+			rs.close();
+			stmt.close();
+		} catch (SQLException e) {
+			LOGGER.severe("Error al hacer un SELECT");
+			e.printStackTrace();
+		}
+		return clientes;
+	}
+	
 	public List<Menus> searchMenuByNombre(String menu) {
 		List<Menus> menus = new ArrayList<Menus>();
 		try {
@@ -317,6 +343,29 @@ public class JDBCManager implements DBManager{
 			e.printStackTrace();
 		}
 		return menus;
+	}
+	
+	public List<Clientes> searchClienteByNombre(String cliente) {
+		List<Clientes> clientes = new ArrayList<Clientes>();
+		try {
+			PreparedStatement prep = c.prepareStatement(searchClienteByNombre);
+			prep.setString(1,cliente + "");
+			ResultSet rs = prep.executeQuery();
+			while(rs.next()) {
+				int id = rs.getInt("Id");
+				String nombre = rs.getString("Nombre");
+				int telefono=rs.getInt("Telefono"); 
+				String email = rs.getString("Email");
+				Clientes cliente1 = new Clientes (id,telefono,email);
+				clientes.add(cliente1);
+				LOGGER.fine("Cliente: " + cliente1);
+			}
+			prep.close();
+		} catch (SQLException e) {
+			LOGGER.severe("Error al hacer un SELECT");
+			e.printStackTrace();
+		}
+		return clientes;
 	}
 	
 	public boolean eliminarEmpleado(String nombreEmpleado) {
@@ -340,6 +389,22 @@ public class JDBCManager implements DBManager{
 		try {
 			PreparedStatement prep = c.prepareStatement(eliminarMenu);
 			prep.setString(1,"%" + nombreMenu + "%");
+			int res = prep.executeUpdate();
+			if(res > 0)
+				existe = true;
+			prep.close();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return existe;
+	}
+	
+	public boolean eliminarCliente(String nombreCliente) {
+		boolean existe = false;
+		try {
+			PreparedStatement prep = c.prepareStatement(eliminarCliente);
+			prep.setString(1,"%" + nombreCliente + "%");
 			int res = prep.executeUpdate();
 			if(res > 0)
 				existe = true;

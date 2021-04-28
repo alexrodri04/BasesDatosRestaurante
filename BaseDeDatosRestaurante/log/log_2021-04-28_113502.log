@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2021-04-28T09:35:02.390722300Z</date>
+  <millis>1619602502390</millis>
+  <nanos>722300</nanos>
+  <sequence>0</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>logging.MyLogger</class>
+  <method>setup</method>
+  <thread>1</thread>
+  <message>Logger is configured</message>
+</record>
+<record>
+  <date>2021-04-28T09:35:02.398699400Z</date>
+  <millis>1619602502398</millis>
+  <nanos>699400</nanos>
+  <sequence>1</sequence>
+  <logger>global</logger>
+  <level>SEVERE</level>
+  <class>jdbc.JDBCManager</class>
+  <method>connect</method>
+  <thread>1</thread>
+  <message>No se ha encontrado la clase org.sqlite.JDBC</message>
+</record>
+<record>
+  <date>2021-04-28T09:35:35.681845600Z</date>
+  <millis>1619602535681</millis>
+  <nanos>845600</nanos>
+  <sequence>2</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>interfaz.MenuServidor</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>El usuario elige 1</message>
+</record>
+</log>

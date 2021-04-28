@@ -44,9 +44,16 @@ public class MenuServidor {
 			System.out.println("\nElige una opción:");
 			System.out.println("1. Añadir Empleado");
 			System.out.println("2. Mostrar Empleados");
-			System.out.println("3. Mostrar Clientes");
-			System.out.println("4. Mostrar Pedidos");
-			System.out.println("5. Mostrar Menu");
+			System.out.println("3. Eliminar Empleado");
+			System.out.println("4. Añadir Cliente");
+			System.out.println("5. Mostrar Clientes");
+			System.out.println("6. Eliminar Cliente ");
+			System.out.println("7. Hacer Pedido");
+			System.out.println("8. Mostrar menu");
+			System.out.println("9. Eliminar menu");
+			
+			
+			
 			try {
 				respuesta=Integer.parseInt(reader.readLine());
 				LOGGER.info("El usuario elige " + respuesta);
@@ -63,20 +70,28 @@ public class MenuServidor {
 				break;
 			case 2:
 				mostrarEmpleados();
-				eliminarEmpleado();
-				mostrarEmpleados();
 				break;
-			case 3: 
+			
+			case 3:
+				eliminarEmpleado();
+			case 4:
+				addCliente();
+				break;
+			case 5:
 				mostrarClientes();
 				break;
-			case 4:
+			case 6:
+				eliminarCliente();
+				break;
+			case 7:
 				crearPedido();
 				mostrarPedidos();
 				break;
-			case 5:
+			case 8:
 				mostrarMenu();
-				eliminarMenu();
 				break;
+			case 9:
+				eliminarMenu();
 			}
 		} while (respuesta != 0);
 		dbman.disconnect();
@@ -250,6 +265,38 @@ public class MenuServidor {
 				}
 			} else {
 				System.out.println("El plato no existe");
+			}
+		} catch (NumberFormatException | IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	private static void eliminarCliente() {
+		mostrarMenu();
+		System.out.println("Introduzca nombre del cliente:");
+		try {
+			String nombreCliente = reader.readLine();
+			List<Clientes> clientes = dbman.searchClienteByNombre(nombreCliente);
+			if (clientes.size() > 0) {
+				System.out.println("Se va a borrar El cliente: ");
+				for(Clientes cliente : clientes) {
+					System.out.println(cliente);
+				}
+				System.out.println("¿Confirmar borrado?(s/n)");
+				String respuesta = reader.readLine();
+				if(respuesta.equalsIgnoreCase("s")) {
+					boolean existeCliente = dbman.eliminarCliente(nombreCliente);
+					if(existeCliente) {
+						System.out.println("El Cliente se ha borrado con éxito");
+					} else {
+						System.out.println("Ha habido un error al intentar eliminar el cliente");
+					}
+				} else {
+					System.out.println("Se ha cancelado la operación de borrado");
+				}
+			} else {
+				System.out.println("El cliente no esta registrado");
 			}
 		} catch (NumberFormatException | IOException e) {
 			// TODO Auto-generated catch block
