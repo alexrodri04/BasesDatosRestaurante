@@ -49,9 +49,17 @@ public class Empleados {
 	public void setCargoId(int cargoId) {
 		this.cargoId = cargoId;
 	}
+<<<<<<< HEAD
+	
+	public String toString() {
+		String string ="ID: "+ getId()+ " Nombre: "+ getNombre()+ " Cargo_id: "+getCargoId()+ " Sueldo: "+getSalario();
+		return string;
+	}
+=======
 	public String toString() {
 		String string ="ID: "+ getId()+ "  Nombre: "+ getNombre()+ "  Cargo_id: "+getCargoId()+  "   Sueldo: "+getSalario();
 		return string; 
 	}
 	
+>>>>>>> e61c5e168821246994d39f13f936908244e6a334
 }
