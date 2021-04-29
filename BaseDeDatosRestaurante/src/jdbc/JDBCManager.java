@@ -45,7 +45,7 @@ public class JDBCManager implements DBManager{
 	private final String searchMenuByNombre = "SELECT * FROM Menus WHERE Plato = ?;";
 	private final String eliminarEmpleado = "DELETE FROM Empleados WHERE Nombre LIKE ?;";
 	private final String eliminarMenu = "DELETE FROM Menus WHERE Plato LIKE ?;";
-	private final String eliminarCliente = "DELETE FROM Clientes WHERE Nombre"
+	private final String eliminarCliente = "DELETE FROM Clientes WHERE Nombre = ?"
 			+ " LIKE ?;";
 	private Connection c;
 	
@@ -68,7 +68,8 @@ public class JDBCManager implements DBManager{
 		}
 	}
 	
-	public void connect() {
+	/*   He creado una clase conexion con conect y disconect
+	 public void connect() {
 		try {
 			Class.forName("org.sqlite.JDBC");
 			c = DriverManager.getConnection("jdbc:sqlite:restaurante.db");
@@ -94,9 +95,9 @@ public class JDBCManager implements DBManager{
 			e.printStackTrace();
 		}
 	}
-
+*/
 	@Override
-	public void addEmpleado(Empleados empleado) {
+	/*public void addEmpleado(Empleados empleado) {
 		// TODO Auto-generated method stub
 		try {
 			PreparedStatement prep = c.prepareStatement(addEmpleado);
@@ -127,8 +128,8 @@ public class JDBCManager implements DBManager{
 		}
 		
 	}
+	*/
 	
-	@Override
 	public void addPedido(Pedidos pedido) {
 		try {
 			PreparedStatement prep = c.prepareStatement(addPedido);
@@ -160,7 +161,7 @@ public class JDBCManager implements DBManager{
 
 	
 	@Override
-	public List<Empleados> searchEmpleados() {
+	/*public List<Empleados> searchEmpleados() {
 		List<Empleados> empleados = new ArrayList<Empleados>();
 		try {
 			Statement stmt = c.createStatement();
@@ -182,6 +183,8 @@ public class JDBCManager implements DBManager{
 		}
 		return empleados;
 	}
+	la llamo printEmpleados()
+	*/
 	
 	public Empleados searchEmpleadoById(int id) {
 		Empleados empleado = null;
@@ -227,7 +230,7 @@ public class JDBCManager implements DBManager{
 	}
 	
 	
-	public List<Clientes> searchClientes() {
+	/*public List<Clientes> searchClientes() {
 		List<Clientes> clientes = new ArrayList<Clientes>();
 		try {
 			Statement stmt = c.createStatement();
@@ -249,6 +252,7 @@ public class JDBCManager implements DBManager{
 		}
 		return clientes;
 	}
+	*/
 	
 	public List<Pedidos> searchPedidos() {
 		List<Pedidos> pedidos = new ArrayList<Pedidos>();
@@ -300,7 +304,7 @@ public class JDBCManager implements DBManager{
 		return menus;
 	}
 	
-	public List<Clientes> searchCliente() {
+	/* public List<Clientes> searchCliente() {
 		List<Clientes> clientes = new ArrayList<Clientes>();
 		try {
 			Statement stmt = c.createStatement();
@@ -322,7 +326,8 @@ public class JDBCManager implements DBManager{
 		}
 		return clientes;
 	}
-	
+	mostarClientes() 
+	*/ 
 	public List<Menus> searchMenuByNombre(String menu) {
 		List<Menus> menus = new ArrayList<Menus>();
 		try {
@@ -368,21 +373,7 @@ public class JDBCManager implements DBManager{
 		return clientes;
 	}
 	
-	public boolean eliminarEmpleado(String nombreEmpleado) {
-		boolean existe = false;
-		try {
-			PreparedStatement prep = c.prepareStatement(eliminarEmpleado);
-			prep.setString(1,"%" + nombreEmpleado + "%");
-			int res = prep.executeUpdate();
-			if(res > 0)
-				existe = true;
-			prep.close();
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		return existe;
-	}
+	
 	
 	public boolean eliminarMenu(String nombreMenu) {
 		boolean existe = false;
@@ -400,7 +391,7 @@ public class JDBCManager implements DBManager{
 		return existe;
 	}
 	
-	public boolean eliminarCliente(String nombreCliente) {
+	/*public boolean eliminarCliente(String nombreCliente) {
 		boolean existe = false;
 		try {
 			PreparedStatement prep = c.prepareStatement(eliminarCliente);
@@ -416,7 +407,22 @@ public class JDBCManager implements DBManager{
 		return existe;
 	}
 	
-
+	public boolean eliminarEmpleado(String nombreEmpleado) {
+		boolean existe = false;
+		try {
+			PreparedStatement prep = c.prepareStatement(eliminarEmpleado);
+			prep.setString(1,"%" + nombreEmpleado + "%");
+			int res = prep.executeUpdate();
+			if(res > 0)
+				existe = true;
+			prep.close();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return existe;
+	}
+*/
 	
 
 }
