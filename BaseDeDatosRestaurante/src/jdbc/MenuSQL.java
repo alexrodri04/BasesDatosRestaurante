@@ -1,5 +1,6 @@
 package jdbc;
 
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -87,6 +88,17 @@ public class MenuSQL {
 		}
 		return menus;
 	}
-
+	
+	public static void actualizarMenu(int id, int precio) throws SQLException, IOException{
+		Connection c =Conexion.connect();
+		String sql = "UPDATE Menu SET precio =? WHERE id =?";
+		PreparedStatement prep = c.prepareStatement(sql);
+		prep.setInt(1, precio);
+		prep.setInt(2, id);
+		prep.executeUpdate();
+		System.out.println("\n Update terminado");
+		Conexion.disconnect(c);
+			
+	}
 	
 }

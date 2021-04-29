@@ -143,49 +143,6 @@ public class EmpleadoSQL {
 			}
 			return empleados;
 		}
-		/*public static Cargo getCargos(int cargo_id, Connection c) throws SQLException {
-			Statement stmt = c.createStatement();
-			String sql = "SELECT * FROM Cargos WHERE id = "+ cargo_id;
-			ResultSet rs = stmt.executeQuery(sql);
-			rs.next();
-			int id = rs.getInt("Id");
-			String nombre = rs.getString("Nombre");
-			Cargo cargo = new Cargo( nombre);
-			cargo.setId(id);
-			rs.close();
-			stmt.close();
-			return cargo;
-		}
-		/*public static void search(String searchname) throws SQLException {
-			Connection c =Conexion.connect();
-			String sql = "SELECT * FROM Empleados Where nombre LIKE ? ";
-			PreparedStatement prep = c.prepareStatement(sql);
-			prep.setString(1, searchname);
-			ResultSet rs = prep.executeQuery();
-			if(rs != null) {
-			while(rs.next()) {
-				int id = rs.getInt("Id");
-				String name = rs.getString("Nombre");
-				int cargo_id = rs.getInt("Cargo_id");
-				String nombreCargo = SQLCargos.getNombreCargo(cargo_id, c);
-				int zona_id = rs.getInt("Zona_id");
-				String nombreZona = SQLZonas.getNombreZona(zona_id, c);
-				int sueldo = rs.getInt("Sueldo");
-				System.out.println("Id: " + id + "\nNombre: "+ name + "\nCargo: " + nombreCargo +
-						"\nZona: " + nombreZona + "\nSueldo: " + sueldo);
-			}
-			}else {
-				System.out.println("No hubo resultados");
-			}
-			
-			// CLOSE Statement
-			rs.close();
-			prep.close();
-			System.out.println("Busqueda Completada");
-			Conexion.disconnect(c);
-		}
-		*/
-
 
 		public static void actualizarEmpleado(int id, int salario) throws SQLException, IOException{
 			Connection c =Conexion.connect();

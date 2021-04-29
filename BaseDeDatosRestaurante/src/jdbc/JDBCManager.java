@@ -1,55 +1,20 @@
 package jdbc;
 
-import java.io.ByteArrayOutputStream;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.io.InputStream;
 import java.sql.Connection;
-import java.sql.Date;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.sql.Time;
-import java.time.LocalDate;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Logger;
-import java.util.logging.Level;
-import jdbc.ClienteSQL;
+
 import pojos.Clientes;
 import pojos.Empleados;
 import pojos.Menus;
 import pojos.Pedidos;
-import interfaz.MenuServidor;
-import jdbc.DBManager;
-import jdbc.Conexion;
-import jdbc.EmpleadoSQL;
-import jdbc.MenuSQL;
 
 public class JDBCManager implements DBManager{
 	
-	final static Logger LOGGER = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
-	private final String addEmpleado = "INSERT INTO Empleados (Nombre,Salario,Cargo_Id) VALUES (?,?,?);";
-	private final String addCliente = "INSERT INTO Clientes (Nombre,Telefono,Email) VALUES (?,?,?);";
-	private final String addPedido = "INSERT INTO Pedidos (Cliente_Id, Fecha,Coste, Direccion,Hora) VALUES (?,?,?)";
-	private final String addMenu = "INSERT INTO Menus (Plato,Precio) VALUES (?,?)";
-	private final String searchEmpleado = "SELECT * FROM Empleados;";
-	private final String searchCliente = "SELECT * FROM Clientes;";
-	private final String searchPedido = "SELECT * FROM Pedidos;";
-	private final String searchMenu = "SELECT * FROM Menus;";
-	private final String searchEmpleadoById = "SELECT * FROM Empleados WHERE Id = ?;";
-	private final String searchEmpleadoByNombre = "SELECT * FROM Empleados WHERE Nombre = ?;";
-	private final String searchClienteByNombre = "SELECT * FROM Clientes WHERE Nombre = ?;";
-	private final String searchMenuByNombre = "SELECT * FROM Menus WHERE Plato = ?;";
-	private final String eliminarEmpleado = "DELETE FROM Empleados WHERE Nombre LIKE ?;";
-	private final String eliminarMenu = "DELETE FROM Menus WHERE Plato LIKE ?;";
-	private final String eliminarCliente = "DELETE FROM Clientes WHERE Nombre = ?"
-			+ " LIKE ?;";
-			
+	final static Logger LOGGER = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);			
 	private Connection c;
 	
 	
@@ -228,22 +193,12 @@ public class JDBCManager implements DBManager{
 		}
 		
 	}
-
 	@Override
-	public void updateMenu(int id, int precio) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	/*@Override
 	public void updateMenu(int id, int precio) {
 		try {
 			MenuSQL.actualizarMenu(id, precio);
 		} catch (SQLException | IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}		
-	} falta funcion actualizarMenu(id, precio)
-	*/
-
+	}
 }
