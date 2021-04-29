@@ -8,13 +8,16 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Logger;
+
 import pojos.Clientes;
 
 	
 public class ClienteSQL {
 	private static Connection c;
-	
-	public static void addCliente(Clientes cliente) throws SQLException, IOException{
+	final static Logger LOGGER = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
+
+	public static void añadirCliente(Clientes cliente) throws SQLException, IOException{
 		Connection c =Conexion.connect();
 		Statement stmt = c.createStatement();
 		String sql = "INSERT INTO Clientes (Nombre,Telefono,Email)" + "VALUES ('" + cliente.getNombre() + "', '" + cliente.getTelefono()	+ "', '" + cliente.getEmail() + "');";
@@ -24,49 +27,6 @@ public class ClienteSQL {
 			
 	}	
 	
-		
-		
-		/*public static void buscarDatos() throws SQLException, IOException {
-			Connection c =Conexion.openConnection();
-			//  SQLSearch
-
-			BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-			System.out.print("Nombre cliente: ");
-			String searchName = reader.readLine();
-			
-			
-			String sql = "SELECT * FROM Clientes Where nombre LIKE ? ";
-			PreparedStatement prep = c.prepareStatement(sql);
-			prep.setString(1, searchName);
-			ResultSet rs = prep.executeQuery();
-			if(rs != null) {
-			while(rs.next()) {
-				int id = rs.getInt("Id");
-				String name = rs.getString("Nombre");
-				int edad = rs.getInt("Edad");
-				int altura = rs.getInt("Altura");
-				String fecha_entrada = rs.getString("Fecha_entrada");
-				String fecha_salida = rs.getString("Fecha_salida");
-				boolean numerosa = rs.getBoolean("Familia_numerosa");
-				int puesto_id =  rs.getInt("Puesto_id");
-				String nombrePuesto = SQLPuestos.getNombrePuesto(puesto_id,c);
-				int atraccion_id =  rs.getInt("Cargo_id");
-				String nombreAtraccion = SQLAtracciones.getNombreAtraccion(atraccion_id,c);
-				
-				
-				System.out.println(id + ": "+ name + ", " + edad + ", " + altura + ", " + fecha_entrada
-						+ ", " + fecha_salida + ", "+ "familia numerosa: "+ numerosa + ", " + nombrePuesto + ", " + nombreAtraccion);
-			}
-			}else {
-				System.out.println("No hubo resultados");
-			}
-				
-			
-			Conexion.closeConnection(c);
-				
-		}
-		
-		*/
 		public static void borrarTabla() throws SQLException {
 			
 			Connection c = Conexion.connect();
@@ -79,7 +39,8 @@ public class ClienteSQL {
 			Conexion.disconnect(c);
 					
 		}
-		public boolean eliminarCliente(String nombreCliente) throws SQLException, IOException {
+		//HABRIA QUE CAMBIARLO A ELIMINAR POR EMAIL
+		public static boolean eliminarCliente(String nombreCliente) throws SQLException, IOException {
 			boolean existe = false;
 				PreparedStatement prep = c.prepareStatement("DELETE FROM Empleados WHERE Nombre LIKE ?;");
 				prep.setString(1,"%" + nombreCliente + "%");
@@ -110,8 +71,9 @@ public class ClienteSQL {
 			rs.close();
 			stmt.close();
 		}
+		// ambos hacen lo mismo, uno devuelve una lista, otro los imprime por pantalla
 		
-		public List<Clientes> searchClientes() {
+		public static List<Clientes> buscarClientes() {
 			List<Clientes> clientes = new ArrayList<Clientes>();
 			try {
 				Statement stmt = c.createStatement();
@@ -123,12 +85,35 @@ public class ClienteSQL {
 					String email = rs.getString("Email");
 					Clientes cliente = new Clientes (id, nombre, telefono , email);
 					clientes.add(cliente);
-					//LOGGER.fine("Cliente: " + cliente);
+					LOGGER.fine("Cliente: " + cliente);
 				}
 				rs.close();
 				stmt.close();
 			} catch (SQLException e) {
-				//LOGGER.severe("Error al hacer un SELECT");
+				LOGGER.severe("Error al hacer un SELECT");
+				e.printStackTrace();
+			}
+			return clientes;
+		}
+		
+		public static List<Clientes> buscarClienteNombre(String cliente) {
+			List<Clientes> clientes = new ArrayList<Clientes>();
+			try {
+				PreparedStatement prep = c.prepareStatement("SELECT * FROM Clientes WHERE Nombre = ?;");
+				prep.setString(1,cliente + "");
+				ResultSet rs = prep.executeQuery();
+				while(rs.next()) {
+					int id = rs.getInt("Id");
+					String nombre = rs.getString("Nombre");
+					int telefono=rs.getInt("Telefono"); 
+					String email = rs.getString("Email");
+					Clientes cliente1 = new Clientes (id,nombre,telefono,email);
+					clientes.add(cliente1);
+					LOGGER.fine("Cliente: " + cliente1);
+				}
+				prep.close();
+			} catch (SQLException e) {
+				LOGGER.severe("Error al hacer un SELECT");
 				e.printStackTrace();
 			}
 			return clientes;

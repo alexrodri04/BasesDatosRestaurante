@@ -33,7 +33,6 @@ public class CargoSQL {
 	
 	public static String getNombre(int id, Connection c) throws SQLException {
 		String nombre = null;
-		
 		String sql = "SELECT Nombre FROM Cargos Where id LIKE ? ";
 		PreparedStatement prep = c.prepareStatement(sql);
 		prep.setInt(1, id);

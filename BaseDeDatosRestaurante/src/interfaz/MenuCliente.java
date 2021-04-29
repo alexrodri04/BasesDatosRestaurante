@@ -3,6 +3,7 @@ package interfaz;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.sql.Connection;
 import java.util.List;
 import java.util.logging.Logger;
 
@@ -27,7 +28,7 @@ MyLogger.setup();
 // TODO Auto-generated catch block
 e.printStackTrace();
 }
-dbman.connect();
+Connection c = dbman.connect();
 int respuesta;
 do {
 System.out.println("\nElige una opción:");
@@ -68,7 +69,7 @@ break;
 }
 
 } while (respuesta != 0);
-dbman.disconnect();
+dbman.disconnect(c);
 }
 
 private static void addCliente() {

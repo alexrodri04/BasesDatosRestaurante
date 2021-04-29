@@ -5,22 +5,20 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.logging.Logger;
+
 import pojos.Empleados;
 	
 public class EmpleadoSQL {
 		private static Connection c;
+		final static Logger LOGGER = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
 		
-		public static void obtenerInfo() throws SQLException{
-			Connection c = Conexion.connect();
-			printEmpleados(c);
-			Conexion.disconnect(c);
-			
-		}
-		
-		public static void addEmpleado(Empleados empleado) throws SQLException, IOException{
+		public static void añadirEmpleado(Empleados empleado) throws SQLException, IOException{
 			Connection c =Conexion.connect();
 			Statement stmt = c.createStatement();
-			String sql = "INSERT INTO Empleados (Nombre, Cargo_id, Zona_id, Sueldo) "
+			String sql = "INSERT INTO Empleados (Nombre, Cargo_id, Zona_id, Salario) "
 					+ "VALUES ('" + empleado.getNombre() + "', '" + empleado.getCargoId()	+ "', '" + "', '" + empleado.getSalario() + "');";
 			stmt.executeUpdate(sql);
 			stmt.close();
@@ -29,34 +27,7 @@ public class EmpleadoSQL {
 		}	
 		
 		
-		/*public static void buscarDatos() throws SQLException, IOException{
-			Connection c =Conexion.openConnection();
-			//  SQLSearch
-			
-			BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-			System.out.print("Nombre empleado: ");
-			String searchName = reader.readLine();
-			
-			search(searchName);
-			
-				Conexion.closeConnection(c);
-				
-		}*/
-		
-		public static void updateEmpleado(int id, int salario) throws SQLException, IOException{
-			Connection c =Conexion.connect();
-			String sql = "UPDATE Empleados SET salario =? WHERE id =?";
-			PreparedStatement prep = c.prepareStatement(sql);
-			prep.setInt(1, salario);
-			prep.setInt(2, id);
-			prep.executeUpdate();
-			System.out.println("\n Update terminado");
-			Conexion.disconnect(c);
-				
-		}
-		
-		
-		public boolean eliminarEmpleado(String nombreEmpleado) {
+		public static boolean eliminarEmpleado(String nombreEmpleado) {
 			boolean existe = false;
 			try {
 				PreparedStatement prep = c.prepareStatement("DELETE FROM Empleados WHERE Nombre LIKE ?;");
@@ -67,7 +38,6 @@ public class EmpleadoSQL {
 				prep.close();
 				Conexion.disconnect(c);
 			} catch (SQLException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 			return existe;
@@ -90,7 +60,7 @@ public class EmpleadoSQL {
 		}
 		
 		
-		public static void printEmpleados(Connection c) throws SQLException {
+		public static void mostarEmpleados(Connection c) throws SQLException {
 			Statement stmt = c.createStatement();
 			String sql = "SELECT * FROM Empleados";
 			ResultSet rs = stmt.executeQuery(sql);
@@ -109,18 +79,69 @@ public class EmpleadoSQL {
 			rs.close();
 			stmt.close();
 		}
-		public static void borrarTabla() throws SQLException, IOException {
-			
-			Connection c =Conexion.connect();
-			
-			Statement stmt1 = c.createStatement();
-			String sql1 = "Drop table Empleados" ;
-			stmt1.executeUpdate(sql1);
-			stmt1.close();
-			System.out.println("\nTabla Empleados borrada");
-			
-			Conexion.disconnect(c);
-					
+		public static List<Empleados> buscarEmpleados() {
+		List<Empleados> empleados = new ArrayList<Empleados>();
+		try {
+			Statement stmt = c.createStatement();
+			ResultSet rs = stmt.executeQuery("SELECT * FROM Empleados;");
+			while(rs.next()){
+				int id = rs.getInt("Id");
+				String nombre = rs.getString("Nombre");
+				int salario = rs.getInt("Salario");
+				int cargoid = rs.getInt("Cargo_Id");
+				Empleados empleado = new Empleados (id, nombre, salario , cargoid);
+				empleados.add(empleado);
+				LOGGER.fine("Empleado: " + empleado);
+			}
+			rs.close();
+			stmt.close();
+		} catch (SQLException e) {
+			LOGGER.severe("Error al hacer un SELECT");
+			e.printStackTrace();
+		}
+		return empleados;
+	}
+		public static Empleados buscarEmpleadosId(int id) {
+		Empleados empleado = null;
+		try {
+			PreparedStatement prep = c.prepareStatement("SELECT * FROM Empleados WHERE Id = ?;");
+			prep.setString(1,id + "");
+			ResultSet rs = prep.executeQuery();
+			while(rs.next()) {
+				String nombre = rs.getString("Nombre");
+				int salario = rs.getInt("Salario");
+				int cargoid = rs.getInt("Cargo_Id");
+				empleado = new Empleados (id, nombre, salario , cargoid);
+				LOGGER.fine("Empleado: " + empleado);
+			}
+			prep.close();
+		} catch (SQLException e) {
+			LOGGER.severe("Error al hacer un SELECT");
+			e.printStackTrace();
+		}
+		return empleado;
+	}
+	
+		public static List<Empleados> buscarEmpleadosNombre(String nombre) {
+			List<Empleados> empleados = new ArrayList<Empleados>();
+			try {
+				PreparedStatement prep = c.prepareStatement("SELECT * FROM Empleados WHERE Nombre = ?;");
+				prep.setString(1,nombre + "");
+				ResultSet rs = prep.executeQuery();
+				while(rs.next()) {
+					int id = rs.getInt("Id");
+					int salario = rs.getInt("Salario");
+					int cargoid = rs.getInt("Cargo_Id");
+					Empleados empleado = new Empleados (id, nombre, salario , cargoid);
+					empleados.add(empleado);
+					LOGGER.fine("Empleado: " + empleado);
+				}
+				prep.close();
+			} catch (SQLException e) {
+				LOGGER.severe("Error al hacer un SELECT");
+				e.printStackTrace();
+			}
+			return empleados;
 		}
 		/*public static Cargo getCargos(int cargo_id, Connection c) throws SQLException {
 			Statement stmt = c.createStatement();
@@ -135,8 +156,6 @@ public class EmpleadoSQL {
 			stmt.close();
 			return cargo;
 		}
-		
-	
 		/*public static void search(String searchname) throws SQLException {
 			Connection c =Conexion.connect();
 			String sql = "SELECT * FROM Empleados Where nombre LIKE ? ";
@@ -166,5 +185,33 @@ public class EmpleadoSQL {
 			Conexion.disconnect(c);
 		}
 		*/
+
+
+		public static void actualizarEmpleado(int id, int salario) throws SQLException, IOException{
+			Connection c =Conexion.connect();
+			String sql = "UPDATE Empleados SET salario =? WHERE id =?";
+			PreparedStatement prep = c.prepareStatement(sql);
+			prep.setInt(1, salario);
+			prep.setInt(2, id);
+			prep.executeUpdate();
+			System.out.println("\n Update terminado");
+			Conexion.disconnect(c);
+				
+		}
+
+
+		public static void borrarTabla() throws SQLException, IOException {
+			
+			Connection c =Conexion.connect();
+			
+			Statement stmt1 = c.createStatement();
+			String sql1 = "Drop table Empleados" ;
+			stmt1.executeUpdate(sql1);
+			stmt1.close();
+			System.out.println("\nTabla Empleados borrada");
+			
+			Conexion.disconnect(c);
+					
+		}
 	
 }
