@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2021-04-28T10:08:52.282560300Z</date>
+  <millis>1619604532282</millis>
+  <nanos>560300</nanos>
+  <sequence>0</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>logging.MyLogger</class>
+  <method>setup</method>
+  <thread>1</thread>
+  <message>Logger is configured</message>
+</record>
+<record>
+  <date>2021-04-28T10:08:52.542779700Z</date>
+  <millis>1619604532542</millis>
+  <nanos>779700</nanos>
+  <sequence>1</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>jdbc.JDBCManager</class>
+  <method>connect</method>
+  <thread>1</thread>
+  <message>Se ha establecido la conexión con la BD</message>
+</record>
+<record>
+  <date>2021-04-28T10:09:04.518845400Z</date>
+  <millis>1619604544518</millis>
+  <nanos>845400</nanos>
+  <sequence>2</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>interfaz.MenuServidor</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>El usuario elige 5</message>
+</record>
+<record>
+  <date>2021-04-28T10:09:04.520890700Z</date>
+  <millis>1619604544520</millis>
+  <nanos>890700</nanos>
+  <sequence>3</sequence>
+  <logger>global</logger>
+  <level>FINE</level>
+  <class>jdbc.JDBCManager</class>
+  <method>searchClientes</method>
+  <thread>1</thread>
+  <message>Cliente: ID: 1 Nombre: juen Telefono: 123456789 Email: juen@hotmail.com</message>
+</record>
+<record>
+  <date>2021-04-28T10:09:08.853771Z</date>
+  <millis>1619604548853</millis>
+  <nanos>771000</nanos>
+  <sequence>4</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>interfaz.MenuServidor</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>El usuario elige 6</message>
+</record>
+<record>
+  <date>2021-04-28T10:09:10.349249200Z</date>
+  <millis>1619604550349</millis>
+  <nanos>249200</nanos>
+  <sequence>5</sequence>
+  <logger>global</logger>
+  <level>FINE</level>
+  <class>jdbc.JDBCManager</class>
+  <method>searchClienteByNombre</method>
+  <thread>1</thread>
+  <message>Cliente: ID: 1 Nombre: null Telefono: 123456789 Email: juen@hotmail.com</message>
+</record>

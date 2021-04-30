@@ -73,3 +73,39 @@
   <thread>1</thread>
   <message>Cliente: ID: 1 Nombre: null Telefono: 123456789 Email: juen@hotmail.com</message>
 </record>
+<record>
+  <date>2021-04-28T10:22:41.309825Z</date>
+  <millis>1619605361309</millis>
+  <nanos>825000</nanos>
+  <sequence>6</sequence>
+  <logger>global</logger>
+  <level>WARNING</level>
+  <class>interfaz.MenuServidor</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>El usuario no ha introducido un número</message>
+</record>
+<record>
+  <date>2021-04-28T10:22:41.347724800Z</date>
+  <millis>1619605361347</millis>
+  <nanos>724800</nanos>
+  <sequence>7</sequence>
+  <logger>global</logger>
+  <level>WARNING</level>
+  <class>interfaz.MenuServidor</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>El usuario no ha introducido un número</message>
+</record>
+<record>
+  <date>2021-04-28T10:22:41.351713800Z</date>
+  <millis>1619605361351</millis>
+  <nanos>713800</nanos>
+  <sequence>8</sequence>
+  <logger>global</logger>
+  <level>WARNING</level>
+  <class>interfaz.MenuServidor</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>El usuario no ha introducido un número</message>
+</record>

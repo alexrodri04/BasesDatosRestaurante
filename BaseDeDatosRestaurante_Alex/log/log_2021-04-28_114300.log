@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2021-04-28T09:43:00.180810700Z</date>
+  <millis>1619602980180</millis>
+  <nanos>810700</nanos>
+  <sequence>0</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>logging.MyLogger</class>
+  <method>setup</method>
+  <thread>1</thread>
+  <message>Logger is configured</message>
+</record>
+<record>
+  <date>2021-04-28T09:43:00.690074Z</date>
+  <millis>1619602980690</millis>
+  <nanos>74000</nanos>
+  <sequence>1</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>jdbc.JDBCManager</class>
+  <method>connect</method>
+  <thread>1</thread>
+  <message>Se ha establecido la conexión con la BD</message>
+</record>
+<record>
+  <date>2021-04-28T09:43:04.358385400Z</date>
+  <millis>1619602984358</millis>
+  <nanos>385400</nanos>
+  <sequence>2</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>interfaz.MenuServidor</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>El usuario elige 2</message>
+</record>
+<record>
+  <date>2021-04-28T09:43:04.360346900Z</date>
+  <millis>1619602984360</millis>
+  <nanos>346900</nanos>
+  <sequence>3</sequence>
+  <logger>global</logger>
+  <level>FINE</level>
+  <class>jdbc.JDBCManager</class>
+  <method>searchEmpleados</method>
+  <thread>1</thread>
+  <message>Empleado: ID: 1  Nombre: rrrrr  Cargo_id: 22   Sueldo: 3333</message>
+</record>
+<record>
+  <date>2021-04-28T09:43:18.821900300Z</date>
+  <millis>1619602998821</millis>
+  <nanos>900300</nanos>
+  <sequence>4</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>interfaz.MenuServidor</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>El usuario elige 2</message>
+</record>
+<record>
+  <date>2021-04-28T09:43:18.823427700Z</date>
+  <millis>1619602998823</millis>
+  <nanos>427700</nanos>
+  <sequence>5</sequence>
+  <logger>global</logger>
+  <level>FINE</level>
+  <class>jdbc.JDBCManager</class>
+  <method>searchEmpleados</method>
+  <thread>1</thread>
+  <message>Empleado: ID: 1  Nombre: rrrrr  Cargo_id: 22   Sueldo: 3333</message>
+</record>
+<record>
+  <date>2021-04-28T09:43:27.647093Z</date>
+  <millis>1619603007647</millis>
+  <nanos>93000</nanos>
+  <sequence>6</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>interfaz.MenuServidor</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>El usuario elige 2</message>
+</record>
+<record>
+  <date>2021-04-28T09:43:27.648071200Z</date>
+  <millis>1619603007648</millis>
+  <nanos>71200</nanos>
+  <sequence>7</sequence>
+  <logger>global</logger>
+  <level>FINE</level>
+  <class>jdbc.JDBCManager</class>
+  <method>searchEmpleados</method>
+  <thread>1</thread>
+  <message>Empleado: ID: 1  Nombre: rrrrr  Cargo_id: 22   Sueldo: 3333</message>
+</record>

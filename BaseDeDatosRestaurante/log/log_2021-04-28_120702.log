@@ -121,3 +121,51 @@
   <thread>1</thread>
   <message>Cliente: ID: 1 Nombre: null Telefono: 123456789 Email: juen@hotmail.com</message>
 </record>
+<record>
+  <date>2021-04-28T10:22:41.286888300Z</date>
+  <millis>1619605361286</millis>
+  <nanos>888300</nanos>
+  <sequence>10</sequence>
+  <logger>global</logger>
+  <level>WARNING</level>
+  <class>interfaz.MenuServidor</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>El usuario no ha introducido un número</message>
+</record>
+<record>
+  <date>2021-04-28T10:22:41.304838800Z</date>
+  <millis>1619605361304</millis>
+  <nanos>838800</nanos>
+  <sequence>11</sequence>
+  <logger>global</logger>
+  <level>WARNING</level>
+  <class>interfaz.MenuServidor</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>El usuario no ha introducido un número</message>
+</record>
+<record>
+  <date>2021-04-28T10:22:41.306834400Z</date>
+  <millis>1619605361306</millis>
+  <nanos>834400</nanos>
+  <sequence>12</sequence>
+  <logger>global</logger>
+  <level>WARNING</level>
+  <class>interfaz.MenuServidor</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>El usuario no ha introducido un número</message>
+</record>
+<record>
+  <date>2021-04-28T10:22:41.307831900Z</date>
+  <millis>1619605361307</millis>
+  <nanos>831900</nanos>
+  <sequence>13</sequence>
+  <logger>global</logger>
+  <level>WARNING</level>
+  <class>interfaz.MenuServidor</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>El usuario no ha introducido un número</message>
+</record>

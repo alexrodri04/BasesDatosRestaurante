@@ -11,29 +11,29 @@ public class Pedidos {
 	private float coste;
 	private String direccion;
 	private Time hora;
-	private int repartidorId;
+	private Empleados repartidor;
 	
 	public Pedidos() {
 		super();
 	}
 	
-	public Pedidos(int cliente_id, Date fecha, float coste, String direccion, Time hora, int repartidorId) {
+	public Pedidos(int cliente_id, Date fecha, float coste, String direccion, Time hora, Empleados repartidor) {
 		this.cliente_id=cliente_id;
 		this.fecha=fecha;
 		this.coste=coste;
 		this.direccion=direccion;
 		this.hora=hora;
-		this.repartidorId=repartidorId;
+		this.repartidor=repartidor;
 	}
 	
-	public Pedidos(int id,int cliente_id, Date fecha, float coste, String direccion, Time hora, int repartidorId) {
+	public Pedidos(int id,int cliente_id, Date fecha, float coste, String direccion, Time hora, Empleados repartidor) {
 		this.id=id;
 		this.cliente_id=cliente_id;
 		this.fecha=fecha;
 		this.coste=coste;
 		this.direccion=direccion;
 		this.hora=hora;
-		this.repartidorId=repartidorId;
+		this.repartidor=repartidor;
 	}
 	
 	public Pedidos(int id,int cliente_id, Date fecha, float coste, String direccion, Time hora) {
@@ -93,16 +93,16 @@ public class Pedidos {
 		this.hora = hora;
 	}
 	
-	public int getRepartidor() {
-		return repartidorId;
+	public Empleados getRepartidor() {
+		return repartidor;
 	}
 	
-	public void setRepartidor(int repartidorId) {
-		this.repartidorId=repartidorId;
+	public void setRepartidor(Empleados repartidor) {
+		this.repartidor=repartidor;
 	}
 	
 	public String toString() {
-		String string ="ID: "+ getId()+ " Cliente_id: "+ getClienteId()+ " Fecha: "+getFecha()+ "Coste: "+getCoste()+ "Direccion: "+getDireccion()+"Hora: "+getHora()+"RepartidorId: "+getRepartidor()+"\n";
+		String string ="ID: "+ getId()+ " Cliente_id: "+ getClienteId()+ " Fecha: "+getFecha()+ "Coste: "+getCoste()+ "Direccion: "+getDireccion()+"Hora: "+getHora()+"Repartidor: "+getRepartidor()+"\n";
 		return string;
 	}
 }

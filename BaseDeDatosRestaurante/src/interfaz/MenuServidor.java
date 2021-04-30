@@ -8,7 +8,6 @@ import pojos.Pedidos;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.sql.Connection;
 import java.sql.Date;
 import java.sql.Time;
 import java.time.LocalDate;
@@ -39,7 +38,7 @@ public class MenuServidor {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		Connection c = (Connection) dbman.connect();
+		dbman.connect();
 		int respuesta;
 		do {
 			System.out.println("\nElige una opción:");
@@ -95,7 +94,7 @@ public class MenuServidor {
 				eliminarMenu();
 			}
 		} while (respuesta != 0);
-		dbman.disconnect(c);
+		dbman.disconnect();
 	}
 	
 
@@ -159,7 +158,8 @@ public class MenuServidor {
 			LocalTime hora = LocalTime.parse(reader.readLine(),formattertime);
 			System.out.println("RepartidorId: ");
 			int idRepartidor = Integer.parseInt(reader.readLine());
-			Pedidos pedido = new Pedidos(cliente_id,Date.valueOf(fecha),coste,direccion,Time.valueOf(hora),idRepartidor);
+			Empleados repartidor = dbman.searchEmpleadoById(idRepartidor);
+			Pedidos pedido = new Pedidos(cliente_id,Date.valueOf(fecha),coste,direccion,Time.valueOf(hora),repartidor);
 			dbman.addPedido(pedido);
 			System.out.println("Se ha añadido el pedido con exito \n");
 		} catch (IOException e) {
@@ -222,7 +222,7 @@ public class MenuServidor {
 				System.out.println("¿Confirmar borrado?(s/n)");
 				String respuesta = reader.readLine();
 				if(respuesta.equalsIgnoreCase("s")) {
-					boolean exiteEmpleado = dbman.deleteEmpleado(nombreEmpleado);
+					boolean exiteEmpleado = dbman.eliminarEmpleado(nombreEmpleado);
 					if(exiteEmpleado) {
 						System.out.println("El empleado se ha borrado con éxito");
 					} else {
@@ -254,7 +254,7 @@ public class MenuServidor {
 				System.out.println("¿Confirmar borrado?(s/n)");
 				String respuesta = reader.readLine();
 				if(respuesta.equalsIgnoreCase("s")) {
-					boolean exiteMenu = dbman.deleteMenu(nombreMenu);
+					boolean exiteMenu = dbman.eliminarMenu(nombreMenu);
 					if(exiteMenu) {
 						System.out.println("El plato se ha borrado con éxito");
 					} else {
@@ -286,7 +286,7 @@ public class MenuServidor {
 				System.out.println("¿Confirmar borrado?(s/n)");
 				String respuesta = reader.readLine();
 				if(respuesta.equalsIgnoreCase("s")) {
-					boolean existeCliente = dbman.deleteCliente(nombreCliente);
+					boolean existeCliente = dbman.eliminarCliente(nombreCliente);
 					if(existeCliente) {
 						System.out.println("El Cliente se ha borrado con éxito");
 					} else {

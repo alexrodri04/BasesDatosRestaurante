@@ -61,3 +61,39 @@
   <thread>1</thread>
   <message>Empleado: ID: 1  Nombre: rrrrr  Cargo_id: 22   Sueldo: 3333</message>
 </record>
+<record>
+  <date>2021-04-28T10:22:41.086423200Z</date>
+  <millis>1619605361086</millis>
+  <nanos>423200</nanos>
+  <sequence>5</sequence>
+  <logger>global</logger>
+  <level>FINE</level>
+  <class>jdbc.JDBCManager</class>
+  <method>searchEmpleados</method>
+  <thread>1</thread>
+  <message>Empleado: ID: 1  Nombre: rrrrr  Cargo_id: 22   Sueldo: 3333</message>
+</record>
+<record>
+  <date>2021-04-28T10:22:41.087420400Z</date>
+  <millis>1619605361087</millis>
+  <nanos>420400</nanos>
+  <sequence>6</sequence>
+  <logger>global</logger>
+  <level>WARNING</level>
+  <class>interfaz.MenuServidor</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>El usuario no ha introducido un número</message>
+</record>
+<record>
+  <date>2021-04-28T10:22:41.100385Z</date>
+  <millis>1619605361100</millis>
+  <nanos>385000</nanos>
+  <sequence>7</sequence>
+  <logger>global</logger>
+  <level>WARNING</level>
+  <class>interfaz.MenuServidor</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>El usuario no ha introducido un número</message>
+</record>

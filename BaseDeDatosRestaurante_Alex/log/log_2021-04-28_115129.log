@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2021-04-28T09:51:29.671054700Z</date>
+  <millis>1619603489671</millis>
+  <nanos>54700</nanos>
+  <sequence>0</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>logging.MyLogger</class>
+  <method>setup</method>
+  <thread>1</thread>
+  <message>Logger is configured</message>
+</record>
+<record>
+  <date>2021-04-28T09:51:30.300595600Z</date>
+  <millis>1619603490300</millis>
+  <nanos>595600</nanos>
+  <sequence>1</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>jdbc.JDBCManager</class>
+  <method>connect</method>
+  <thread>1</thread>
+  <message>Se ha establecido la conexión con la BD</message>
+</record>
+<record>
+  <date>2021-04-28T09:51:33.931384600Z</date>
+  <millis>1619603493931</millis>
+  <nanos>384600</nanos>
+  <sequence>2</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>interfaz.MenuServidor</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>El usuario elige 4</message>
+</record>
+<record>
+  <date>2021-04-28T09:51:58.676855500Z</date>
+  <millis>1619603518676</millis>
+  <nanos>855500</nanos>
+  <sequence>3</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>interfaz.MenuServidor</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>El usuario elige 5</message>
+</record>
+<record>
+  <date>2021-04-28T09:51:58.679271300Z</date>
+  <millis>1619603518679</millis>
+  <nanos>271300</nanos>
+  <sequence>4</sequence>
+  <logger>global</logger>
+  <level>FINE</level>
+  <class>jdbc.JDBCManager</class>
+  <method>searchClientes</method>
+  <thread>1</thread>
+  <message>Cliente: ID: 1 Nombre: juen Telefono: 123456789 Email: juen@hotmail.com</message>
+</record>

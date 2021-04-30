@@ -59,6 +59,5 @@ public class Clientes {
 		String string ="ID: "+ getId()+ " Nombre: "+ getNombre()+ " Telefono: "+getTelefono()+ " Email: "+getEmail();
 		return string;
 		}
-	
 
 }
