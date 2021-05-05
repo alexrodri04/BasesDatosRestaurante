@@ -3,8 +3,10 @@ package jdbc;
 import java.util.List;
 
 import pojos.Pedidos;
+import pojos.Cargos;
 import pojos.Clientes;
 import pojos.Empleados;
+import pojos.Jefes;
 import pojos.Menus;
 
 public interface DBManager {
@@ -35,7 +37,7 @@ public interface DBManager {
 
 	public List<Empleados> searchEmpleadoByNombre(String nombreEmpleado);
 
-	public List<Menus> searchMenuByNombre(String nombreMenu);
+	public Menus searchMenuByNombre(String nombreMenu);
 
 	public boolean eliminarMenu(String nombreMenu);
 
@@ -44,5 +46,13 @@ public interface DBManager {
 	public boolean eliminarCliente(String nombreCliente);
 
 	public Clientes searchClienteByEmail(String email);
+
+	public void addCargo(Cargos cargo);
+
+	public void addJefe(Jefes jefe);
+
+	public List<Jefes> searchJefes();
+
+	public List<Cargos> searchCargos();
 
 }

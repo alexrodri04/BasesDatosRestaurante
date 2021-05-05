@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2021-05-04T13:18:05.460484600Z</date>
+  <millis>1620134285460</millis>
+  <nanos>484600</nanos>
+  <sequence>0</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>logging.MyLogger</class>
+  <method>setup</method>
+  <thread>1</thread>
+  <message>Logger is configured</message>
+</record>
+<record>
+  <date>2021-05-04T13:18:09.518968500Z</date>
+  <millis>1620134289518</millis>
+  <nanos>968500</nanos>
+  <sequence>1</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>jdbc.JDBCManager</class>
+  <method>connect</method>
+  <thread>1</thread>
+  <message>Se ha establecido la conexión con la BD</message>
+</record>
+<record>
+  <date>2021-05-04T13:18:19.975485600Z</date>
+  <millis>1620134299975</millis>
+  <nanos>485600</nanos>
+  <sequence>2</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>interfaz.MenuServidor</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>El usuario elige 11</message>
+</record>
+<record>
+  <date>2021-05-04T13:18:38.636526600Z</date>
+  <millis>1620134318636</millis>
+  <nanos>526600</nanos>
+  <sequence>3</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>interfaz.MenuServidor</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>El usuario elige 11</message>
+</record>
+<record>
+  <date>2021-05-04T13:18:48.731393200Z</date>
+  <millis>1620134328731</millis>
+  <nanos>393200</nanos>
+  <sequence>4</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>interfaz.MenuServidor</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>El usuario elige 11</message>
+</record>
+<record>
+  <date>2021-05-04T13:19:04.297616600Z</date>
+  <millis>1620134344297</millis>
+  <nanos>616600</nanos>
+  <sequence>5</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>interfaz.MenuServidor</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>El usuario elige 10</message>
+</record>
+<record>
+  <date>2021-05-04T13:19:16.191476600Z</date>
+  <millis>1620134356191</millis>
+  <nanos>476600</nanos>
+  <sequence>6</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>interfaz.MenuServidor</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>El usuario elige 10</message>
+</record>
+<record>
+  <date>2021-05-04T13:19:24.009937500Z</date>
+  <millis>1620134364009</millis>
+  <nanos>937500</nanos>
+  <sequence>7</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>interfaz.MenuServidor</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>El usuario elige 11</message>
+</record>
+</log>

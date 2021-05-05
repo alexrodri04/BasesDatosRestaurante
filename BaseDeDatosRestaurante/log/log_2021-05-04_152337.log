@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2021-05-04T13:23:37.677045300Z</date>
+  <millis>1620134617677</millis>
+  <nanos>45300</nanos>
+  <sequence>0</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>logging.MyLogger</class>
+  <method>setup</method>
+  <thread>1</thread>
+  <message>Logger is configured</message>
+</record>
+<record>
+  <date>2021-05-04T13:23:38.081574500Z</date>
+  <millis>1620134618081</millis>
+  <nanos>574500</nanos>
+  <sequence>1</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>jdbc.JDBCManager</class>
+  <method>connect</method>
+  <thread>1</thread>
+  <message>Se ha establecido la conexión con la BD</message>
+</record>
+<record>
+  <date>2021-05-04T13:23:40.626566700Z</date>
+  <millis>1620134620626</millis>
+  <nanos>566700</nanos>
+  <sequence>2</sequence>
+  <logger>global</logger>
+  <level>WARNING</level>
+  <class>interfaz.MenuServidor</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>El usuario no ha introducido un número</message>
+</record>
+<record>
+  <date>2021-05-04T13:23:40.647513Z</date>
+  <millis>1620134620647</millis>
+  <nanos>513000</nanos>
+  <sequence>3</sequence>
+  <logger>global</logger>
+  <level>WARNING</level>
+  <class>interfaz.MenuServidor</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>El usuario no ha introducido un número</message>
+</record>
+<record>
+  <date>2021-05-04T13:23:40.650505300Z</date>
+  <millis>1620134620650</millis>
+  <nanos>505300</nanos>
+  <sequence>4</sequence>
+  <logger>global</logger>
+  <level>WARNING</level>
+  <class>interfaz.MenuServidor</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>El usuario no ha introducido un número</message>
+</record>
+<record>
+  <date>2021-05-04T13:23:40.652499600Z</date>
+  <millis>1620134620652</millis>
+  <nanos>499600</nanos>
+  <sequence>5</sequence>
+  <logger>global</logger>
+  <level>WARNING</level>
+  <class>interfaz.MenuServidor</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>El usuario no ha introducido un número</message>
+</record>

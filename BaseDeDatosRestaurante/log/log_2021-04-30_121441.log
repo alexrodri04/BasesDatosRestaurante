@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2021-04-30T10:14:41.110593500Z</date>
+  <millis>1619777681110</millis>
+  <nanos>593500</nanos>
+  <sequence>0</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>logging.MyLogger</class>
+  <method>setup</method>
+  <thread>1</thread>
+  <message>Logger is configured</message>
+</record>
+<record>
+  <date>2021-04-30T10:14:41.371326400Z</date>
+  <millis>1619777681371</millis>
+  <nanos>326400</nanos>
+  <sequence>1</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>jdbc.JDBCManager</class>
+  <method>connect</method>
+  <thread>1</thread>
+  <message>Se ha establecido la conexión con la BD</message>
+</record>
+<record>
+  <date>2021-04-30T10:14:42.718644600Z</date>
+  <millis>1619777682718</millis>
+  <nanos>644600</nanos>
+  <sequence>2</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>interfaz.MenuCliente</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>El usuario elige 1</message>
+</record>
+<record>
+  <date>2021-04-30T10:14:58.489202300Z</date>
+  <millis>1619777698489</millis>
+  <nanos>202300</nanos>
+  <sequence>3</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>interfaz.MenuCliente</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>El usuario elige 1</message>
+</record>
+<record>
+  <date>2021-04-30T10:23:00.440230400Z</date>
+  <millis>1619778180440</millis>
+  <nanos>230400</nanos>
+  <sequence>4</sequence>
+  <logger>global</logger>
+  <level>WARNING</level>
+  <class>interfaz.MenuCliente</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>El usuario no ha introducido un número</message>
+</record>
+<record>
+  <date>2021-04-30T10:23:00.462181Z</date>
+  <millis>1619778180462</millis>
+  <nanos>181000</nanos>
+  <sequence>5</sequence>
+  <logger>global</logger>
+  <level>WARNING</level>
+  <class>interfaz.MenuCliente</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>El usuario no ha introducido un número</message>
+</record>
+<record>
+  <date>2021-04-30T10:23:00.465173300Z</date>
+  <millis>1619778180465</millis>
+  <nanos>173300</nanos>
+  <sequence>6</sequence>
+  <logger>global</logger>
+  <level>WARNING</level>
+  <class>interfaz.MenuCliente</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>El usuario no ha introducido un número</message>
+</record>

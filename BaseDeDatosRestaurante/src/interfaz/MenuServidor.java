@@ -1,13 +1,16 @@
 package interfaz;
 
+import pojos.Cargos;
 import pojos.Clientes;
 import pojos.Empleados;
+import pojos.Jefes;
 import pojos.Menus;
 import pojos.Pedidos;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.sql.Connection;
 import java.sql.Date;
 import java.sql.Time;
 import java.time.LocalDate;
@@ -25,9 +28,9 @@ public class MenuServidor {
 	final static Logger LOGGER = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
 	private static DBManager dbman = new JDBCManager();
 	private static BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-	private final static String[] EMPLEADOS_NOMBRES = {"Maria","Javier", "David"};
-	private final static int[] EMPLEADOS_SUELDO= {1400,1100,1100};
-	private final static int[] EMPLEADOS_CARGOID = {1, 2, 3};
+	private final static String[] JEFES_NOMBRES = {"Daniel","Alejandro", "Ignacio"};
+	private final static String[] CARGOS_NOMBRES = {"Informatico","Cocinero","Repartidor"};
+	private final static int[] CARGOS_JEFE_ID = {1, 2, 3};
 	private final static DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 	private final static DateTimeFormatter formattertime = DateTimeFormatter.ofPattern("hh:mm");
 	
@@ -38,7 +41,14 @@ public class MenuServidor {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		
 		dbman.connect();
+		
+		if (dbman.searchJefes() == null) {
+			generarJefes();
+			generarCargos();
+		}
+		
 		int respuesta;
 		do {
 			System.out.println("\nElige una opción:");
@@ -51,8 +61,10 @@ public class MenuServidor {
 			System.out.println("7. Hacer Pedido");
 			System.out.println("8. Mostrar menu");
 			System.out.println("9. Eliminar menu");
-			
-			
+			System.out.println("10. Añadir Jefe");
+			System.out.println("11. Mostrar Jefes");
+			System.out.println("12. Añadir Cargo");
+			System.out.println("13. Mostrar Cargos");
 			
 			try {
 				respuesta=Integer.parseInt(reader.readLine());
@@ -71,9 +83,9 @@ public class MenuServidor {
 			case 2:
 				mostrarEmpleados();
 				break;
-			
 			case 3:
 				eliminarEmpleado();
+				break;
 			case 4:
 				addCliente();
 				break;
@@ -92,6 +104,19 @@ public class MenuServidor {
 				break;
 			case 9:
 				eliminarMenu();
+				break;
+			case 10:
+				addJefe();
+				break;
+			case 11:
+				mostrarJefes();
+				break;
+			case 12:
+				addCargo();
+				break;
+			case 13:
+				mostrarCargos();
+				break;
 			}
 		} while (respuesta != 0);
 		dbman.disconnect();
@@ -130,6 +155,32 @@ public class MenuServidor {
 		}
 	}
 	
+	private static void addCargo() {
+		try {
+			System.out.println("Nombre del cargo:");
+			String nombre = reader.readLine();
+			System.out.println("Jefe_id: ");
+			int jefe_id = Integer.parseInt(reader.readLine());
+			Cargos cargo = new Cargos(nombre, jefe_id);
+			dbman.addCargo(cargo);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	private static void addJefe() {
+		try {
+			System.out.println("Nombre: ");
+			String nombre = reader.readLine();
+			Jefes jefe = new Jefes(nombre);
+			dbman.addJefe(jefe);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
 	private static void crearMenu() {
 		try {
 			System.out.println("Nombre del plato:");
@@ -157,9 +208,8 @@ public class MenuServidor {
 			System.out.println("Hora: ");
 			LocalTime hora = LocalTime.parse(reader.readLine(),formattertime);
 			System.out.println("RepartidorId: ");
-			int idRepartidor = Integer.parseInt(reader.readLine());
-			Empleados repartidor = dbman.searchEmpleadoById(idRepartidor);
-			Pedidos pedido = new Pedidos(cliente_id,Date.valueOf(fecha),coste,direccion,Time.valueOf(hora),repartidor);
+			int id_repartidor = Integer.parseInt(reader.readLine());
+			Pedidos pedido = new Pedidos(cliente_id,Date.valueOf(fecha),coste,direccion,Time.valueOf(hora),id_repartidor);
 			dbman.addPedido(pedido);
 			System.out.println("Se ha añadido el pedido con exito \n");
 		} catch (IOException e) {
@@ -167,13 +217,21 @@ public class MenuServidor {
 		}
 	}
 	
-	private static void generarEmpleados() {
-		for(int i = 0; i < EMPLEADOS_NOMBRES.length; i++) {
-						
-			Empleados empleado = new Empleados(EMPLEADOS_NOMBRES[i],EMPLEADOS_SUELDO[i],EMPLEADOS_CARGOID[i]);
-			dbman.addEmpleado(empleado);
+	private static void generarJefes() {
+		for(int i = 0; i < JEFES_NOMBRES.length; i++) {
+			
+			Jefes jefe = new Jefes(JEFES_NOMBRES[i]);
+			dbman.addJefe(jefe);
 		}
-		System.out.println("Se han generado " + EMPLEADOS_NOMBRES.length + " empleados.");
+		System.out.println("Se han generado " + JEFES_NOMBRES.length + " jefes.");
+	}
+	
+	private static void generarCargos() {
+		for(int i = 0; i < CARGOS_NOMBRES.length; i++) {
+			Cargos cargo = new Cargos(CARGOS_NOMBRES[i],CARGOS_JEFE_ID[i]);
+			dbman.addCargo(cargo);
+		}
+		System.out.println("Se han generado " + CARGOS_NOMBRES.length + " cargos.");
 	}
 	
 	private static void mostrarEmpleados() {
@@ -205,6 +263,22 @@ public class MenuServidor {
 		System.out.println("\nMenu: \n");
 		for(Menus menu : menus) {
 			System.out.println(menu);
+		}
+	}
+	
+	private static void mostrarJefes() {
+		List<Jefes> jefes = dbman.searchJefes();
+		System.out.println("\nJefes: \n");
+		for(Jefes jefe : jefes) {
+			System.out.println(jefe);
+		}
+	}
+	
+	private static void mostrarCargos() {
+		List<Cargos> cargos = dbman.searchCargos();
+		System.out.println("\nCargos: \n");
+		for(Cargos cargo : cargos) {
+			System.out.println(cargo);
 		}
 	}
 	
@@ -245,12 +319,10 @@ public class MenuServidor {
 		System.out.println("Introduzca nombre del plato:");
 		try {
 			String nombreMenu = reader.readLine();
-			List<Menus> menus = dbman.searchMenuByNombre(nombreMenu);
-			if (menus.size() > 0) {
+			Menus menu = dbman.searchMenuByNombre(nombreMenu);
+			if (menu !=  null) {
 				System.out.println("Se va a borrar el siguiente plato: ");
-				for(Menus menu : menus) {
-					System.out.println(menu);
-				}
+				System.out.println(menu);
 				System.out.println("¿Confirmar borrado?(s/n)");
 				String respuesta = reader.readLine();
 				if(respuesta.equalsIgnoreCase("s")) {

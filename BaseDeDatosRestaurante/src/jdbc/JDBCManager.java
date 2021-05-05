@@ -20,8 +20,10 @@ import java.util.List;
 import java.util.logging.Logger;
 import java.util.logging.Level;
 
+import pojos.Cargos;
 import pojos.Clientes;
 import pojos.Empleados;
+import pojos.Jefes;
 import pojos.Menus;
 import pojos.Pedidos;
 import interfaz.MenuServidor;
@@ -35,11 +37,15 @@ public class JDBCManager implements DBManager{
 	private final String addCliente = "INSERT INTO Clientes (Nombre,Telefono,Email) VALUES (?,?,?);";
 	private final String addPedido = "INSERT INTO Pedidos (Cliente_Id, Fecha,Coste, Direccion,Hora) VALUES (?,?,?)";
 	private final String addMenu = "INSERT INTO Menus (Plato,Precio) VALUES (?,?)";
+	private final String addJefe = "INSERT INTO Jefes (Nombre) VALUES (?)";
+	private final String addCargo = "INSERT INTO Cargos (Nombre, Jefe_Id) VALUES (?,?)";
 	private final String searchEmpleado = "SELECT * FROM Empleados;";
 	private final String searchCliente = "SELECT * FROM Clientes;";
 	private final String searchClienteByEmail = "SELECT * FROM Clientes WHERE Email = ?;";
 	private final String searchPedido = "SELECT * FROM Pedidos;";
 	private final String searchMenu = "SELECT * FROM Menus;";
+	private final String searchJefe = "SELECT * FROM Jefes;";
+	private final String searchCargo = "SELECT * FROM Cargos;";
 	private final String searchEmpleadoById = "SELECT * FROM Empleados WHERE Id = ?;";
 	private final String searchEmpleadoByNombre = "SELECT * FROM Empleados WHERE Nombre = ?;";
 	private final String searchClienteByNombre = "SELECT * FROM Clientes WHERE Nombre = ?;";
@@ -54,13 +60,19 @@ public class JDBCManager implements DBManager{
 		try {
 			Statement stmt = c.createStatement();
 			stmt.executeUpdate("CREATE TABLE IF NOT EXISTS "
-					+ "Empleados (Id INTEGER PRIMARY KEY, Nombre STRING, Salario INTEGER, Cargo_Id INTEGER)");
+					+ "Empleados (Id INTEGER PRIMARY KEY, Nombre STRING, Salario INTEGER, Cargo_Id INTEGER REFERENCES Cargos(Id))");
 			stmt.executeUpdate("CREATE TABLE IF NOT EXISTS "
 					+ "Menus (Id INTEGER PRIMARY KEY, Plato STRING, Precio FLOAT)");
 			stmt.executeUpdate("CREATE TABLE IF NOT EXISTS "
 					+ "Clientes (Id INTEGER PRIMARY KEY, Nombre STRING, Telefono INTEGER, Email STRING)");
 			stmt.executeUpdate("CREATE TABLE IF NOT EXISTS "
 					+ "Pedidos (Id INTEGER PRIMARY KEY, Cliente_Id INTEGER REFERENCES Clientes(Id), Fecha DATE, Coste INTEGER, Direccion STRING, Hora TIME, Repartidor_Id INTEGER REFERENCES Empleados(Id))");
+			stmt.executeUpdate("CREATE TABLE IF NOT EXISTS "
+					+ "Pedidos_Menus (Id_Pedido INTEGER REFERENCES Pedidos(Id), Id_Menu INTEGER REFERENCES Menus(Id))");
+			stmt.executeUpdate("CREATE TABLE IF NOT EXISTS "
+					+ "Jefes (Id INTEGER PRIMARY KEY, Nombre STRING)");
+			stmt.executeUpdate("CREATE TABLE IF NOT EXISTS "
+					+ "Cargos (Id INTEGER PRIMARY KEY, Nombre STRING, Jefe_Id REFERENCES Jefes(id))");
 			stmt.close();
 		} catch (SQLException e) {
 			LOGGER.severe("Error al crear las tablas");
@@ -109,7 +121,6 @@ public class JDBCManager implements DBManager{
 			LOGGER.severe("Error al insertar empleado: " + empleado);
 			e.printStackTrace();
 		}
-		
 	}
 	
 	public void addCliente(Clientes cliente) {
@@ -125,7 +136,6 @@ public class JDBCManager implements DBManager{
 			LOGGER.severe("Error al insertar cliente: " + cliente);
 			e.printStackTrace();
 		}
-		
 	}
 	
 	@Override
@@ -157,7 +167,32 @@ public class JDBCManager implements DBManager{
 			e.printStackTrace();
 		}
 	}
-
+	
+	public void addJefe(Jefes jefe) {
+		try {
+			PreparedStatement prep = c.prepareStatement(addJefe);
+			prep.setString(1, jefe.getNombre());
+			prep.executeUpdate();
+			prep.close();
+		} catch (SQLException e) {
+			LOGGER.severe("Error al insertar el jefe: " + jefe);
+			e.printStackTrace();
+		}
+	}
+	
+	public void addCargo(Cargos cargo) {
+		try {
+			PreparedStatement prep = c.prepareStatement(addCargo);
+			prep.setString(1, cargo.getNombre());
+			prep.setInt(2, cargo.getJefe_Id());
+			prep.executeUpdate();
+			prep.close();
+		} catch (SQLException e) {
+			LOGGER.severe("Error al insertar el cargo: " + cargo);
+			e.printStackTrace();
+		}
+	}
+	
 	
 	@Override
 	public List<Empleados> searchEmpleados() {
@@ -283,9 +318,8 @@ public class JDBCManager implements DBManager{
 				float coste = rs.getFloat("Coste");
 				String direccion = rs.getString("Direccion");
 				Time hora = rs.getTime("Hora");
-				int idEmpleado = rs.getInt("Repartidor_Id");
-				Empleados repartidor = searchEmpleadoById(idEmpleado);
-				Pedidos pedido = new Pedidos(id,cliente_id,fecha,coste,direccion,hora,repartidor);
+				int id_repartidor = rs.getInt("Repartidor_Id");
+				Pedidos pedido = new Pedidos(id,cliente_id,fecha,coste,direccion,hora,id_repartidor);
 				pedidos.add(pedido);
 				LOGGER.fine("Pedido: " + pedido);
 			}
@@ -320,7 +354,7 @@ public class JDBCManager implements DBManager{
 		}
 		return menus;
 	}
-	
+		
 	public List<Clientes> searchCliente() {
 		List<Clientes> clientes = new ArrayList<Clientes>();
 		try {
@@ -344,42 +378,81 @@ public class JDBCManager implements DBManager{
 		return clientes;
 	}
 	
-	public List<Menus> searchMenuByNombre(String menu) {
-		List<Menus> menus = new ArrayList<Menus>();
+	public List<Jefes> searchJefes() {
+		List<Jefes> jefes = new ArrayList<Jefes>();
+		try {
+			Statement stmt = c.createStatement();
+			ResultSet rs = stmt.executeQuery(searchJefe);
+			while(rs.next()){
+				int id = rs.getInt("Id");
+				String nombre = rs.getString("Nombre");
+				Jefes jefe = new Jefes(id,nombre);
+				jefes.add(jefe);
+				LOGGER.fine("Jefe: " + jefe);
+			}
+			rs.close();
+			stmt.close();
+		} catch (SQLException e) {
+			LOGGER.severe("Error al hacer un SELECT");
+			e.printStackTrace();
+		}
+		return jefes;	
+	}
+	
+	public List<Cargos> searchCargos() {
+		List<Cargos> cargos = new ArrayList<Cargos>();
+		try {
+			Statement stmt = c.createStatement();
+			ResultSet rs = stmt.executeQuery(searchCargo);
+			while(rs.next()){
+				int id = rs.getInt("Id");
+				String nombre = rs.getString("Nombre");
+				int jefe_id = rs.getInt("Jefe_Id");
+				Cargos cargo = new Cargos(id,nombre,jefe_id);
+				cargos.add(cargo);
+				LOGGER.fine("Cargo: " + cargo);
+			}
+			rs.close();
+			stmt.close();
+		} catch (SQLException e) {
+			LOGGER.severe("Error al hacer un SELECT");
+			e.printStackTrace();
+		}
+		return cargos;	
+	}
+	
+	public Menus searchMenuByNombre(String plato) {
+		Menus menu = new Menus();
 		try {
 			PreparedStatement prep = c.prepareStatement(searchMenuByNombre);
 			prep.setString(1,menu + "");
 			ResultSet rs = prep.executeQuery();
 			while(rs.next()) {
 				int id = rs.getInt("Id");
-				String plato = rs.getString("Plato");
 				int precio = rs.getInt("Precio");
-				Menus menu1 = new Menus (id,plato,precio);
-				menus.add(menu1);
-				LOGGER.fine("Menu: " + menu1);
+				menu = new Menus (id,plato,precio);
 			}
 			prep.close();
 		} catch (SQLException e) {
 			LOGGER.severe("Error al hacer un SELECT");
 			e.printStackTrace();
 		}
-		return menus;
+		return menu;
 	}
 	
-	public List<Clientes> searchClienteByNombre(String cliente) {
+	public List<Clientes> searchClienteByNombre(String nombre) {
 		List<Clientes> clientes = new ArrayList<Clientes>();
 		try {
 			PreparedStatement prep = c.prepareStatement(searchClienteByNombre);
-			prep.setString(1,cliente + "");
+			prep.setString(1,nombre + "");
 			ResultSet rs = prep.executeQuery();
 			while(rs.next()) {
 				int id = rs.getInt("Id");
-				String nombre = rs.getString("Nombre");
 				int telefono=rs.getInt("Telefono"); 
 				String email = rs.getString("Email");
-				Clientes cliente1 = new Clientes (id,telefono,email);
-				clientes.add(cliente1);
-				LOGGER.fine("Cliente: " + cliente1);
+				Clientes cliente = new Clientes (id,nombre,telefono,email);
+				clientes.add(cliente);
+				LOGGER.fine("Cliente: " + cliente);
 			}
 			prep.close();
 		} catch (SQLException e) {

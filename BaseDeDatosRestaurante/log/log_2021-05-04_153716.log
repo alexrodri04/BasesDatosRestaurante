@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2021-05-04T13:37:16.390094200Z</date>
+  <millis>1620135436390</millis>
+  <nanos>94200</nanos>
+  <sequence>0</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>logging.MyLogger</class>
+  <method>setup</method>
+  <thread>1</thread>
+  <message>Logger is configured</message>
+</record>
+<record>
+  <date>2021-05-04T13:37:16.907064700Z</date>
+  <millis>1620135436907</millis>
+  <nanos>64700</nanos>
+  <sequence>1</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>jdbc.JDBCManager</class>
+  <method>connect</method>
+  <thread>1</thread>
+  <message>Se ha establecido la conexión con la BD</message>
+</record>
+<record>
+  <date>2021-05-04T13:37:29.568622900Z</date>
+  <millis>1620135449568</millis>
+  <nanos>622900</nanos>
+  <sequence>2</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>interfaz.MenuServidor</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>El usuario elige 1</message>
+</record>
+<record>
+  <date>2021-05-04T13:37:40.277696100Z</date>
+  <millis>1620135460277</millis>
+  <nanos>696100</nanos>
+  <sequence>3</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>interfaz.MenuServidor</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>El usuario elige 2</message>
+</record>
+<record>
+  <date>2021-05-04T13:37:40.279689600Z</date>
+  <millis>1620135460279</millis>
+  <nanos>689600</nanos>
+  <sequence>4</sequence>
+  <logger>global</logger>
+  <level>FINE</level>
+  <class>jdbc.JDBCManager</class>
+  <method>searchEmpleados</method>
+  <thread>1</thread>
+  <message>Empleado: ID: 1  Nombre: daniel  Cargo_id: 1   Sueldo: 1000</message>
+</record>
+<record>
+  <date>2021-05-04T13:37:47.052206100Z</date>
+  <millis>1620135467052</millis>
+  <nanos>206100</nanos>
+  <sequence>5</sequence>
+  <logger>global</logger>
+  <level>WARNING</level>
+  <class>interfaz.MenuServidor</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>El usuario no ha introducido un número</message>
+</record>
+<record>
+  <date>2021-05-04T13:37:47.072156Z</date>
+  <millis>1620135467072</millis>
+  <nanos>156000</nanos>
+  <sequence>6</sequence>
+  <logger>global</logger>
+  <level>WARNING</level>
+  <class>interfaz.MenuServidor</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>El usuario no ha introducido un número</message>
+</record>
+<record>
+  <date>2021-05-04T13:37:47.074147Z</date>
+  <millis>1620135467074</millis>
+  <nanos>147000</nanos>
+  <sequence>7</sequence>
+  <logger>global</logger>
+  <level>WARNING</level>
+  <class>interfaz.MenuServidor</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>El usuario no ha introducido un número</message>
+</record>
+<record>
+  <date>2021-05-04T13:37:47.077138900Z</date>
+  <millis>1620135467077</millis>
+  <nanos>138900</nanos>
+  <sequence>8</sequence>
+  <logger>global</logger>
+  <level>WARNING</level>
+  <class>interfaz.MenuServidor</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>El usuario no ha introducido un número</message>
+</record>

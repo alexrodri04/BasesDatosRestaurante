@@ -58,6 +58,6 @@ public class Clientes {
 	public String toString() {
 		String string ="ID: "+ getId()+ " Nombre: "+ getNombre()+ " Telefono: "+getTelefono()+ " Email: "+getEmail();
 		return string;
-		}
+	}
 
 }

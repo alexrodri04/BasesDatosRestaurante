@@ -3,6 +3,8 @@ package interfaz;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.sql.Connection;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Logger;
 
@@ -123,11 +125,16 @@ public class MenuCliente {
 	private static void añadirAlPedido() {
 		mostrarMenu();
 		String respuesta = "s";
+		List<Menus> menus = new ArrayList<Menus>();
+		float coste = 0;
 		do {
 			mostrarMenu();
 			System.out.println("Seleccione el nombre de un plato: ");
 			try {
 				String plato = reader.readLine();
+				Menus menu = dbman.searchMenuByNombre(plato);
+				menus.add(menu);
+				coste = coste + menu.getPrecio();
 			} catch (IOException e1) {
 				// TODO Auto-generated catch block
 				e1.printStackTrace();
@@ -141,9 +148,6 @@ public class MenuCliente {
 			}
 		} while ( respuesta == ("s"));
 	}
-	
-	
-	
 	
 }
 

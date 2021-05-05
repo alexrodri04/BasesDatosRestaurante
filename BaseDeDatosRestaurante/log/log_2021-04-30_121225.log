@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2021-04-30T10:12:25.452957900Z</date>
+  <millis>1619777545452</millis>
+  <nanos>957900</nanos>
+  <sequence>0</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>logging.MyLogger</class>
+  <method>setup</method>
+  <thread>1</thread>
+  <message>Logger is configured</message>
+</record>
+<record>
+  <date>2021-04-30T10:12:25.703922100Z</date>
+  <millis>1619777545703</millis>
+  <nanos>922100</nanos>
+  <sequence>1</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>jdbc.JDBCManager</class>
+  <method>connect</method>
+  <thread>1</thread>
+  <message>Se ha establecido la conexión con la BD</message>
+</record>
+<record>
+  <date>2021-04-30T10:12:29.074334200Z</date>
+  <millis>1619777549074</millis>
+  <nanos>334200</nanos>
+  <sequence>2</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>interfaz.MenuServidor</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>El usuario elige 1</message>
+</record>
+<record>
+  <date>2021-04-30T10:12:36.467164900Z</date>
+  <millis>1619777556467</millis>
+  <nanos>164900</nanos>
+  <sequence>3</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>interfaz.MenuServidor</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>El usuario elige 2</message>
+</record>
+<record>
+  <date>2021-04-30T10:12:36.469159800Z</date>
+  <millis>1619777556469</millis>
+  <nanos>159800</nanos>
+  <sequence>4</sequence>
+  <logger>global</logger>
+  <level>FINE</level>
+  <class>jdbc.JDBCManager</class>
+  <method>searchEmpleados</method>
+  <thread>1</thread>
+  <message>Empleado: ID: 1  Nombre: yo  Cargo_id: 1   Sueldo: 1</message>
+</record>
+<record>
+  <date>2021-04-30T10:12:39.702758600Z</date>
+  <millis>1619777559702</millis>
+  <nanos>758600</nanos>
+  <sequence>5</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>interfaz.MenuServidor</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>El usuario elige 3</message>
+</record>
+<record>
+  <date>2021-04-30T10:12:39.703756800Z</date>
+  <millis>1619777559703</millis>
+  <nanos>756800</nanos>
+  <sequence>6</sequence>
+  <logger>global</logger>
+  <level>FINE</level>
+  <class>jdbc.JDBCManager</class>
+  <method>searchEmpleados</method>
+  <thread>1</thread>
+  <message>Empleado: ID: 1  Nombre: yo  Cargo_id: 1   Sueldo: 1</message>
+</record>
+<record>
+  <date>2021-04-30T10:12:41.453168200Z</date>
+  <millis>1619777561453</millis>
+  <nanos>168200</nanos>
+  <sequence>7</sequence>
+  <logger>global</logger>
+  <level>FINE</level>
+  <class>jdbc.JDBCManager</class>
+  <method>searchEmpleadoByNombre</method>
+  <thread>1</thread>
+  <message>Empleado: ID: 1  Nombre: yo  Cargo_id: 1   Sueldo: 1</message>
+</record>
+</log>

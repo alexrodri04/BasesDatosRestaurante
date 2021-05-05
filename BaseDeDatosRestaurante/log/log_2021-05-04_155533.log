@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2021-05-04T13:55:34.008596700Z</date>
+  <millis>1620136534008</millis>
+  <nanos>596700</nanos>
+  <sequence>0</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>logging.MyLogger</class>
+  <method>setup</method>
+  <thread>1</thread>
+  <message>Logger is configured</message>
+</record>
+<record>
+  <date>2021-05-04T13:55:34.436510500Z</date>
+  <millis>1620136534436</millis>
+  <nanos>510500</nanos>
+  <sequence>1</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>jdbc.JDBCManager</class>
+  <method>connect</method>
+  <thread>1</thread>
+  <message>Se ha establecido la conexión con la BD</message>
+</record>
+<record>
+  <date>2021-05-04T13:55:38.893317200Z</date>
+  <millis>1620136538893</millis>
+  <nanos>317200</nanos>
+  <sequence>2</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>interfaz.MenuServidor</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>El usuario elige 11</message>
+</record>
+<record>
+  <date>2021-05-04T13:55:38.894355300Z</date>
+  <millis>1620136538894</millis>
+  <nanos>355300</nanos>
+  <sequence>3</sequence>
+  <logger>global</logger>
+  <level>FINE</level>
+  <class>jdbc.JDBCManager</class>
+  <method>searchJefes</method>
+  <thread>1</thread>
+  <message>Jefe: ID: 1 Nombre: Daniel</message>
+</record>
+<record>
+  <date>2021-05-04T13:55:38.895315200Z</date>
+  <millis>1620136538895</millis>
+  <nanos>315200</nanos>
+  <sequence>4</sequence>
+  <logger>global</logger>
+  <level>FINE</level>
+  <class>jdbc.JDBCManager</class>
+  <method>searchJefes</method>
+  <thread>1</thread>
+  <message>Jefe: ID: 2 Nombre: Alejandro</message>
+</record>
+<record>
+  <date>2021-05-04T13:55:38.895315200Z</date>
+  <millis>1620136538895</millis>
+  <nanos>315200</nanos>
+  <sequence>5</sequence>
+  <logger>global</logger>
+  <level>FINE</level>
+  <class>jdbc.JDBCManager</class>
+  <method>searchJefes</method>
+  <thread>1</thread>
+  <message>Jefe: ID: 3 Nombre: Ignacio</message>
+</record>
+<record>
+  <date>2021-05-04T13:55:38.895315200Z</date>
+  <millis>1620136538895</millis>
+  <nanos>315200</nanos>
+  <sequence>6</sequence>
+  <logger>global</logger>
+  <level>FINE</level>
+  <class>jdbc.JDBCManager</class>
+  <method>searchJefes</method>
+  <thread>1</thread>
+  <message>Jefe: ID: 4 Nombre: Daniel</message>
+</record>
+<record>
+  <date>2021-05-04T13:55:38.896312400Z</date>
+  <millis>1620136538896</millis>
+  <nanos>312400</nanos>
+  <sequence>7</sequence>
+  <logger>global</logger>
+  <level>FINE</level>
+  <class>jdbc.JDBCManager</class>
+  <method>searchJefes</method>
+  <thread>1</thread>
+  <message>Jefe: ID: 5 Nombre: Alejandro</message>
+</record>
+<record>
+  <date>2021-05-04T13:55:38.896312400Z</date>
+  <millis>1620136538896</millis>
+  <nanos>312400</nanos>
+  <sequence>8</sequence>
+  <logger>global</logger>
+  <level>FINE</level>
+  <class>jdbc.JDBCManager</class>
+  <method>searchJefes</method>
+  <thread>1</thread>
+  <message>Jefe: ID: 6 Nombre: Ignacio</message>
+</record>
+<record>
+  <date>2021-05-04T13:55:38.896312400Z</date>
+  <millis>1620136538896</millis>
+  <nanos>312400</nanos>
+  <sequence>9</sequence>
+  <logger>global</logger>
+  <level>FINE</level>
+  <class>jdbc.JDBCManager</class>
+  <method>searchJefes</method>
+  <thread>1</thread>
+  <message>Jefe: ID: 7 Nombre: Daniel</message>
+</record>
+<record>
+  <date>2021-05-04T13:55:38.897309400Z</date>
+  <millis>1620136538897</millis>
+  <nanos>309400</nanos>
+  <sequence>10</sequence>
+  <logger>global</logger>
+  <level>FINE</level>
+  <class>jdbc.JDBCManager</class>
+  <method>searchJefes</method>
+  <thread>1</thread>
+  <message>Jefe: ID: 8 Nombre: Alejandro</message>
+</record>
+<record>
+  <date>2021-05-04T13:55:38.897309400Z</date>
+  <millis>1620136538897</millis>
+  <nanos>309400</nanos>
+  <sequence>11</sequence>
+  <logger>global</logger>
+  <level>FINE</level>
+  <class>jdbc.JDBCManager</class>
+  <method>searchJefes</method>
+  <thread>1</thread>
+  <message>Jefe: ID: 9 Nombre: Ignacio</message>
+</record>
+<record>
+  <date>2021-05-04T13:55:42.743179200Z</date>
+  <millis>1620136542743</millis>
+  <nanos>179200</nanos>
+  <sequence>12</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>interfaz.MenuServidor</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>El usuario elige 13</message>
+</record>
+<record>
+  <date>2021-05-04T13:55:42.745183700Z</date>
+  <millis>1620136542745</millis>
+  <nanos>183700</nanos>
+  <sequence>13</sequence>
+  <logger>global</logger>
+  <level>FINE</level>
+  <class>jdbc.JDBCManager</class>
+  <method>searchCargos</method>
+  <thread>1</thread>
+  <message>Cargo: ID: 1 Nombre: Informatico Jefe: 1</message>
+</record>
+<record>
+  <date>2021-05-04T13:55:42.746180500Z</date>
+  <millis>1620136542746</millis>
+  <nanos>180500</nanos>
+  <sequence>14</sequence>
+  <logger>global</logger>
+  <level>FINE</level>
+  <class>jdbc.JDBCManager</class>
+  <method>searchCargos</method>
+  <thread>1</thread>
+  <message>Cargo: ID: 2 Nombre: Cocinero Jefe: 2</message>
+</record>
+<record>
+  <date>2021-05-04T13:55:42.747175100Z</date>
+  <millis>1620136542747</millis>
+  <nanos>175100</nanos>
+  <sequence>15</sequence>
+  <logger>global</logger>
+  <level>FINE</level>
+  <class>jdbc.JDBCManager</class>
+  <method>searchCargos</method>
+  <thread>1</thread>
+  <message>Cargo: ID: 3 Nombre: Repartidor Jefe: 3</message>
+</record>
+<record>
+  <date>2021-05-04T13:55:42.747175100Z</date>
+  <millis>1620136542747</millis>
+  <nanos>175100</nanos>
+  <sequence>16</sequence>
+  <logger>global</logger>
+  <level>FINE</level>
+  <class>jdbc.JDBCManager</class>
+  <method>searchCargos</method>
+  <thread>1</thread>
+  <message>Cargo: ID: 4 Nombre: Informatico Jefe: 1</message>
+</record>
+<record>
+  <date>2021-05-04T13:55:42.748175400Z</date>
+  <millis>1620136542748</millis>
+  <nanos>175400</nanos>
+  <sequence>17</sequence>
+  <logger>global</logger>
+  <level>FINE</level>
+  <class>jdbc.JDBCManager</class>
+  <method>searchCargos</method>
+  <thread>1</thread>
+  <message>Cargo: ID: 5 Nombre: Cocinero Jefe: 2</message>
+</record>
+<record>
+  <date>2021-05-04T13:55:42.748175400Z</date>
+  <millis>1620136542748</millis>
+  <nanos>175400</nanos>
+  <sequence>18</sequence>
+  <logger>global</logger>
+  <level>FINE</level>
+  <class>jdbc.JDBCManager</class>
+  <method>searchCargos</method>
+  <thread>1</thread>
+  <message>Cargo: ID: 6 Nombre: Repartidor Jefe: 3</message>
+</record>
+<record>
+  <date>2021-05-04T13:55:42.748175400Z</date>
+  <millis>1620136542748</millis>
+  <nanos>175400</nanos>
+  <sequence>19</sequence>
+  <logger>global</logger>
+  <level>FINE</level>
+  <class>jdbc.JDBCManager</class>
+  <method>searchCargos</method>
+  <thread>1</thread>
+  <message>Cargo: ID: 7 Nombre: Informatico Jefe: 1</message>
+</record>
+<record>
+  <date>2021-05-04T13:55:42.749172100Z</date>
+  <millis>1620136542749</millis>
+  <nanos>172100</nanos>
+  <sequence>20</sequence>
+  <logger>global</logger>
+  <level>FINE</level>
+  <class>jdbc.JDBCManager</class>
+  <method>searchCargos</method>
+  <thread>1</thread>
+  <message>Cargo: ID: 8 Nombre: Cocinero Jefe: 2</message>
+</record>
+<record>
+  <date>2021-05-04T13:55:42.749172100Z</date>
+  <millis>1620136542749</millis>
+  <nanos>172100</nanos>
+  <sequence>21</sequence>
+  <logger>global</logger>
+  <level>FINE</level>
+  <class>jdbc.JDBCManager</class>
+  <method>searchCargos</method>
+  <thread>1</thread>
+  <message>Cargo: ID: 9 Nombre: Repartidor Jefe: 3</message>
+</record>
+<record>
+  <date>2021-05-04T13:58:50.951612900Z</date>
+  <millis>1620136730951</millis>
+  <nanos>612900</nanos>
+  <sequence>22</sequence>
+  <logger>global</logger>
+  <level>WARNING</level>
+  <class>interfaz.MenuServidor</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>El usuario no ha introducido un número</message>
+</record>
+<record>
+  <date>2021-05-04T13:58:50.972556300Z</date>
+  <millis>1620136730972</millis>
+  <nanos>556300</nanos>
+  <sequence>23</sequence>
+  <logger>global</logger>
+  <level>WARNING</level>
+  <class>interfaz.MenuServidor</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>El usuario no ha introducido un número</message>
+</record>
+<record>
+  <date>2021-05-04T13:58:50.976545800Z</date>
+  <millis>1620136730976</millis>
+  <nanos>545800</nanos>
+  <sequence>24</sequence>
+  <logger>global</logger>
+  <level>WARNING</level>
+  <class>interfaz.MenuServidor</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>El usuario no ha introducido un número</message>
+</record>
+<record>
+  <date>2021-05-04T13:58:50.979537600Z</date>
+  <millis>1620136730979</millis>
+  <nanos>537600</nanos>
+  <sequence>25</sequence>
+  <logger>global</logger>
+  <level>WARNING</level>
+  <class>interfaz.MenuServidor</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>El usuario no ha introducido un número</message>
+</record>
+<record>
+  <date>2021-05-04T13:58:50.981533100Z</date>
+  <millis>1620136730981</millis>
+  <nanos>533100</nanos>
+  <sequence>26</sequence>
+  <logger>global</logger>
+  <level>WARNING</level>
+  <class>interfaz.MenuServidor</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>El usuario no ha introducido un número</message>
+</record>
