@@ -4,6 +4,9 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.sql.Connection;
+import java.sql.Date;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Logger;
@@ -21,6 +24,8 @@ public class MenuCliente {
 	private static DBManager dbman = new JDBCManager();
 	private static BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 	private static Clientes usuario = new Clientes();
+	private final static DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+	private final static DateTimeFormatter formattertime = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
 	
 	public static void main(String[] args) {
 		try {
@@ -76,6 +81,7 @@ public class MenuCliente {
 					mostrarMenu();
 					break;
 				case 4:
+					añadirAlPedido();
 					break;
 			}
  			
@@ -123,10 +129,12 @@ public class MenuCliente {
 	}
 	
 	private static void añadirAlPedido() {
-		mostrarMenu();
 		String respuesta = "s";
-		List<Menus> menus = new ArrayList<Menus>();
+		ArrayList<Menus> menus = new ArrayList<Menus>();
+		Pedidos pedido = new Pedidos();
 		float coste = 0;
+		String direccion;
+		LocalDate hora;
 		do {
 			mostrarMenu();
 			System.out.println("Seleccione el nombre de un plato: ");
@@ -135,6 +143,7 @@ public class MenuCliente {
 				Menus menu = dbman.searchMenuByNombre(plato);
 				menus.add(menu);
 				coste = coste + menu.getPrecio();
+				dbman.addPedido_Menu(pedido,menu);
 			} catch (IOException e1) {
 				// TODO Auto-generated catch block
 				e1.printStackTrace();
@@ -147,6 +156,19 @@ public class MenuCliente {
 				e.printStackTrace();
 			}
 		} while ( respuesta == ("s"));
+		System.out.println("Introduzca una dirección de entrega: \n");
+		try {
+			direccion = reader.readLine();
+			System.out.println("Indutroduzca la Hora: ");
+			hora = LocalDate.parse(reader.readLine(),formattertime);
+			pedido = new Pedidos(usuario.getId(),coste,direccion,Date.valueOf(hora),3, menus);
+			dbman.addPedido(pedido);
+			
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
 	}
 	
 }

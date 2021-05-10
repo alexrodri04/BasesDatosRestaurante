@@ -1,10 +1,13 @@
 package pojos;
 
+import java.util.ArrayList;
+
 public class Empleados {
 	private int id;
 	private String nombre;
 	private int salario;
 	private int cargoId;
+	private ArrayList<Menus> menus;
 	
 	public Empleados() {
 		super();

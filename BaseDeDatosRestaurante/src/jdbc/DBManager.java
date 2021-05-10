@@ -29,7 +29,7 @@ public interface DBManager {
 
 	public List<Pedidos> searchPedidos();
 
-	void addPedido(Pedidos pedido);
+	public void addPedido(Pedidos pedido);
 
 	public List<Menus> searchMenu();
 
@@ -54,5 +54,7 @@ public interface DBManager {
 	public List<Jefes> searchJefes();
 
 	public List<Cargos> searchCargos();
+
+	public void addPedido_Menu(Pedidos pedido, Menus menu);
 
 }

@@ -2,44 +2,51 @@ package pojos;
 
 import java.sql.Date;
 import java.sql.Time;
+import java.util.ArrayList;
 
 public class Pedidos {
 	
 	private int id;
 	private int cliente_id;
-	private Date fecha;
 	private float coste;
 	private String direccion;
-	private Time hora;
+	private Date hora;
 	private int id_repartidor;
+	private ArrayList<Menus> menu;
 	
 	public Pedidos() {
 		super();
 	}
 	
-	public Pedidos(int cliente_id, Date fecha, float coste, String direccion, Time hora, int id_repartidor) {
+	public Pedidos(int cliente_id, float coste, String direccion, Date hora, int id_repartidor) {
 		this.cliente_id=cliente_id;
-		this.fecha=fecha;
 		this.coste=coste;
 		this.direccion=direccion;
 		this.hora=hora;
 		this.id_repartidor=id_repartidor;
 	}
 	
-	public Pedidos(int id,int cliente_id, Date fecha, float coste, String direccion, Time hora, int id_repartidor) {
+	public Pedidos(int cliente_id, float coste, String direccion, Date hora, int id_repartidor,ArrayList<Menus> menu) {
+		this.cliente_id=cliente_id;
+		this.coste=coste;
+		this.direccion=direccion;
+		this.hora=hora;
+		this.id_repartidor=id_repartidor;
+		this.menu = menu;
+	}
+	
+	public Pedidos(int id,int cliente_id, float coste, String direccion, Date hora, int id_repartidor) {
 		this.id=id;
 		this.cliente_id=cliente_id;
-		this.fecha=fecha;
 		this.coste=coste;
 		this.direccion=direccion;
 		this.hora=hora;
 		this.id_repartidor=id_repartidor;
 	}
 	
-	public Pedidos(int id,int cliente_id, Date fecha, float coste, String direccion, Time hora) {
+	public Pedidos(int id,int cliente_id, float coste, String direccion, Date hora) {
 		this.id=id;
 		this.cliente_id=cliente_id;
-		this.fecha=fecha;
 		this.coste=coste;
 		this.direccion=direccion;
 		this.hora=hora;
@@ -61,14 +68,6 @@ public class Pedidos {
 		this.cliente_id = cliente_id;
 	}
 	
-	public Date getFecha() {
-		return fecha;
-	}
-
-	public void setFecha(Date horario) {
-		this.fecha = horario;
-	}
-	
 	public float getCoste() {
 		return coste;
 	}
@@ -85,11 +84,11 @@ public class Pedidos {
 		this.direccion = direccion;
 	}
 		
-	public Time getHora() {
+	public Date getHora() {
 		return hora;
 	}
 
-	public void setHora(Time hora) {
+	public void setHora(Date hora) {
 		this.hora = hora;
 	}
 	
@@ -102,7 +101,7 @@ public class Pedidos {
 	}
 	
 	public String toString() {
-		String string ="ID: "+ getId()+ " Cliente_id: "+ getClienteId()+ " Fecha: "+getFecha()+ "Coste: "+getCoste()+ "Direccion: "+getDireccion()+"Hora: "+getHora()+"Repartidor: "+getRepartidor()+"\n";
+		String string ="ID: "+ getId()+ " Cliente_id: "+ getClienteId()+ "Coste: "+getCoste()+ "Direccion: "+getDireccion()+"Hora: "+getHora()+"Repartidor: "+getRepartidor()+"\n";
 		return string;
 	}
 }

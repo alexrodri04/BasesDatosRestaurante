@@ -1,9 +1,12 @@
 package pojos;
 
+import java.util.ArrayList;
+
 public class Menus {
 	private int id;
 	private String plato;
 	private float precio;
+	private ArrayList<Pedidos> pedidos;
 	
 	public Menus() {
 		super();

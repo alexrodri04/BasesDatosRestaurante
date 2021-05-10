@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2021-05-05T14:47:32.537567100Z</date>
+  <millis>1620226052537</millis>
+  <nanos>567100</nanos>
+  <sequence>0</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>logging.MyLogger</class>
+  <method>setup</method>
+  <thread>1</thread>
+  <message>Logger is configured</message>
+</record>
+<record>
+  <date>2021-05-05T14:47:32.982377200Z</date>
+  <millis>1620226052982</millis>
+  <nanos>377200</nanos>
+  <sequence>1</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>jdbc.JDBCManager</class>
+  <method>connect</method>
+  <thread>1</thread>
+  <message>Se ha establecido la conexión con la BD</message>
+</record>
+<record>
+  <date>2021-05-05T14:47:37.637828100Z</date>
+  <millis>1620226057637</millis>
+  <nanos>828100</nanos>
+  <sequence>2</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>interfaz.MenuServidor</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>El usuario elige 11</message>
+</record>
+<record>
+  <date>2021-05-05T14:47:37.638821900Z</date>
+  <millis>1620226057638</millis>
+  <nanos>821900</nanos>
+  <sequence>3</sequence>
+  <logger>global</logger>
+  <level>FINE</level>
+  <class>jdbc.JDBCManager</class>
+  <method>searchJefes</method>
+  <thread>1</thread>
+  <message>Jefe: ID: 1 Nombre: Daniel</message>
+</record>
+<record>
+  <date>2021-05-05T14:47:37.639865700Z</date>
+  <millis>1620226057639</millis>
+  <nanos>865700</nanos>
+  <sequence>4</sequence>
+  <logger>global</logger>
+  <level>FINE</level>
+  <class>jdbc.JDBCManager</class>
+  <method>searchJefes</method>
+  <thread>1</thread>
+  <message>Jefe: ID: 2 Nombre: Alejandro</message>
+</record>
+<record>
+  <date>2021-05-05T14:47:37.639865700Z</date>
+  <millis>1620226057639</millis>
+  <nanos>865700</nanos>
+  <sequence>5</sequence>
+  <logger>global</logger>
+  <level>FINE</level>
+  <class>jdbc.JDBCManager</class>
+  <method>searchJefes</method>
+  <thread>1</thread>
+  <message>Jefe: ID: 3 Nombre: Ignacio</message>
+</record>
+<record>
+  <date>2021-05-05T14:47:37.640817400Z</date>
+  <millis>1620226057640</millis>
+  <nanos>817400</nanos>
+  <sequence>6</sequence>
+  <logger>global</logger>
+  <level>FINE</level>
+  <class>jdbc.JDBCManager</class>
+  <method>searchJefes</method>
+  <thread>1</thread>
+  <message>Jefe: ID: 4 Nombre: Daniel</message>
+</record>
+<record>
+  <date>2021-05-05T14:47:37.640817400Z</date>
+  <millis>1620226057640</millis>
+  <nanos>817400</nanos>
+  <sequence>7</sequence>
+  <logger>global</logger>
+  <level>FINE</level>
+  <class>jdbc.JDBCManager</class>
+  <method>searchJefes</method>
+  <thread>1</thread>
+  <message>Jefe: ID: 5 Nombre: Alejandro</message>
+</record>
+<record>
+  <date>2021-05-05T14:47:37.640817400Z</date>
+  <millis>1620226057640</millis>
+  <nanos>817400</nanos>
+  <sequence>8</sequence>
+  <logger>global</logger>
+  <level>FINE</level>
+  <class>jdbc.JDBCManager</class>
+  <method>searchJefes</method>
+  <thread>1</thread>
+  <message>Jefe: ID: 6 Nombre: Ignacio</message>
+</record>
+<record>
+  <date>2021-05-05T14:47:42.008554Z</date>
+  <millis>1620226062008</millis>
+  <nanos>554000</nanos>
+  <sequence>9</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>interfaz.MenuServidor</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>El usuario elige 8</message>
+</record>
+<record>
+  <date>2021-05-05T14:47:42.010549800Z</date>
+  <millis>1620226062010</millis>
+  <nanos>549800</nanos>
+  <sequence>10</sequence>
+  <logger>global</logger>
+  <level>FINE</level>
+  <class>jdbc.JDBCManager</class>
+  <method>searchMenu</method>
+  <thread>1</thread>
+  <message>Menu: Plato [id=1, plato=Patatas precio=6.0]</message>
+</record>
+<record>
+  <date>2021-05-05T14:47:42.011546300Z</date>
+  <millis>1620226062011</millis>
+  <nanos>546300</nanos>
+  <sequence>11</sequence>
+  <logger>global</logger>
+  <level>FINE</level>
+  <class>jdbc.JDBCManager</class>
+  <method>searchMenu</method>
+  <thread>1</thread>
+  <message>Menu: Plato [id=2, plato=Pasta precio=10.0]</message>
+</record>
+<record>
+  <date>2021-05-05T14:47:42.011546300Z</date>
+  <millis>1620226062011</millis>
+  <nanos>546300</nanos>
+  <sequence>12</sequence>
+  <logger>global</logger>
+  <level>FINE</level>
+  <class>jdbc.JDBCManager</class>
+  <method>searchMenu</method>
+  <thread>1</thread>
+  <message>Menu: Plato [id=3, plato=Pizza precio=10.0]</message>
+</record>
+<record>
+  <date>2021-05-05T14:47:42.011546300Z</date>
+  <millis>1620226062011</millis>
+  <nanos>546300</nanos>
+  <sequence>13</sequence>
+  <logger>global</logger>
+  <level>FINE</level>
+  <class>jdbc.JDBCManager</class>
+  <method>searchMenu</method>
+  <thread>1</thread>
+  <message>Menu: Plato [id=4, plato=Solomillo precio=15.0]</message>
+</record>
+<record>
+  <date>2021-05-05T14:47:42.012542700Z</date>
+  <millis>1620226062012</millis>
+  <nanos>542700</nanos>
+  <sequence>14</sequence>
+  <logger>global</logger>
+  <level>FINE</level>
+  <class>jdbc.JDBCManager</class>
+  <method>searchMenu</method>
+  <thread>1</thread>
+  <message>Menu: Plato [id=5, plato=Patatas precio=6.0]</message>
+</record>
+<record>
+  <date>2021-05-05T14:47:42.012542700Z</date>
+  <millis>1620226062012</millis>
+  <nanos>542700</nanos>
+  <sequence>15</sequence>
+  <logger>global</logger>
+  <level>FINE</level>
+  <class>jdbc.JDBCManager</class>
+  <method>searchMenu</method>
+  <thread>1</thread>
+  <message>Menu: Plato [id=6, plato=Pasta precio=10.0]</message>
+</record>
+<record>
+  <date>2021-05-05T14:47:42.012542700Z</date>
+  <millis>1620226062012</millis>
+  <nanos>542700</nanos>
+  <sequence>16</sequence>
+  <logger>global</logger>
+  <level>FINE</level>
+  <class>jdbc.JDBCManager</class>
+  <method>searchMenu</method>
+  <thread>1</thread>
+  <message>Menu: Plato [id=7, plato=Pizza precio=10.0]</message>
+</record>
+<record>
+  <date>2021-05-05T14:47:42.013540500Z</date>
+  <millis>1620226062013</millis>
+  <nanos>540500</nanos>
+  <sequence>17</sequence>
+  <logger>global</logger>
+  <level>FINE</level>
+  <class>jdbc.JDBCManager</class>
+  <method>searchMenu</method>
+  <thread>1</thread>
+  <message>Menu: Plato [id=8, plato=Solomillo precio=15.0]</message>
+</record>
+<record>
+  <date>2021-05-05T14:48:11.462075900Z</date>
+  <millis>1620226091462</millis>
+  <nanos>75900</nanos>
+  <sequence>18</sequence>
+  <logger>global</logger>
+  <level>WARNING</level>
+  <class>interfaz.MenuServidor</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>El usuario no ha introducido un número</message>
+</record>
+<record>
+  <date>2021-05-05T14:48:11.473046100Z</date>
+  <millis>1620226091473</millis>
+  <nanos>46100</nanos>
+  <sequence>19</sequence>
+  <logger>global</logger>
+  <level>WARNING</level>
+  <class>interfaz.MenuServidor</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>El usuario no ha introducido un número</message>
+</record>
+<record>
+  <date>2021-05-05T14:48:11.474043500Z</date>
+  <millis>1620226091474</millis>
+  <nanos>43500</nanos>
+  <sequence>20</sequence>
+  <logger>global</logger>
+  <level>WARNING</level>
+  <class>interfaz.MenuServidor</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>El usuario no ha introducido un número</message>
+</record>
+<record>
+  <date>2021-05-05T14:48:11.476037900Z</date>
+  <millis>1620226091476</millis>
+  <nanos>37900</nanos>
+  <sequence>21</sequence>
+  <logger>global</logger>
+  <level>WARNING</level>
+  <class>interfaz.MenuServidor</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>El usuario no ha introducido un número</message>
+</record>
+<record>
+  <date>2021-05-05T14:48:11.477035200Z</date>
+  <millis>1620226091477</millis>
+  <nanos>35200</nanos>
+  <sequence>22</sequence>
+  <logger>global</logger>
+  <level>WARNING</level>
+  <class>interfaz.MenuServidor</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>El usuario no ha introducido un número</message>
+</record>
+<record>
+  <date>2021-05-05T14:48:11.479030Z</date>
+  <millis>1620226091479</millis>
+  <nanos>30000</nanos>
+  <sequence>23</sequence>
+  <logger>global</logger>
+  <level>WARNING</level>
+  <class>interfaz.MenuServidor</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>El usuario no ha introducido un número</message>
+</record>
+<record>
+  <date>2021-05-05T14:48:11.481025100Z</date>
+  <millis>1620226091481</millis>
+  <nanos>25100</nanos>
+  <sequence>24</sequence>
+  <logger>global</logger>
+  <level>WARNING</level>
+  <class>interfaz.MenuServidor</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>El usuario no ha introducido un número</message>
+</record>
+<record>
+  <date>2021-05-05T14:48:11.484017100Z</date>
+  <millis>1620226091484</millis>
+  <nanos>17100</nanos>
+  <sequence>25</sequence>
+  <logger>global</logger>
+  <level>WARNING</level>
+  <class>interfaz.MenuServidor</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>El usuario no ha introducido un número</message>
+</record>

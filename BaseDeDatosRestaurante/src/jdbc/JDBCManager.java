@@ -35,7 +35,8 @@ public class JDBCManager implements DBManager{
 	final static Logger LOGGER = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
 	private final String addEmpleado = "INSERT INTO Empleados (Nombre,Salario,Cargo_Id) VALUES (?,?,?);";
 	private final String addCliente = "INSERT INTO Clientes (Nombre,Telefono,Email) VALUES (?,?,?);";
-	private final String addPedido = "INSERT INTO Pedidos (Cliente_Id, Fecha,Coste, Direccion,Hora) VALUES (?,?,?)";
+	private final String addPedido = "INSERT INTO Pedidos (Cliente_Id,Coste, Direccion,Hora,Repartidor_Id) VALUES (?,?,?,?,?)";
+	private final String addPedido_Menu = "INSERT INTO Pedidos_Menus (Id_Pedido,Id_Menu) VALUES (?,?)";
 	private final String addMenu = "INSERT INTO Menus (Plato,Precio) VALUES (?,?)";
 	private final String addJefe = "INSERT INTO Jefes (Nombre) VALUES (?)";
 	private final String addCargo = "INSERT INTO Cargos (Nombre, Jefe_Id) VALUES (?,?)";
@@ -66,7 +67,7 @@ public class JDBCManager implements DBManager{
 			stmt.executeUpdate("CREATE TABLE IF NOT EXISTS "
 					+ "Clientes (Id INTEGER PRIMARY KEY, Nombre STRING, Telefono INTEGER, Email STRING)");
 			stmt.executeUpdate("CREATE TABLE IF NOT EXISTS "
-					+ "Pedidos (Id INTEGER PRIMARY KEY, Cliente_Id INTEGER REFERENCES Clientes(Id), Fecha DATE, Coste INTEGER, Direccion STRING, Hora TIME, Repartidor_Id INTEGER REFERENCES Empleados(Id))");
+					+ "Pedidos (Id INTEGER PRIMARY KEY, Cliente_Id INTEGER REFERENCES Clientes(Id), Coste INTEGER, Direccion STRING, Hora DATE, Repartidor_Id INTEGER REFERENCES Empleados(Id))");
 			stmt.executeUpdate("CREATE TABLE IF NOT EXISTS "
 					+ "Pedidos_Menus (Id_Pedido INTEGER REFERENCES Pedidos(Id), Id_Menu INTEGER REFERENCES Menus(Id))");
 			stmt.executeUpdate("CREATE TABLE IF NOT EXISTS "
@@ -140,13 +141,14 @@ public class JDBCManager implements DBManager{
 	
 	@Override
 	public void addPedido(Pedidos pedido) {
+		// TODO Auto-generated method stub
 		try {
 			PreparedStatement prep = c.prepareStatement(addPedido);
 			prep.setInt(1, pedido.getClienteId());
-			prep.setDate(2, pedido.getFecha());
-			prep.setFloat(3, pedido.getCoste());
-			prep.setString(4, pedido.getDireccion());
-			prep.setTime(5,pedido.getHora());
+			prep.setFloat(2, pedido.getCoste());
+			prep.setString(3, pedido.getDireccion());
+			prep.setDate(4,pedido.getHora());
+			prep.setInt(5, pedido.getRepartidor());
 			prep.executeUpdate();
 			prep.close();
 		} catch (SQLException e) {
@@ -154,6 +156,22 @@ public class JDBCManager implements DBManager{
 			e.printStackTrace();
 		}
 	}
+	
+	public void addPedido_Menu(Pedidos pedido,Menus menu) {
+		// TODO Auto-generated method stub
+		try {
+			PreparedStatement prep = c.prepareStatement(addPedido_Menu);
+			prep.setInt(1, pedido.getId());
+			prep.setInt(2, menu.getId());
+			prep.executeUpdate();
+			prep.close();
+		} catch (SQLException e) {
+			LOGGER.severe("Error al insertar el Pedido_Menu: " + pedido.getId() + " "+ menu.getId());
+			e.printStackTrace();
+		}
+	}
+	
+	
 
 	public void addMenu(Menus menu) {
 		try {
@@ -314,12 +332,11 @@ public class JDBCManager implements DBManager{
 			while(rs.next()){
 				int id = rs.getInt("Id");
 				int cliente_id = rs.getInt("Cliente_Id");
-				Date fecha = rs.getDate("Fecha");
 				float coste = rs.getFloat("Coste");
 				String direccion = rs.getString("Direccion");
-				Time hora = rs.getTime("Hora");
+				Date hora = rs.getDate("Hora");
 				int id_repartidor = rs.getInt("Repartidor_Id");
-				Pedidos pedido = new Pedidos(id,cliente_id,fecha,coste,direccion,hora,id_repartidor);
+				Pedidos pedido = new Pedidos(id,cliente_id,coste,direccion,hora,id_repartidor);
 				pedidos.add(pedido);
 				LOGGER.fine("Pedido: " + pedido);
 			}

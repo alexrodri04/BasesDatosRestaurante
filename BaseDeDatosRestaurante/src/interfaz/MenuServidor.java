@@ -29,10 +29,14 @@ public class MenuServidor {
 	private static DBManager dbman = new JDBCManager();
 	private static BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 	private final static String[] JEFES_NOMBRES = {"Daniel","Alejandro", "Ignacio"};
+	private final static String[] EMPLEADOS_NOMBRES = {"Paco","Jaime", "Jose"};
 	private final static String[] CARGOS_NOMBRES = {"Informatico","Cocinero","Repartidor"};
+	private final static String[]  MENUS_PLATOS = {"Patatas","Pasta","Pizza","Solomillo"};
+	private final static int[] MENUS_PRECIOS = {6,10,10,15};
 	private final static int[] CARGOS_JEFE_ID = {1, 2, 3};
+	private final static int[] EMPLEADOS_SALARIOS = {1000, 1000, 1000};
 	private final static DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-	private final static DateTimeFormatter formattertime = DateTimeFormatter.ofPattern("hh:mm");
+	private final static DateTimeFormatter formattertime = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
 	
 	public static void main(String[] args) {
 		try {
@@ -43,11 +47,6 @@ public class MenuServidor {
 		}
 		
 		dbman.connect();
-		
-		if (dbman.searchJefes() == null) {
-			generarJefes();
-			generarCargos();
-		}
 		
 		int respuesta;
 		do {
@@ -65,6 +64,7 @@ public class MenuServidor {
 			System.out.println("11. Mostrar Jefes");
 			System.out.println("12. Añadir Cargo");
 			System.out.println("13. Mostrar Cargos");
+			System.out.println("14. Inicializar Valores");
 			
 			try {
 				respuesta=Integer.parseInt(reader.readLine());
@@ -116,6 +116,12 @@ public class MenuServidor {
 				break;
 			case 13:
 				mostrarCargos();
+				break;
+			case 14:
+				generarJefes();
+				generarCargos();
+				generarMenus();
+				generarEmpleados();
 				break;
 			}
 		} while (respuesta != 0);
@@ -181,7 +187,7 @@ public class MenuServidor {
 		}
 	}
 	
-	private static void crearMenu() {
+	private static void addMenu() {
 		try {
 			System.out.println("Nombre del plato:");
 			String plato = reader.readLine();
@@ -199,17 +205,15 @@ public class MenuServidor {
 		try {
 			System.out.println("Cliente_id: ");
 			int cliente_id = Integer.parseInt(reader.readLine());
-			System.out.println("Fecha: ");
-			LocalDate fecha = LocalDate.parse(reader.readLine(),formatter);
 			System.out.println("Coste: ");
 			float coste = Float.parseFloat(reader.readLine());
 			System.out.println("Direccion: ");
 			String direccion = reader.readLine();
 			System.out.println("Hora: ");
-			LocalTime hora = LocalTime.parse(reader.readLine(),formattertime);
+			LocalDate hora = LocalDate.parse(reader.readLine(),formattertime);
 			System.out.println("RepartidorId: ");
 			int id_repartidor = Integer.parseInt(reader.readLine());
-			Pedidos pedido = new Pedidos(cliente_id,Date.valueOf(fecha),coste,direccion,Time.valueOf(hora),id_repartidor);
+			Pedidos pedido = new Pedidos(cliente_id,coste,direccion,Date.valueOf(hora),id_repartidor);
 			dbman.addPedido(pedido);
 			System.out.println("Se ha añadido el pedido con exito \n");
 		} catch (IOException e) {
@@ -226,12 +230,30 @@ public class MenuServidor {
 		System.out.println("Se han generado " + JEFES_NOMBRES.length + " jefes.");
 	}
 	
+	private static void generarEmpleados() {
+		for(int i = 0; i < EMPLEADOS_NOMBRES.length; i++) {
+			
+			Empleados empleado = new Empleados(EMPLEADOS_NOMBRES[i],EMPLEADOS_SALARIOS[i],CARGOS_JEFE_ID[i]);
+			dbman.addEmpleado(empleado);
+		
+		}
+		System.out.println("Se han generado " + EMPLEADOS_NOMBRES.length + " empleados");
+	}
+	
 	private static void generarCargos() {
 		for(int i = 0; i < CARGOS_NOMBRES.length; i++) {
 			Cargos cargo = new Cargos(CARGOS_NOMBRES[i],CARGOS_JEFE_ID[i]);
 			dbman.addCargo(cargo);
 		}
 		System.out.println("Se han generado " + CARGOS_NOMBRES.length + " cargos.");
+	}
+	
+	private static void generarMenus() {
+		for(int i = 0; i < MENUS_PLATOS.length; i++) {
+			Menus menu = new Menus(MENUS_PLATOS[i],MENUS_PRECIOS[i]);
+			dbman.addMenu(menu);
+		}
+		System.out.println("Se han generado " + MENUS_PLATOS.length + " platos.");
 	}
 	
 	private static void mostrarEmpleados() {
