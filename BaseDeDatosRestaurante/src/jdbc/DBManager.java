@@ -56,5 +56,14 @@ public interface DBManager {
 	public List<Cargos> searchCargos();
 
 	public void addPedido_Menu(Pedidos pedido, Menus menu);
+	
+	public void actualizarEmpleado(int id, int salario);
+	
+	public void actualizarCliente(String nombre, String email, int telefono);
+	
+	public void actualizarMenu(int id, int precio);
+	
+	public void mostarEmpleados();
+	
 
 }

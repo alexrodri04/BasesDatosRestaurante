@@ -1,7 +1,6 @@
 package pojos;
 
 import java.sql.Date;
-import java.sql.Time;
 import java.util.ArrayList;
 
 public class Pedidos {
@@ -98,6 +97,12 @@ public class Pedidos {
 	
 	public void setRepartidor(int id_repartidor) {
 		this.id_repartidor=id_repartidor;
+	}
+	public ArrayList<Menus> getMenu(){
+		return menu;
+	}
+	public void setMenu(ArrayList<Menus> menu) {
+		this.menu = menu;
 	}
 	
 	public String toString() {

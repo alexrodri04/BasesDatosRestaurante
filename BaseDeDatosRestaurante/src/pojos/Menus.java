@@ -46,9 +46,15 @@ public class Menus {
 	public void setPrecio(int precio) {
 		this.precio = precio;
 	}
+	public ArrayList<Pedidos> getPedidos(){
+		return pedidos;
+	}
+	public void setPedidos(ArrayList<Pedidos> pedidos) {
+		this.pedidos = pedidos;
+	}
 	
 	@Override
 	public String toString() {
-		return "Plato [id=" + id + ", plato=" + plato + " precio=" + precio+"]";
+		return "Plato [id=" + getId() + ", plato=" + getPlato() + " precio=" + getPrecio() +"]";
 	}
 }

@@ -81,7 +81,8 @@ public class MenuServidor {
 				addEmpleado();
 				break;
 			case 2:
-				mostrarEmpleados();
+				//mostrarEmpleados();
+				mostrarEmpleados2();
 				break;
 			case 3:
 				eliminarEmpleado();
@@ -262,6 +263,10 @@ public class MenuServidor {
 		for(Empleados empleado : empleados) {
 			System.out.println(empleado);
 		}
+	}
+	private static void mostrarEmpleados2() {
+		dbman.mostarEmpleados();
+		
 	}
 	
 	private static void mostrarClientes() {

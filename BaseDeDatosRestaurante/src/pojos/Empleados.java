@@ -1,13 +1,11 @@
 package pojos;
 
-import java.util.ArrayList;
 
 public class Empleados {
 	private int id;
 	private String nombre;
 	private int salario;
 	private int cargoId;
-	private ArrayList<Menus> menus;
 	
 	public Empleados() {
 		super();
@@ -54,7 +52,7 @@ public class Empleados {
 	}
 
 	public String toString() {
-		String string ="ID: "+ getId()+ "  Nombre: "+ getNombre()+ "  Cargo_id: "+getCargoId()+  "   Sueldo: "+getSalario();
+		String string ="ID: "+ getId()+ "  Nombre: "+ getNombre()+   "   Sueldo: "+getSalario() + " Cargo_id: " + getCargoId();
 		return string; 
 	}
 	

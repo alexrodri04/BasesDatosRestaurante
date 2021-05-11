@@ -105,6 +105,8 @@ public class MenuCliente {
 		}
 		return usuario;
 	}
+	//private static void actualizarCliente(Cliente usuario){
+	
 	
 	private static Clientes iniciarSesion(Clientes usuario) {
 		try {

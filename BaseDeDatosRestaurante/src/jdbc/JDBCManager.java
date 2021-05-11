@@ -54,6 +54,7 @@ public class JDBCManager implements DBManager{
 	private final String eliminarEmpleado = "DELETE FROM Empleados WHERE Nombre LIKE ?;";
 	private final String eliminarMenu = "DELETE FROM Menus WHERE Plato LIKE ?;";
 	private final String eliminarCliente = "DELETE FROM Clientes WHERE Nombre"+ " LIKE ?;";
+	private final String updateEmpleado = "UPDATE Empleados SET salario =? WHERE id =?";
 	private Connection c;
 	
 	
@@ -528,4 +529,92 @@ public class JDBCManager implements DBManager{
 	}
 	
 
+	public void actualizarEmpleado(int id, int salario){
+		PreparedStatement prep;
+		try {
+			prep = c.prepareStatement(updateEmpleado);
+			prep.setInt(1, salario);
+			prep.setInt(2, id);
+			prep.executeUpdate();
+			System.out.println("\n Update terminado");
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}	
+	}
+	public void actualizarMenu(int id, int precio){
+		String sql = "UPDATE Menu SET precio =? WHERE id =?";
+		PreparedStatement prep;
+		try {
+			prep = c.prepareStatement(sql);
+			prep.setInt(1, precio);
+			prep.setInt(2, id);
+			prep.executeUpdate();
+			System.out.println("\n Update terminado");	
+	} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	public void actualizarCliente(String nombre, String email, int telefono) {
+		String sql1 = "UPDATE Cliente SET Email =?, Telefono=? WHERE Nombre =?";
+		PreparedStatement prep;
+		try {
+			prep = c.prepareStatement(sql1);
+			prep.setString(1, email);
+			prep.setInt(2, telefono);
+			prep.setString(3, nombre);
+			prep.executeUpdate();
+			System.out.println("\n Update terminado");	
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+}
+
+	public String getNombre(int id) throws SQLException {
+		String nombre = null;
+		String sql = "SELECT Nombre FROM Cargos Where id LIKE ? ";
+		PreparedStatement prep = c.prepareStatement(sql);
+		prep.setInt(1, id);
+		ResultSet rs = prep.executeQuery();
+		if(rs != null) {
+		while(rs.next()) {
+
+			 nombre = rs.getString("Nombre");
+		}
+		}else {
+			System.out.println("No hubo resultados");
+		}
+		rs.close();
+		prep.close();
+		return nombre;
+		
+	}
+	public void mostarEmpleados() {
+		Statement stmt;
+		try {
+			stmt = c.createStatement();
+		
+			String sql = "SELECT * FROM Empleados";
+			ResultSet rs = stmt.executeQuery(sql);
+			if(rs != null) {
+				while (rs.next()) {
+					int id = rs.getInt("Id");
+					String nombre = rs.getString("Nombre");
+					int salario = rs.getInt("Salario");
+					int cargo_id = rs.getInt("Cargo_id");	
+					String cargo = getNombre(cargo_id);
+					Empleados empleado = new Empleados(id, nombre, salario, cargo_id);
+					empleado.setId(id);
+					System.out.println(empleado + "  Cargo: "+ cargo);
+		}
+		}
+		rs.close();
+		stmt.close();
+	} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
 }
