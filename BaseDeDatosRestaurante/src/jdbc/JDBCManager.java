@@ -1,11 +1,6 @@
 package jdbc;
 
-import java.io.ByteArrayOutputStream;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.io.InputStream;
+
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.DriverManager;
@@ -13,12 +8,10 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.sql.Time;
-import java.time.LocalDate;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Logger;
-import java.util.logging.Level;
 
 import pojos.Cargos;
 import pojos.Clientes;
@@ -26,8 +19,7 @@ import pojos.Empleados;
 import pojos.Jefes;
 import pojos.Menus;
 import pojos.Pedidos;
-import interfaz.MenuServidor;
-import jdbc.DBManager;
+
 
 
 public class JDBCManager implements DBManager{

@@ -1,6 +1,7 @@
 package jpa;
 
-import java.util.ArrayList;
+import java.util.List;
+
 
 import pojos.Rol;
 import pojos.Usuario;
@@ -10,7 +11,7 @@ public interface ManagerJPA {
 
 	void disconnect();
 
-	ArrayList<Rol> getRoles();
+	List<Rol> getRoles();
 
 	Rol getRolById(int rolId);
 
@@ -19,5 +20,10 @@ public interface ManagerJPA {
 	void addRol(Rol rol);
 
 	Usuario checkPass(String email, String pass);
+	
+	void updateUsuario(int id, String nombre);
+	
+	void deleteUsuario(int id);
+	
 }
 

@@ -4,7 +4,7 @@
 	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
 	version="2.0" xmlns="http://java.sun.com/xml/ns/persistence">
 
-	<persistence-unit name="cinema-provider"
+	<persistence-unit name="restaurante-provider"
 		transaction-type="RESOURCE_LOCAL">
 		<provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
 
@@ -16,7 +16,7 @@
 			<property name="javax.persistence.jdbc.driver"
 				value="org.sqlite.JDBC" />
 			<property name="javax.persistence.jdbc.url"
-				value="jdbc:sqlite:./db/cine.db" />
+				value="jdbc:sqlite:./restaurante.db" />
 			<!-- JPA doesn't create the schema -->
 			<property name="eclipselink.ddl-generation"
 				value="create-tables" />

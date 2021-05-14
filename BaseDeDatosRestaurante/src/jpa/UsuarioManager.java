@@ -1,7 +1,9 @@
+
 package jpa;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Logger;
 
@@ -11,7 +13,6 @@ import javax.persistence.NoResultException;
 import javax.persistence.Persistence;
 import javax.persistence.Query;
 
-import jpa.UsuarioManager;
 import pojos.Rol;
 import pojos.Usuario;
 
@@ -51,7 +52,8 @@ public class UsuarioManager implements ManagerJPA{
 	@Override
 	public List<Rol> getRoles() {
 		Query q = em.createNativeQuery("SELECT * FROM Roles", Rol.class);
-		return q.getResultList();
+		List<Rol> resultList = q.getResultList();
+		return resultList;
 	}
 
 	@Override
@@ -83,18 +85,18 @@ public class UsuarioManager implements ManagerJPA{
 			return null;
 		}
 	}
-	public void updateUsuario(int id, String nombre) {
-	Usuario UsuarioUpdate = em.getOne(id);
-	UsuarioUpdate.setName(nombre);
-	em.save(UsuarioUpdate);
+	public void updateUsuario(int id, String email) {
+		Usuario UsuarioUpdate = em.find(Usuario.class, id);
+		UsuarioUpdate.setEmail(email);
+		 em.getTransaction().commit();
 	
 	}
-	public void updateUsuario(int id, String nombre ) {
-		Query q = em.createNativeQuery("UPDATE Usuarios SET nombre = ? WHERE id = ?");
-		q.setParameter(1, id);
-		q.setParameter(2, nombre);
-		
+	
+	public void deleteUsuario(int id) {
+		Usuario user = em.find(Usuario.class, id);
+		em.getTransaction().begin();
+		em.remove(user);
+		em.getTransaction().commit();
 	}
 }
-
 
