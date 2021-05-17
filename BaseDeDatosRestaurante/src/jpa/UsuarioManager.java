@@ -3,7 +3,6 @@ package jpa;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Logger;
 
@@ -88,7 +87,7 @@ public class UsuarioManager implements ManagerJPA{
 	public void updateUsuario(int id, String email) {
 		Usuario UsuarioUpdate = em.find(Usuario.class, id);
 		UsuarioUpdate.setEmail(email);
-		 em.getTransaction().commit();
+		em.getTransaction().commit();
 	
 	}
 	

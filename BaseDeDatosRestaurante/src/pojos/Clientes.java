@@ -17,6 +17,11 @@ public class Clientes {
 		this.telefono=telefono;
 		this.email=email;
 	}
+	public Clientes(int id, String nombre,  String email) {
+		this.id=id;
+		this.nombre=nombre;
+		this.email=email;
+	}
 	
 	public Clientes(String nombre, int telefono, String email) {
 		this.nombre=nombre;
