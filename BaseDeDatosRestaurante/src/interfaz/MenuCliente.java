@@ -12,6 +12,8 @@ import java.util.logging.Logger;
 
 import jdbc.DBManager;
 import jdbc.JDBCManager;
+import jpa.ManagerJPA;
+import jpa.UsuarioManager;
 import logging.MyLogger;
 import pojos.Clientes;
 import pojos.Menus;
@@ -21,12 +23,13 @@ public class MenuCliente {
 	
 	final static Logger LOGGER = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
 	private static DBManager dbman = new JDBCManager();
+	private static ManagerJPA userman = new UsuarioManager();
 	private static BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-	private static Clientes usuario = new Clientes();
+	//private static Clientes usuario = new Clientes();
 	private final static DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 	private final static DateTimeFormatter formattertime = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
 	
-	public static void main(String[] args) {
+	public static void main(Clientes usuario) {
 		try {
 			MyLogger.setup();
 		} catch (IOException e) {
@@ -34,7 +37,7 @@ public class MenuCliente {
 			e.printStackTrace();
 		}
 		dbman.connect();
-		int respuesta;
+	/*	int respuesta;
 		System.out.println("\nElige una opción:");
 		System.out.println("1. Registrarse");
 		System.out.println("2. Iniciar Sesion");			
@@ -53,14 +56,16 @@ public class MenuCliente {
 			case 2:
 				usuario = iniciarSesion(usuario);
 				break;
-			}
-		respuesta = 0;
+			}*/
+		int respuesta = 0;
 		do {
 			System.out.println("\nElige una opción:");
 			System.out.println("1. Mostrar informacion del usuario");
 			System.out.println("2. Modificar informacion del usuario");
 			System.out.println("3. Visualizar Menu");
 			System.out.println("4. Hacer pedido");
+			
+
 			try {
 				respuesta=Integer.parseInt(reader.readLine());
 				LOGGER.info("El usuario elige " + respuesta);
@@ -74,14 +79,16 @@ public class MenuCliente {
 					System.out.println(usuario);
 					break;
 				case 2:
-					usuario = addCliente(usuario);
+					actualizarCliente(usuario);
 					break;
 				case 3:
 					mostrarMenu();
 					break;
 				case 4:
-					añadirAlPedido();
+					añadirAlPedido(usuario);
 					break;
+				case 5: 
+					//can
 			}
  			
 		} while (respuesta != 0);
@@ -104,7 +111,24 @@ public class MenuCliente {
 		}
 		return usuario;
 	}
-	//private static void actualizarCliente(Cliente usuario){
+	
+	private static void actualizarCliente(Clientes usuario){
+		try {			
+			String nombre = usuario.getNombre();
+			System.out.println("Esta actualizando informacion de cliente:");
+			System.out.println(nombre);
+			System.out.println("Nuevo Telefono: ");
+			int telefono = Integer.parseInt(reader.readLine());
+			System.out.println("Nuevo Email: ");
+			String email = reader.readLine();
+			dbman.actualizarCliente(nombre, email, telefono);
+			int id = usuario.getId();
+			userman.updateUsuario(id, email);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
 	
 	
 	private static Clientes iniciarSesion(Clientes usuario) {
@@ -129,7 +153,7 @@ public class MenuCliente {
 		}
 	}
 	
-	private static void añadirAlPedido() {
+	private static void añadirAlPedido(Clientes usuario) {
 		String respuesta = "s";
 		ArrayList<Menus> menus = new ArrayList<Menus>();
 		Pedidos pedido = new Pedidos();
@@ -171,6 +195,7 @@ public class MenuCliente {
 		}
 		
 	}
+	
 	
 }
 

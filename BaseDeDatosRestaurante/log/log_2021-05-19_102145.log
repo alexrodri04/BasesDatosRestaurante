@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2021-05-19T08:21:45.108490500Z</date>
+  <millis>1621412505108</millis>
+  <nanos>490500</nanos>
+  <sequence>22</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>logging.MyLogger</class>
+  <method>setup</method>
+  <thread>1</thread>
+  <message>Logger is configured</message>
+</record>
+<record>
+  <date>2021-05-19T08:21:45.111514800Z</date>
+  <millis>1621412505111</millis>
+  <nanos>514800</nanos>
+  <sequence>23</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>jdbc.JDBCManager</class>
+  <method>connect</method>
+  <thread>1</thread>
+  <message>Se ha establecido la conexión con la BD</message>
+</record>
+<record>
+  <date>2021-05-19T08:21:47.173540300Z</date>
+  <millis>1621412507173</millis>
+  <nanos>540300</nanos>
+  <sequence>24</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>interfaz.MenuCliente</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>El usuario elige 1</message>
+</record>
+<record>
+  <date>2021-05-19T08:21:59.050918900Z</date>
+  <millis>1621412519050</millis>
+  <nanos>918900</nanos>
+  <sequence>25</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>interfaz.MenuCliente</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>El usuario elige 3</message>
+</record>
+<record>
+  <date>2021-05-19T08:21:59.055907800Z</date>
+  <millis>1621412519055</millis>
+  <nanos>907800</nanos>
+  <sequence>26</sequence>
+  <logger>global</logger>
+  <level>FINE</level>
+  <class>jdbc.JDBCManager</class>
+  <method>searchMenu</method>
+  <thread>1</thread>
+  <message>Menu: Plato [id=1, plato=Patatas precio=6.0]</message>
+</record>
+<record>
+  <date>2021-05-19T08:21:59.055907800Z</date>
+  <millis>1621412519055</millis>
+  <nanos>907800</nanos>
+  <sequence>27</sequence>
+  <logger>global</logger>
+  <level>FINE</level>
+  <class>jdbc.JDBCManager</class>
+  <method>searchMenu</method>
+  <thread>1</thread>
+  <message>Menu: Plato [id=2, plato=Pasta precio=10.0]</message>
+</record>
+<record>
+  <date>2021-05-19T08:21:59.055907800Z</date>
+  <millis>1621412519055</millis>
+  <nanos>907800</nanos>
+  <sequence>28</sequence>
+  <logger>global</logger>
+  <level>FINE</level>
+  <class>jdbc.JDBCManager</class>
+  <method>searchMenu</method>
+  <thread>1</thread>
+  <message>Menu: Plato [id=3, plato=Pizza precio=10.0]</message>
+</record>
+<record>
+  <date>2021-05-19T08:21:59.056906500Z</date>
+  <millis>1621412519056</millis>
+  <nanos>906500</nanos>
+  <sequence>29</sequence>
+  <logger>global</logger>
+  <level>FINE</level>
+  <class>jdbc.JDBCManager</class>
+  <method>searchMenu</method>
+  <thread>1</thread>
+  <message>Menu: Plato [id=4, plato=Solomillo precio=15.0]</message>
+</record>
+<record>
+  <date>2021-05-19T08:21:59.056906500Z</date>
+  <millis>1621412519056</millis>
+  <nanos>906500</nanos>
+  <sequence>30</sequence>
+  <logger>global</logger>
+  <level>FINE</level>
+  <class>jdbc.JDBCManager</class>
+  <method>searchMenu</method>
+  <thread>1</thread>
+  <message>Menu: Plato [id=5, plato=Patatas precio=6.0]</message>
+</record>
+<record>
+  <date>2021-05-19T08:21:59.056906500Z</date>
+  <millis>1621412519056</millis>
+  <nanos>906500</nanos>
+  <sequence>31</sequence>
+  <logger>global</logger>
+  <level>FINE</level>
+  <class>jdbc.JDBCManager</class>
+  <method>searchMenu</method>
+  <thread>1</thread>
+  <message>Menu: Plato [id=6, plato=Pasta precio=10.0]</message>
+</record>
+<record>
+  <date>2021-05-19T08:21:59.056906500Z</date>
+  <millis>1621412519056</millis>
+  <nanos>906500</nanos>
+  <sequence>32</sequence>
+  <logger>global</logger>
+  <level>FINE</level>
+  <class>jdbc.JDBCManager</class>
+  <method>searchMenu</method>
+  <thread>1</thread>
+  <message>Menu: Plato [id=7, plato=Pizza precio=10.0]</message>
+</record>
+<record>
+  <date>2021-05-19T08:21:59.057902800Z</date>
+  <millis>1621412519057</millis>
+  <nanos>902800</nanos>
+  <sequence>33</sequence>
+  <logger>global</logger>
+  <level>FINE</level>
+  <class>jdbc.JDBCManager</class>
+  <method>searchMenu</method>
+  <thread>1</thread>
+  <message>Menu: Plato [id=8, plato=Solomillo precio=15.0]</message>
+</record>
+<record>
+  <date>2021-05-19T08:22:09.065940700Z</date>
+  <millis>1621412529065</millis>
+  <nanos>940700</nanos>
+  <sequence>34</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>interfaz.MenuCliente</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>El usuario elige 2</message>
+</record>
+</log>
