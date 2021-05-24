@@ -10,6 +10,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Logger;
 
+import org.eclipse.persistence.jpa.jpql.parser.DateTime;
+
 import jdbc.DBManager;
 import jdbc.JDBCManager;
 import jpa.ManagerJPA;
@@ -26,7 +28,6 @@ public class MenuCliente {
 	private static ManagerJPA userman = new UsuarioManager();
 	private static BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 	//private static Clientes usuario = new Clientes();
-	private final static DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 	private final static DateTimeFormatter formattertime = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
 	
 	public static void main(Clientes usuario) {
@@ -37,26 +38,6 @@ public class MenuCliente {
 			e.printStackTrace();
 		}
 		dbman.connect();
-	/*	int respuesta;
-		System.out.println("\nElige una opción:");
-		System.out.println("1. Registrarse");
-		System.out.println("2. Iniciar Sesion");			
-		try {
-			respuesta=Integer.parseInt(reader.readLine());
-			LOGGER.info("El usuario elige " + respuesta);
-		} catch  (NumberFormatException | IOException e) {
-			respuesta = -1;
-			LOGGER.warning("El usuario no ha introducido un número");
-			e.printStackTrace();
-		}
-		switch(respuesta) {
-			case 1:
-				usuario = addCliente(usuario);
-				break;
-			case 2:
-				usuario = iniciarSesion(usuario);
-				break;
-			}*/
 		int respuesta = 0;
 		do {
 			System.out.println("\nElige una opción:");
@@ -122,8 +103,7 @@ public class MenuCliente {
 			System.out.println("Nuevo Email: ");
 			String email = reader.readLine();
 			dbman.actualizarCliente(nombre, email, telefono);
-			int id = usuario.getId();
-			userman.updateUsuario(id, email);
+			userman.updateUsuario(usuario.getId(), email);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -156,10 +136,12 @@ public class MenuCliente {
 	private static void añadirAlPedido(Clientes usuario) {
 		String respuesta = "s";
 		ArrayList<Menus> menus = new ArrayList<Menus>();
-		Pedidos pedido = new Pedidos();
+		
 		float coste = 0;
 		String direccion;
-		LocalDate hora;
+		LocalDate hora = LocalDate.now(); 
+		direccion = " ";
+		Pedidos pedido = new Pedidos(usuario.getId(),coste,direccion,Date.valueOf(hora), 3, menus);
 		do {
 			mostrarMenu();
 			System.out.println("Seleccione el nombre de un plato: ");
@@ -180,15 +162,18 @@ public class MenuCliente {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-		} while ( respuesta == ("s"));
+		} while (respuesta == ("s"));
 		System.out.println("Introduzca una dirección de entrega: \n");
 		try {
 			direccion = reader.readLine();
-			System.out.println("Indutroduzca la Hora: ");
-			hora = LocalDate.parse(reader.readLine(),formattertime);
-			pedido = new Pedidos(usuario.getId(),coste,direccion,Date.valueOf(hora),3, menus);
+			pedido.setDireccion(direccion);
+			pedido.setCoste(coste);
+			pedido.setMenu(menus);
+			//System.out.println("Indutroduzca la Hora: ");
+			//LocalDate time = LocalDate.now();
+			//hora = LocalDate.parse(time, formattertime);
+			//pedido = new Pedidos(usuario.getId(),coste,direccion,Date.valueOf(time), 3, menus);
 			dbman.addPedido(pedido);
-			
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

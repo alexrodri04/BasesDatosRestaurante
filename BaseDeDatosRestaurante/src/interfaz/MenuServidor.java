@@ -44,7 +44,9 @@ public class MenuServidor {
 		}
 		
 		dbman.connect();
-		
+		if (dbman.searchJefes().isEmpty()) {
+			generartablas();
+		}
 		int respuesta;
 		do {
 			System.out.println("\nElige una opción:");
@@ -279,6 +281,12 @@ public class MenuServidor {
 			dbman.addMenu(menu);
 		}
 		System.out.println("Se han generado " + MENUS_PLATOS.length + " platos.");
+	}
+	private static void generartablas() {
+		generarJefes();
+		generarCargos();
+		generarMenus();
+		generarEmpleados();
 	}
 	
 	private static void mostrarEmpleados() {

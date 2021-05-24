@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2021-05-19T16:19:27.335919800Z</date>
+  <millis>1621441167335</millis>
+  <nanos>919800</nanos>
+  <sequence>0</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>logging.MyLogger</class>
+  <method>setup</method>
+  <thread>1</thread>
+  <message>Logger is configured</message>
+</record>
+<record>
+  <date>2021-05-19T16:19:28.122566300Z</date>
+  <millis>1621441168122</millis>
+  <nanos>566300</nanos>
+  <sequence>1</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>jdbc.JDBCManager</class>
+  <method>connect</method>
+  <thread>1</thread>
+  <message>Se ha establecido la conexión con la BD</message>
+</record>
+<record>
+  <date>2021-05-19T16:19:28.157473100Z</date>
+  <millis>1621441168157</millis>
+  <nanos>473100</nanos>
+  <sequence>2</sequence>
+  <logger>global</logger>
+  <level>FINER</level>
+  <class>ArchiveFactoryImpl</class>
+  <method>createArchive</method>
+  <thread>1</thread>
+  <message>ENTRY file:/C:/Users/alex0/AppData/Roaming/SPB_Data/git/restaurante/BasesDatosRestaurante/BaseDeDatosRestaurante/bin/ META-INF/persistence.xml</message>
+</record>
+<record>
+  <date>2021-05-19T16:19:28.158469800Z</date>
+  <millis>1621441168158</millis>
+  <nanos>469800</nanos>
+  <sequence>3</sequence>
+  <logger>global</logger>
+  <level>FINER</level>
+  <class>ArchiveFactoryImpl</class>
+  <method>createArchive</method>
+  <thread>1</thread>
+  <message>protocol = file</message>
+</record>
+<record>
+  <date>2021-05-19T16:19:28.167446200Z</date>
+  <millis>1621441168167</millis>
+  <nanos>446200</nanos>
+  <sequence>4</sequence>
+  <logger>global</logger>
+  <level>FINER</level>
+  <class>DirectoryArchive</class>
+  <method>DirectoryArchive</method>
+  <thread>1</thread>
+  <message>ENTRY C:\Users\alex0\AppData\Roaming\SPB_Data\git\restaurante\BasesDatosRestaurante\BaseDeDatosRestaurante\bin</message>
+</record>
+<record>
+  <date>2021-05-19T16:19:28.167446200Z</date>
+  <millis>1621441168167</millis>
+  <nanos>446200</nanos>
+  <sequence>5</sequence>
+  <logger>global</logger>
+  <level>FINER</level>
+  <class>DirectoryArchive</class>
+  <method>DirectoryArchive</method>
+  <thread>1</thread>
+  <message>rootURL = file:/C:/Users/alex0/AppData/Roaming/SPB_Data/git/restaurante/BasesDatosRestaurante/BaseDeDatosRestaurante/bin/</message>
+</record>
+<record>
+  <date>2021-05-19T16:19:28.173433100Z</date>
+  <millis>1621441168173</millis>
+  <nanos>433100</nanos>
+  <sequence>6</sequence>
+  <logger>global</logger>
+  <level>FINER</level>
+  <class>ArchiveFactoryImpl</class>
+  <method>createArchive</method>
+  <thread>1</thread>
+  <message>RETURN DirectoryArchive(file:/C:/Users/alex0/AppData/Roaming/SPB_Data/git/restaurante/BasesDatosRestaurante/BaseDeDatosRestaurante/bin/)</message>
+</record>
+<record>
+  <date>2021-05-19T16:19:28.487622500Z</date>
+  <millis>1621441168487</millis>
+  <nanos>622500</nanos>
+  <sequence>7</sequence>
+  <logger>global</logger>
+  <level>FINER</level>
+  <class>ArchiveFactoryImpl</class>
+  <method>createArchive</method>
+  <thread>1</thread>
+  <message>ENTRY file:/C:/Users/alex0/AppData/Roaming/SPB_Data/git/restaurante/BasesDatosRestaurante/BaseDeDatosRestaurante/bin/ null</message>
+</record>
+<record>
+  <date>2021-05-19T16:19:28.487622500Z</date>
+  <millis>1621441168487</millis>
+  <nanos>622500</nanos>
+  <sequence>8</sequence>
+  <logger>global</logger>
+  <level>FINER</level>
+  <class>ArchiveFactoryImpl</class>
+  <method>createArchive</method>
+  <thread>1</thread>
+  <message>protocol = file</message>
+</record>
+<record>
+  <date>2021-05-19T16:19:28.487622500Z</date>
+  <millis>1621441168487</millis>
+  <nanos>622500</nanos>
+  <sequence>9</sequence>
+  <logger>global</logger>
+  <level>FINER</level>
+  <class>DirectoryArchive</class>
+  <method>DirectoryArchive</method>
+  <thread>1</thread>
+  <message>ENTRY C:\Users\alex0\AppData\Roaming\SPB_Data\git\restaurante\BasesDatosRestaurante\BaseDeDatosRestaurante\bin</message>
+</record>
+<record>
+  <date>2021-05-19T16:19:28.488588400Z</date>
+  <millis>1621441168488</millis>
+  <nanos>588400</nanos>
+  <sequence>10</sequence>
+  <logger>global</logger>
+  <level>FINER</level>
+  <class>DirectoryArchive</class>
+  <method>DirectoryArchive</method>
+  <thread>1</thread>
+  <message>rootURL = file:/C:/Users/alex0/AppData/Roaming/SPB_Data/git/restaurante/BasesDatosRestaurante/BaseDeDatosRestaurante/bin/</message>
+</record>
+<record>
+  <date>2021-05-19T16:19:28.492577200Z</date>
+  <millis>1621441168492</millis>
+  <nanos>577200</nanos>
+  <sequence>11</sequence>
+  <logger>global</logger>
+  <level>FINER</level>
+  <class>ArchiveFactoryImpl</class>
+  <method>createArchive</method>
+  <thread>1</thread>
+  <message>RETURN DirectoryArchive(file:/C:/Users/alex0/AppData/Roaming/SPB_Data/git/restaurante/BasesDatosRestaurante/BaseDeDatosRestaurante/bin/)</message>
+</record>
+<record>
+  <date>2021-05-19T16:19:28.492577200Z</date>
+  <millis>1621441168492</millis>
+  <nanos>577200</nanos>
+  <sequence>12</sequence>
+  <logger>global</logger>
+  <level>FINER</level>
+  <class>ArchiveFactoryImpl</class>
+  <method>createArchive</method>
+  <thread>1</thread>
+  <message>ENTRY file:/C:/Users/alex0/AppData/Roaming/SPB_Data/git/restaurante/BasesDatosRestaurante/BaseDeDatosRestaurante/bin/ null</message>
+</record>
+<record>
+  <date>2021-05-19T16:19:28.493574600Z</date>
+  <millis>1621441168493</millis>
+  <nanos>574600</nanos>
+  <sequence>13</sequence>
+  <logger>global</logger>
+  <level>FINER</level>
+  <class>ArchiveFactoryImpl</class>
+  <method>createArchive</method>
+  <thread>1</thread>
+  <message>protocol = file</message>
+</record>
+<record>
+  <date>2021-05-19T16:19:28.493574600Z</date>
+  <millis>1621441168493</millis>
+  <nanos>574600</nanos>
+  <sequence>14</sequence>
+  <logger>global</logger>
+  <level>FINER</level>
+  <class>DirectoryArchive</class>
+  <method>DirectoryArchive</method>
+  <thread>1</thread>
+  <message>ENTRY C:\Users\alex0\AppData\Roaming\SPB_Data\git\restaurante\BasesDatosRestaurante\BaseDeDatosRestaurante\bin</message>
+</record>
+<record>
+  <date>2021-05-19T16:19:28.493574600Z</date>
+  <millis>1621441168493</millis>
+  <nanos>574600</nanos>
+  <sequence>15</sequence>
+  <logger>global</logger>
+  <level>FINER</level>
+  <class>DirectoryArchive</class>
+  <method>DirectoryArchive</method>
+  <thread>1</thread>
+  <message>rootURL = file:/C:/Users/alex0/AppData/Roaming/SPB_Data/git/restaurante/BasesDatosRestaurante/BaseDeDatosRestaurante/bin/</message>
+</record>
+<record>
+  <date>2021-05-19T16:19:28.498562100Z</date>
+  <millis>1621441168498</millis>
+  <nanos>562100</nanos>
+  <sequence>16</sequence>
+  <logger>global</logger>
+  <level>FINER</level>
+  <class>ArchiveFactoryImpl</class>
+  <method>createArchive</method>
+  <thread>1</thread>
+  <message>RETURN DirectoryArchive(file:/C:/Users/alex0/AppData/Roaming/SPB_Data/git/restaurante/BasesDatosRestaurante/BaseDeDatosRestaurante/bin/)</message>
+</record>
+<record>
+  <date>2021-05-19T16:19:31.337591600Z</date>
+  <millis>1621441171337</millis>
+  <nanos>591600</nanos>
+  <sequence>17</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>interfaz.menu</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>El usuario elige 1</message>
+</record>
+<record>
+  <date>2021-05-19T16:19:40.297265500Z</date>
+  <millis>1621441180297</millis>
+  <nanos>265500</nanos>
+  <sequence>18</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>interfaz.menu</class>
+  <method>registrarse</method>
+  <thread>1</thread>
+  <message>Usuario [id=null, email=juan, rol=Rol [id=1, nombre=usuario]]</message>
+</record>
+<record>
+  <date>2021-05-19T16:19:40.546741900Z</date>
+  <millis>1621441180546</millis>
+  <nanos>741900</nanos>
+  <sequence>19</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>interfaz.menu</class>
+  <method>registrarse</method>
+  <thread>1</thread>
+  <message>Usuario [id=7, email=juan, rol=Rol [id=1, nombre=usuario]]</message>
+</record>
+<record>
+  <date>2021-05-19T16:19:42.060042500Z</date>
+  <millis>1621441182060</millis>
+  <nanos>42500</nanos>
+  <sequence>20</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>interfaz.menu</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>El usuario elige 2</message>
+</record>
+<record>
+  <date>2021-05-19T16:19:45.790401800Z</date>
+  <millis>1621441185790</millis>
+  <nanos>401800</nanos>
+  <sequence>21</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>logging.MyLogger</class>
+  <method>setup</method>
+  <thread>1</thread>
+  <message>Logger is configured</message>
+</record>
+<record>
+  <date>2021-05-19T16:19:45.793360100Z</date>
+  <millis>1621441185793</millis>
+  <nanos>360100</nanos>
+  <sequence>22</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>jdbc.JDBCManager</class>
+  <method>connect</method>
+  <thread>1</thread>
+  <message>Se ha establecido la conexión con la BD</message>
+</record>
+<record>
+  <date>2021-05-19T16:19:47.889870400Z</date>
+  <millis>1621441187889</millis>
+  <nanos>870400</nanos>
+  <sequence>23</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>interfaz.MenuCliente</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>El usuario elige 1</message>
+</record>
+<record>
+  <date>2021-05-19T16:19:53.573345200Z</date>
+  <millis>1621441193573</millis>
+  <nanos>345200</nanos>
+  <sequence>24</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>interfaz.MenuCliente</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>El usuario elige 2</message>
+</record>
+</log>
