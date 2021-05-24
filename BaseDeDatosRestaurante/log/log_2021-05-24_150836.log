@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2021-05-24T13:08:36.243640500Z</date>
+  <millis>1621861716243</millis>
+  <nanos>640500</nanos>
+  <sequence>18</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>logging.MyLogger</class>
+  <method>setup</method>
+  <thread>1</thread>
+  <message>Logger is configured</message>
+</record>
+<record>
+  <date>2021-05-24T13:08:36.247997300Z</date>
+  <millis>1621861716247</millis>
+  <nanos>997300</nanos>
+  <sequence>19</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>jdbc.JDBCManager</class>
+  <method>connect</method>
+  <thread>1</thread>
+  <message>Se ha establecido la conexión con la BD</message>
+</record>
+<record>
+  <date>2021-05-24T13:09:08.843118500Z</date>
+  <millis>1621861748843</millis>
+  <nanos>118500</nanos>
+  <sequence>20</sequence>
+  <logger>global</logger>
+  <level>WARNING</level>
+  <class>interfaz.MenuServidor</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>El usuario no ha introducido un número</message>
+</record>
+<record>
+  <date>2021-05-24T13:09:08.856085400Z</date>
+  <millis>1621861748856</millis>
+  <nanos>85400</nanos>
+  <sequence>21</sequence>
+  <logger>global</logger>
+  <level>WARNING</level>
+  <class>interfaz.MenuServidor</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>El usuario no ha introducido un número</message>
+</record>
+<record>
+  <date>2021-05-24T13:09:08.860146900Z</date>
+  <millis>1621861748860</millis>
+  <nanos>146900</nanos>
+  <sequence>22</sequence>
+  <logger>global</logger>
+  <level>WARNING</level>
+  <class>interfaz.MenuServidor</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>El usuario no ha introducido un número</message>
+</record>
+<record>
+  <date>2021-05-24T13:09:08.863065800Z</date>
+  <millis>1621861748863</millis>
+  <nanos>65800</nanos>
+  <sequence>23</sequence>
+  <logger>global</logger>
+  <level>WARNING</level>
+  <class>interfaz.MenuServidor</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>El usuario no ha introducido un número</message>
+</record>
+<record>
+  <date>2021-05-24T13:09:08.866504800Z</date>
+  <millis>1621861748866</millis>
+  <nanos>504800</nanos>
+  <sequence>24</sequence>
+  <logger>global</logger>
+  <level>WARNING</level>
+  <class>interfaz.MenuServidor</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>El usuario no ha introducido un número</message>
+</record>
