@@ -6,6 +6,7 @@ import pojos.Empleados;
 import pojos.Jefes;
 import pojos.Menus;
 import pojos.Pedidos;
+import xml.MenuXML;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -13,8 +14,16 @@ import java.io.InputStreamReader;
 import java.sql.Date;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.InputMismatchException;
 import java.util.List;
+import java.util.Scanner;
 import java.util.logging.Logger;
+
+import javax.xml.bind.JAXBException;
+import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.xpath.XPathExpressionException;
+
+import org.xml.sax.SAXException;
 
 import jdbc.JDBCManager;
 import logging.MyLogger;
@@ -34,8 +43,9 @@ public class MenuServidor {
 	private final static int[] EMPLEADOS_SALARIOS = {1000, 1000, 1000};
 	private final static DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 	private final static DateTimeFormatter formattertime = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
+	static Scanner sc = new Scanner(System.in);
 	
-	public static void main(String[] args) {
+	public static void main(String[] args) throws XPathExpressionException, IOException, JAXBException, SAXException, ParserConfigurationException {
 		try {
 			MyLogger.setup();
 		} catch (IOException e) {
@@ -62,6 +72,7 @@ public class MenuServidor {
 			System.out.println("12. Añadir Cargo");
 			System.out.println("13. Mostrar Cargos");
 			System.out.println("14. Inicializar Valores");
+			System.out.println("15. Menu XML");
 			
 			try {
 				respuesta=Integer.parseInt(reader.readLine());
@@ -121,6 +132,8 @@ public class MenuServidor {
 				generarMenus();
 				generarEmpleados();
 				break;
+			case 15:
+				funcionXML();
 			}
 		} while (respuesta != 0);
 		dbman.disconnect();
@@ -399,6 +412,48 @@ public class MenuServidor {
 			e.printStackTrace();
 		}
 	}
+	
+	private static void funcionXML() throws IOException, JAXBException, XPathExpressionException, SAXException, ParserConfigurationException {
+		
+		boolean salir = false;
+
+		while (!salir) {
+			System.out.println("Seleccione la función deseada\n1) Realizar operacion de Marshalling \n2) Realizar operacion de Unmarshalling \n"
+					+ "3) Generar HTML desde XML\n4) Ejecutar sentencias XPath sobre un archivo XML\n"
+					+ "5) Salir");
+			int opcion3 = sc.nextInt();
+			try {
+				switch (opcion3) {
+				case 1:
+					MenuXML.menuXML(opcion3);
+					break;
+				case 2:
+					MenuXML.menuXML(opcion3);
+					break;
+				case 3:
+					MenuXML.menuXML(opcion3);
+					break;
+				case 4:
+					MenuXML.menuXML(opcion3);
+					break;
+				case 5:
+					salir = true;
+					break;
+				default:
+					LOGGER.info("Solo números entre 1 y 5");
+
+				}
+
+			}catch (InputMismatchException e) {
+				System.out.println("Debes insertar un número");
+				sc.next(); 
+
+			}
+		}
+
+
+	}
+	
 	
 	
 		

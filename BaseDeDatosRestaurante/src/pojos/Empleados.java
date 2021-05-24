@@ -1,10 +1,47 @@
 package pojos;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+//import javax.persistence.Table;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+import javax.persistence.TableGenerator;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlTransient;
+import javax.xml.bind.annotation.XmlType;
+
+
+@Entity
+@Table(name = "Empleados")
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlRootElement(name = "Empleado")
+@XmlType(propOrder = {"nombre", "salario", "cargoId"})
+
 
 
 public class Empleados {
+	
+	@Id
+	@GeneratedValue(generator="empleados_gen")
+	@TableGenerator(name="empleados_gen", table="sqlite_sequence", pkColumnName="name", 
+		valueColumnName="seq", pkColumnValue="Empleados")
+	@XmlAttribute
 	private int id;
+	@XmlElement
 	private String nombre;
+	@XmlElement
 	private int salario;
+	@ManyToOne(fetch=FetchType.LAZY)
+	@XmlElement
 	private int cargoId;
 	
 	public Empleados() {

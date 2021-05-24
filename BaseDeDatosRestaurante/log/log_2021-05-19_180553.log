@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2021-05-19T16:05:53.134777Z</date>
+  <millis>1621440353134</millis>
+  <nanos>777000</nanos>
+  <sequence>0</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>logging.MyLogger</class>
+  <method>setup</method>
+  <thread>1</thread>
+  <message>Logger is configured</message>
+</record>
+<record>
+  <date>2021-05-19T16:05:59.518327500Z</date>
+  <millis>1621440359518</millis>
+  <nanos>327500</nanos>
+  <sequence>1</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>jdbc.JDBCManager</class>
+  <method>connect</method>
+  <thread>1</thread>
+  <message>Se ha establecido la conexión con la BD</message>
+</record>
+<record>
+  <date>2021-05-19T16:05:59.565571700Z</date>
+  <millis>1621440359565</millis>
+  <nanos>571700</nanos>
+  <sequence>2</sequence>
+  <logger>global</logger>
+  <level>FINER</level>
+  <class>ArchiveFactoryImpl</class>
+  <method>createArchive</method>
+  <thread>1</thread>
+  <message>ENTRY file:/C:/Users/danie/OneDrive/Escritorio/CEU%20San%20Pablo/20-21/Segundo%20Cuatrimestre/Tratamiento%20de%20la%20Informaci%c3%b3n%20en%20Sistemas%20Distribuidos/Workspace/BasesDatosRestaurante/BaseDeDatosRestaurante/bin/ META-INF/persistence.xml</message>
+</record>
+<record>
+  <date>2021-05-19T16:05:59.567567Z</date>
+  <millis>1621440359567</millis>
+  <nanos>567000</nanos>
+  <sequence>3</sequence>
+  <logger>global</logger>
+  <level>FINER</level>
+  <class>ArchiveFactoryImpl</class>
+  <method>createArchive</method>
+  <thread>1</thread>
+  <message>protocol = file</message>
+</record>
+<record>
+  <date>2021-05-19T16:05:59.584565200Z</date>
+  <millis>1621440359584</millis>
+  <nanos>565200</nanos>
+  <sequence>4</sequence>
+  <logger>global</logger>
+  <level>FINER</level>
+  <class>DirectoryArchive</class>
+  <method>DirectoryArchive</method>
+  <thread>1</thread>
+  <message>ENTRY C:\Users\danie\OneDrive\Escritorio\CEU San Pablo\20-21\Segundo Cuatrimestre\Tratamiento de la Información en Sistemas Distribuidos\Workspace\BasesDatosRestaurante\BaseDeDatosRestaurante\bin</message>
+</record>
+<record>
+  <date>2021-05-19T16:05:59.585562200Z</date>
+  <millis>1621440359585</millis>
+  <nanos>562200</nanos>
+  <sequence>5</sequence>
+  <logger>global</logger>
+  <level>FINER</level>
+  <class>DirectoryArchive</class>
+  <method>DirectoryArchive</method>
+  <thread>1</thread>
+  <message>rootURL = file:/C:/Users/danie/OneDrive/Escritorio/CEU%20San%20Pablo/20-21/Segundo%20Cuatrimestre/Tratamiento%20de%20la%20Información%20en%20Sistemas%20Distribuidos/Workspace/BasesDatosRestaurante/BaseDeDatosRestaurante/bin/</message>
+</record>
+<record>
+  <date>2021-05-19T16:05:59.597531100Z</date>
+  <millis>1621440359597</millis>
+  <nanos>531100</nanos>
+  <sequence>6</sequence>
+  <logger>global</logger>
+  <level>FINER</level>
+  <class>ArchiveFactoryImpl</class>
+  <method>createArchive</method>
+  <thread>1</thread>
+  <message>RETURN DirectoryArchive(file:/C:/Users/danie/OneDrive/Escritorio/CEU%20San%20Pablo/20-21/Segundo%20Cuatrimestre/Tratamiento%20de%20la%20Información%20en%20Sistemas%20Distribuidos/Workspace/BasesDatosRestaurante/BaseDeDatosRestaurante/bin/)</message>
+</record>
+<record>
+  <date>2021-05-19T16:05:59.966433700Z</date>
+  <millis>1621440359966</millis>
+  <nanos>433700</nanos>
+  <sequence>7</sequence>
+  <logger>global</logger>
+  <level>FINER</level>
+  <class>ArchiveFactoryImpl</class>
+  <method>createArchive</method>
+  <thread>1</thread>
+  <message>ENTRY file:/C:/Users/danie/OneDrive/Escritorio/CEU%20San%20Pablo/20-21/Segundo%20Cuatrimestre/Tratamiento%20de%20la%20Información%20en%20Sistemas%20Distribuidos/Workspace/BasesDatosRestaurante/BaseDeDatosRestaurante/bin/ null</message>
+</record>
+<record>
+  <date>2021-05-19T16:05:59.967721900Z</date>
+  <millis>1621440359967</millis>
+  <nanos>721900</nanos>
+  <sequence>8</sequence>
+  <logger>global</logger>
+  <level>FINER</level>
+  <class>ArchiveFactoryImpl</class>
+  <method>createArchive</method>
+  <thread>1</thread>
+  <message>protocol = file</message>
+</record>
+<record>
+  <date>2021-05-19T16:05:59.968426700Z</date>
+  <millis>1621440359968</millis>
+  <nanos>426700</nanos>
+  <sequence>9</sequence>
+  <logger>global</logger>
+  <level>FINER</level>
+  <class>DirectoryArchive</class>
+  <method>DirectoryArchive</method>
+  <thread>1</thread>
+  <message>ENTRY C:\Users\danie\OneDrive\Escritorio\CEU San Pablo\20-21\Segundo Cuatrimestre\Tratamiento de la Información en Sistemas Distribuidos\Workspace\BasesDatosRestaurante\BaseDeDatosRestaurante\bin</message>
+</record>
+<record>
+  <date>2021-05-19T16:05:59.968426700Z</date>
+  <millis>1621440359968</millis>
+  <nanos>426700</nanos>
+  <sequence>10</sequence>
+  <logger>global</logger>
+  <level>FINER</level>
+  <class>DirectoryArchive</class>
+  <method>DirectoryArchive</method>
+  <thread>1</thread>
+  <message>rootURL = file:/C:/Users/danie/OneDrive/Escritorio/CEU%20San%20Pablo/20-21/Segundo%20Cuatrimestre/Tratamiento%20de%20la%20Información%20en%20Sistemas%20Distribuidos/Workspace/BasesDatosRestaurante/BaseDeDatosRestaurante/bin/</message>
+</record>
+<record>
+  <date>2021-05-19T16:05:59.980109700Z</date>
+  <millis>1621440359980</millis>
+  <nanos>109700</nanos>
+  <sequence>11</sequence>
+  <logger>global</logger>
+  <level>FINER</level>
+  <class>ArchiveFactoryImpl</class>
+  <method>createArchive</method>
+  <thread>1</thread>
+  <message>RETURN DirectoryArchive(file:/C:/Users/danie/OneDrive/Escritorio/CEU%20San%20Pablo/20-21/Segundo%20Cuatrimestre/Tratamiento%20de%20la%20Información%20en%20Sistemas%20Distribuidos/Workspace/BasesDatosRestaurante/BaseDeDatosRestaurante/bin/)</message>
+</record>
+<record>
+  <date>2021-05-19T16:05:59.981141100Z</date>
+  <millis>1621440359981</millis>
+  <nanos>141100</nanos>
+  <sequence>12</sequence>
+  <logger>global</logger>
+  <level>FINER</level>
+  <class>ArchiveFactoryImpl</class>
+  <method>createArchive</method>
+  <thread>1</thread>
+  <message>ENTRY file:/C:/Users/danie/OneDrive/Escritorio/CEU%20San%20Pablo/20-21/Segundo%20Cuatrimestre/Tratamiento%20de%20la%20Información%20en%20Sistemas%20Distribuidos/Workspace/BasesDatosRestaurante/BaseDeDatosRestaurante/bin/ null</message>
+</record>
+<record>
+  <date>2021-05-19T16:05:59.981141100Z</date>
+  <millis>1621440359981</millis>
+  <nanos>141100</nanos>
+  <sequence>13</sequence>
+  <logger>global</logger>
+  <level>FINER</level>
+  <class>ArchiveFactoryImpl</class>
+  <method>createArchive</method>
+  <thread>1</thread>
+  <message>protocol = file</message>
+</record>
+<record>
+  <date>2021-05-19T16:05:59.982059800Z</date>
+  <millis>1621440359982</millis>
+  <nanos>59800</nanos>
+  <sequence>14</sequence>
+  <logger>global</logger>
+  <level>FINER</level>
+  <class>DirectoryArchive</class>
+  <method>DirectoryArchive</method>
+  <thread>1</thread>
+  <message>ENTRY C:\Users\danie\OneDrive\Escritorio\CEU San Pablo\20-21\Segundo Cuatrimestre\Tratamiento de la Información en Sistemas Distribuidos\Workspace\BasesDatosRestaurante\BaseDeDatosRestaurante\bin</message>
+</record>
+<record>
+  <date>2021-05-19T16:05:59.982059800Z</date>
+  <millis>1621440359982</millis>
+  <nanos>59800</nanos>
+  <sequence>15</sequence>
+  <logger>global</logger>
+  <level>FINER</level>
+  <class>DirectoryArchive</class>
+  <method>DirectoryArchive</method>
+  <thread>1</thread>
+  <message>rootURL = file:/C:/Users/danie/OneDrive/Escritorio/CEU%20San%20Pablo/20-21/Segundo%20Cuatrimestre/Tratamiento%20de%20la%20Información%20en%20Sistemas%20Distribuidos/Workspace/BasesDatosRestaurante/BaseDeDatosRestaurante/bin/</message>
+</record>
+<record>
+  <date>2021-05-19T16:05:59.993333300Z</date>
+  <millis>1621440359993</millis>
+  <nanos>333300</nanos>
+  <sequence>16</sequence>
+  <logger>global</logger>
+  <level>FINER</level>
+  <class>ArchiveFactoryImpl</class>
+  <method>createArchive</method>
+  <thread>1</thread>
+  <message>RETURN DirectoryArchive(file:/C:/Users/danie/OneDrive/Escritorio/CEU%20San%20Pablo/20-21/Segundo%20Cuatrimestre/Tratamiento%20de%20la%20Información%20en%20Sistemas%20Distribuidos/Workspace/BasesDatosRestaurante/BaseDeDatosRestaurante/bin/)</message>
+</record>
+<record>
+  <date>2021-05-19T16:06:05.265320400Z</date>
+  <millis>1621440365265</millis>
+  <nanos>320400</nanos>
+  <sequence>17</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>interfaz.menu</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>El usuario elige 1</message>
+</record>
+<record>
+  <date>2021-05-19T16:06:29.357984700Z</date>
+  <millis>1621440389357</millis>
+  <nanos>984700</nanos>
+  <sequence>18</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>interfaz.menu</class>
+  <method>registrarse</method>
+  <thread>1</thread>
+  <message>Usuario [id=null, email=pepe, rol=Rol [id=2, nombre=admin]]</message>
+</record>
+<record>
+  <date>2021-05-19T16:06:29.384713800Z</date>
+  <millis>1621440389384</millis>
+  <nanos>713800</nanos>
+  <sequence>19</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>interfaz.menu</class>
+  <method>registrarse</method>
+  <thread>1</thread>
+  <message>Usuario [id=3, email=pepe, rol=Rol [id=2, nombre=admin]]</message>
+</record>
+<record>
+  <date>2021-05-19T16:06:32.801305900Z</date>
+  <millis>1621440392801</millis>
+  <nanos>305900</nanos>
+  <sequence>20</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>interfaz.menu</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>El usuario elige 2</message>
+</record>
+<record>
+  <date>2021-05-19T16:06:40.062168100Z</date>
+  <millis>1621440400062</millis>
+  <nanos>168100</nanos>
+  <sequence>21</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>logging.MyLogger</class>
+  <method>setup</method>
+  <thread>1</thread>
+  <message>Logger is configured</message>
+</record>
+<record>
+  <date>2021-05-19T16:06:40.067129600Z</date>
+  <millis>1621440400067</millis>
+  <nanos>129600</nanos>
+  <sequence>22</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>jdbc.JDBCManager</class>
+  <method>connect</method>
+  <thread>1</thread>
+  <message>Se ha establecido la conexión con la BD</message>
+</record>
+<record>
+  <date>2021-05-19T16:06:51.914397600Z</date>
+  <millis>1621440411914</millis>
+  <nanos>397600</nanos>
+  <sequence>23</sequence>
+  <logger>global</logger>
+  <level>WARNING</level>
+  <class>interfaz.MenuServidor</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>El usuario no ha introducido un número</message>
+</record>
+<record>
+  <date>2021-05-19T16:06:51.924370300Z</date>
+  <millis>1621440411924</millis>
+  <nanos>370300</nanos>
+  <sequence>24</sequence>
+  <logger>global</logger>
+  <level>WARNING</level>
+  <class>interfaz.MenuServidor</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>El usuario no ha introducido un número</message>
+</record>
+<record>
+  <date>2021-05-19T16:06:51.926365800Z</date>
+  <millis>1621440411926</millis>
+  <nanos>365800</nanos>
+  <sequence>25</sequence>
+  <logger>global</logger>
+  <level>WARNING</level>
+  <class>interfaz.MenuServidor</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>El usuario no ha introducido un número</message>
+</record>
+<record>
+  <date>2021-05-19T16:06:51.929356500Z</date>
+  <millis>1621440411929</millis>
+  <nanos>356500</nanos>
+  <sequence>26</sequence>
+  <logger>global</logger>
+  <level>WARNING</level>
+  <class>interfaz.MenuServidor</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>El usuario no ha introducido un número</message>
+</record>
+<record>
+  <date>2021-05-19T16:06:51.930353900Z</date>
+  <millis>1621440411930</millis>
+  <nanos>353900</nanos>
+  <sequence>27</sequence>
+  <logger>global</logger>
+  <level>WARNING</level>
+  <class>interfaz.MenuServidor</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>El usuario no ha introducido un número</message>
+</record>
+<record>
+  <date>2021-05-19T16:06:51.932348500Z</date>
+  <millis>1621440411932</millis>
+  <nanos>348500</nanos>
+  <sequence>28</sequence>
+  <logger>global</logger>
+  <level>WARNING</level>
+  <class>interfaz.MenuServidor</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>El usuario no ha introducido un número</message>
+</record>
+<record>
+  <date>2021-05-19T16:06:51.934343200Z</date>
+  <millis>1621440411934</millis>
+  <nanos>343200</nanos>
+  <sequence>29</sequence>
+  <logger>global</logger>
+  <level>WARNING</level>
+  <class>interfaz.MenuServidor</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>El usuario no ha introducido un número</message>
+</record>

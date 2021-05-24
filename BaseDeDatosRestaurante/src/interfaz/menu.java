@@ -5,7 +5,15 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.util.InputMismatchException;
+import java.util.Scanner;
 import java.util.logging.Logger;
+
+import javax.xml.bind.JAXBException;
+import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.xpath.XPathExpressionException;
+import org.xml.sax.SAXException;
+import xml.MenuXML;
 import jdbc.DBManager;
 import jdbc.JDBCManager;
 import jpa.UsuarioManager;
@@ -22,6 +30,7 @@ public class menu {
 		private static ManagerJPA userman = new UsuarioManager();
 		private static BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 		private static Clientes cliente;
+
 		
 		public static void main(String[] args) {
 			try {
@@ -95,7 +104,7 @@ public class menu {
 			}
 		}
 		
-		private static void login() {
+		private static void login() throws XPathExpressionException, JAXBException, SAXException, ParserConfigurationException {
 			try {
 				System.out.println("Indique su email:");
 				String email = reader.readLine();
@@ -120,5 +129,7 @@ public class menu {
 				e.printStackTrace();
 			}
 		}
+		
+		
 
 }
