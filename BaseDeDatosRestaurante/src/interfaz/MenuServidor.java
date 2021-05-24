@@ -71,8 +71,14 @@ public class MenuServidor {
 			System.out.println("11. Mostrar Jefes");
 			System.out.println("12. Añadir Cargo");
 			System.out.println("13. Mostrar Cargos");
+<<<<<<< HEAD
 			System.out.println("14. Inicializar Valores");
 			System.out.println("15. Menu XML");
+=======
+			System.out.println("14. Actualizar Empleado");
+			System.out.println("15. Añadir Menu");
+			//System.out.println("14. Inicializar Valores");
+>>>>>>> 16699ffd668eb2c050dfb3f685c68eccb387ae3d
 			
 			try {
 				respuesta=Integer.parseInt(reader.readLine());
@@ -89,7 +95,7 @@ public class MenuServidor {
 				addEmpleado();
 				break;
 			case 2:
-				//mostrarEmpleados();
+				//mostrarEmpleados(); la otra mola mas
 				mostrarEmpleados2();
 				break;
 			case 3:
@@ -127,13 +133,21 @@ public class MenuServidor {
 				mostrarCargos();
 				break;
 			case 14:
+				updateEmpleado();
+			case 15:
+				addMenu();
+			/*case 14: meter esto al inicializar base de datos
 				generarJefes();
 				generarCargos();
 				generarMenus();
 				generarEmpleados();
+<<<<<<< HEAD
 				break;
 			case 15:
 				funcionXML();
+=======
+				break;*/
+>>>>>>> 16699ffd668eb2c050dfb3f685c68eccb387ae3d
 			}
 		} while (respuesta != 0);
 		dbman.disconnect();
@@ -155,6 +169,27 @@ public class MenuServidor {
 			e.printStackTrace();
 		}
 	}
+	private static void updateEmpleado() {
+		try {
+			System.out.println("Actualizando informacion de Empleado ");
+			System.out.println("Nombre del empleado:");
+			String nombre = reader.readLine();
+			if (dbman.searchEmpleadoByNombre(nombre).isEmpty()) {
+				System.out.println("Nombre del empleado no encontrado");
+				}
+			else {
+			System.out.println("Nuevo Sueldo: ");
+			int sueldo = Integer.parseInt(reader.readLine());
+			Empleados empleado = (Empleados) dbman.searchEmpleadoByNombre(nombre);
+			int id = empleado.getId();
+			dbman.actualizarEmpleado(id, sueldo);
+			System.out.println("Sueldo actualizado con exito: ");
+		} }catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
 	
 	private static void addCliente() {
 		try {

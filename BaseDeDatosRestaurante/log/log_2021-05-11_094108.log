@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2021-05-11T07:41:08.413918200Z</date>
+  <millis>1620718868413</millis>
+  <nanos>918200</nanos>
+  <sequence>0</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>logging.MyLogger</class>
+  <method>setup</method>
+  <thread>1</thread>
+  <message>Logger is configured</message>
+</record>
+<record>
+  <date>2021-05-11T07:41:09.138862900Z</date>
+  <millis>1620718869138</millis>
+  <nanos>862900</nanos>
+  <sequence>1</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>jdbc.JDBCManager</class>
+  <method>connect</method>
+  <thread>1</thread>
+  <message>Se ha establecido la conexión con la BD</message>
+</record>
+<record>
+  <date>2021-05-11T07:41:14.972320700Z</date>
+  <millis>1620718874972</millis>
+  <nanos>320700</nanos>
+  <sequence>2</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>interfaz.MenuCliente</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>El usuario elige 1</message>
+</record>
+<record>
+  <date>2021-05-11T07:41:24.724037700Z</date>
+  <millis>1620718884724</millis>
+  <nanos>37700</nanos>
+  <sequence>3</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>interfaz.MenuCliente</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>El usuario elige 1</message>
+</record>
+<record>
+  <date>2021-05-11T07:41:33.595276400Z</date>
+  <millis>1620718893595</millis>
+  <nanos>276400</nanos>
+  <sequence>4</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>interfaz.MenuCliente</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>El usuario elige 2</message>
+</record>
+<record>
+  <date>2021-05-11T07:41:42.008676600Z</date>
+  <millis>1620718902008</millis>
+  <nanos>676600</nanos>
+  <sequence>5</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>interfaz.MenuCliente</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>El usuario elige 1</message>
+</record>

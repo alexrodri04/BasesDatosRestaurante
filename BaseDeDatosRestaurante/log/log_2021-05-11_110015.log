@@ -1,0 +1,351 @@
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2021-05-11T09:00:15.547415Z</date>
+  <millis>1620723615547</millis>
+  <nanos>415000</nanos>
+  <sequence>0</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>logging.MyLogger</class>
+  <method>setup</method>
+  <thread>1</thread>
+  <message>Logger is configured</message>
+</record>
+<record>
+  <date>2021-05-11T09:00:16.267486800Z</date>
+  <millis>1620723616267</millis>
+  <nanos>486800</nanos>
+  <sequence>1</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>jdbc.JDBCManager</class>
+  <method>connect</method>
+  <thread>1</thread>
+  <message>Se ha establecido la conexión con la BD</message>
+</record>
+<record>
+  <date>2021-05-11T09:00:31.197559300Z</date>
+  <millis>1620723631197</millis>
+  <nanos>559300</nanos>
+  <sequence>2</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>interfaz.MenuServidor</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>El usuario elige 2</message>
+</record>
+<record>
+  <date>2021-05-11T09:03:22.387524100Z</date>
+  <millis>1620723802387</millis>
+  <nanos>524100</nanos>
+  <sequence>3</sequence>
+  <logger>global</logger>
+  <level>WARNING</level>
+  <class>interfaz.MenuServidor</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>El usuario no ha introducido un número</message>
+</record>
+<record>
+  <date>2021-05-11T09:03:22.424423500Z</date>
+  <millis>1620723802424</millis>
+  <nanos>423500</nanos>
+  <sequence>4</sequence>
+  <logger>global</logger>
+  <level>WARNING</level>
+  <class>interfaz.MenuServidor</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>El usuario no ha introducido un número</message>
+</record>
+<record>
+  <date>2021-05-11T09:03:22.426418400Z</date>
+  <millis>1620723802426</millis>
+  <nanos>418400</nanos>
+  <sequence>5</sequence>
+  <logger>global</logger>
+  <level>WARNING</level>
+  <class>interfaz.MenuServidor</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>El usuario no ha introducido un número</message>
+</record>
+<record>
+  <date>2021-05-11T09:03:22.430407600Z</date>
+  <millis>1620723802430</millis>
+  <nanos>407600</nanos>
+  <sequence>6</sequence>
+  <logger>global</logger>
+  <level>WARNING</level>
+  <class>interfaz.MenuServidor</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>El usuario no ha introducido un número</message>
+</record>
+<record>
+  <date>2021-05-11T09:03:22.431405200Z</date>
+  <millis>1620723802431</millis>
+  <nanos>405200</nanos>
+  <sequence>7</sequence>
+  <logger>global</logger>
+  <level>WARNING</level>
+  <class>interfaz.MenuServidor</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>El usuario no ha introducido un número</message>
+</record>
+<record>
+  <date>2021-05-11T09:03:22.433400Z</date>
+  <millis>1620723802433</millis>
+  <nanos>400000</nanos>
+  <sequence>8</sequence>
+  <logger>global</logger>
+  <level>WARNING</level>
+  <class>interfaz.MenuServidor</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>El usuario no ha introducido un número</message>
+</record>
+<record>
+  <date>2021-05-11T09:03:22.434396300Z</date>
+  <millis>1620723802434</millis>
+  <nanos>396300</nanos>
+  <sequence>9</sequence>
+  <logger>global</logger>
+  <level>WARNING</level>
+  <class>interfaz.MenuServidor</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>El usuario no ha introducido un número</message>
+</record>
+<record>
+  <date>2021-05-11T09:03:22.436391600Z</date>
+  <millis>1620723802436</millis>
+  <nanos>391600</nanos>
+  <sequence>10</sequence>
+  <logger>global</logger>
+  <level>WARNING</level>
+  <class>interfaz.MenuServidor</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>El usuario no ha introducido un número</message>
+</record>
+<record>
+  <date>2021-05-11T09:03:22.437388500Z</date>
+  <millis>1620723802437</millis>
+  <nanos>388500</nanos>
+  <sequence>11</sequence>
+  <logger>global</logger>
+  <level>WARNING</level>
+  <class>interfaz.MenuServidor</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>El usuario no ha introducido un número</message>
+</record>
+<record>
+  <date>2021-05-11T09:03:22.439384Z</date>
+  <millis>1620723802439</millis>
+  <nanos>384000</nanos>
+  <sequence>12</sequence>
+  <logger>global</logger>
+  <level>WARNING</level>
+  <class>interfaz.MenuServidor</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>El usuario no ha introducido un número</message>
+</record>
+<record>
+  <date>2021-05-11T09:03:22.441377200Z</date>
+  <millis>1620723802441</millis>
+  <nanos>377200</nanos>
+  <sequence>13</sequence>
+  <logger>global</logger>
+  <level>WARNING</level>
+  <class>interfaz.MenuServidor</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>El usuario no ha introducido un número</message>
+</record>
+<record>
+  <date>2021-05-11T09:03:22.447361900Z</date>
+  <millis>1620723802447</millis>
+  <nanos>361900</nanos>
+  <sequence>14</sequence>
+  <logger>global</logger>
+  <level>WARNING</level>
+  <class>interfaz.MenuServidor</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>El usuario no ha introducido un número</message>
+</record>
+<record>
+  <date>2021-05-11T09:03:22.449357Z</date>
+  <millis>1620723802449</millis>
+  <nanos>357000</nanos>
+  <sequence>15</sequence>
+  <logger>global</logger>
+  <level>WARNING</level>
+  <class>interfaz.MenuServidor</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>El usuario no ha introducido un número</message>
+</record>
+<record>
+  <date>2021-05-11T09:03:22.467308200Z</date>
+  <millis>1620723802467</millis>
+  <nanos>308200</nanos>
+  <sequence>16</sequence>
+  <logger>global</logger>
+  <level>WARNING</level>
+  <class>interfaz.MenuServidor</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>El usuario no ha introducido un número</message>
+</record>
+<record>
+  <date>2021-05-11T09:03:22.468305900Z</date>
+  <millis>1620723802468</millis>
+  <nanos>305900</nanos>
+  <sequence>17</sequence>
+  <logger>global</logger>
+  <level>WARNING</level>
+  <class>interfaz.MenuServidor</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>El usuario no ha introducido un número</message>
+</record>
+<record>
+  <date>2021-05-11T09:03:22.469302400Z</date>
+  <millis>1620723802469</millis>
+  <nanos>302400</nanos>
+  <sequence>18</sequence>
+  <logger>global</logger>
+  <level>WARNING</level>
+  <class>interfaz.MenuServidor</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>El usuario no ha introducido un número</message>
+</record>
+<record>
+  <date>2021-05-11T09:03:22.471297800Z</date>
+  <millis>1620723802471</millis>
+  <nanos>297800</nanos>
+  <sequence>19</sequence>
+  <logger>global</logger>
+  <level>WARNING</level>
+  <class>interfaz.MenuServidor</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>El usuario no ha introducido un número</message>
+</record>
+<record>
+  <date>2021-05-11T09:03:22.472295200Z</date>
+  <millis>1620723802472</millis>
+  <nanos>295200</nanos>
+  <sequence>20</sequence>
+  <logger>global</logger>
+  <level>WARNING</level>
+  <class>interfaz.MenuServidor</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>El usuario no ha introducido un número</message>
+</record>
+<record>
+  <date>2021-05-11T09:03:22.473293200Z</date>
+  <millis>1620723802473</millis>
+  <nanos>293200</nanos>
+  <sequence>21</sequence>
+  <logger>global</logger>
+  <level>WARNING</level>
+  <class>interfaz.MenuServidor</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>El usuario no ha introducido un número</message>
+</record>
+<record>
+  <date>2021-05-11T09:03:22.475288200Z</date>
+  <millis>1620723802475</millis>
+  <nanos>288200</nanos>
+  <sequence>22</sequence>
+  <logger>global</logger>
+  <level>WARNING</level>
+  <class>interfaz.MenuServidor</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>El usuario no ha introducido un número</message>
+</record>
+<record>
+  <date>2021-05-11T09:03:22.477282800Z</date>
+  <millis>1620723802477</millis>
+  <nanos>282800</nanos>
+  <sequence>23</sequence>
+  <logger>global</logger>
+  <level>WARNING</level>
+  <class>interfaz.MenuServidor</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>El usuario no ha introducido un número</message>
+</record>
+<record>
+  <date>2021-05-11T09:03:22.478279900Z</date>
+  <millis>1620723802478</millis>
+  <nanos>279900</nanos>
+  <sequence>24</sequence>
+  <logger>global</logger>
+  <level>WARNING</level>
+  <class>interfaz.MenuServidor</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>El usuario no ha introducido un número</message>
+</record>
+<record>
+  <date>2021-05-11T09:03:22.479279100Z</date>
+  <millis>1620723802479</millis>
+  <nanos>279100</nanos>
+  <sequence>25</sequence>
+  <logger>global</logger>
+  <level>WARNING</level>
+  <class>interfaz.MenuServidor</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>El usuario no ha introducido un número</message>
+</record>
+<record>
+  <date>2021-05-11T09:03:22.480274300Z</date>
+  <millis>1620723802480</millis>
+  <nanos>274300</nanos>
+  <sequence>26</sequence>
+  <logger>global</logger>
+  <level>WARNING</level>
+  <class>interfaz.MenuServidor</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>El usuario no ha introducido un número</message>
+</record>
+<record>
+  <date>2021-05-11T09:03:22.481272100Z</date>
+  <millis>1620723802481</millis>
+  <nanos>272100</nanos>
+  <sequence>27</sequence>
+  <logger>global</logger>
+  <level>WARNING</level>
+  <class>interfaz.MenuServidor</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>El usuario no ha introducido un número</message>
+</record>
+<record>
+  <date>2021-05-11T09:03:22.482268900Z</date>
+  <millis>1620723802482</millis>
+  <nanos>268900</nanos>
+  <sequence>28</sequence>
+  <logger>global</logger>
+  <level>WARNING</level>
+  <class>interfaz.MenuServidor</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>El usuario no ha introducido un número</message>
+</record>

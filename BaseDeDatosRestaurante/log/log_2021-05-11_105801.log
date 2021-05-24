@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2021-05-11T08:58:01.961106Z</date>
+  <millis>1620723481961</millis>
+  <nanos>106000</nanos>
+  <sequence>0</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>logging.MyLogger</class>
+  <method>setup</method>
+  <thread>1</thread>
+  <message>Logger is configured</message>
+</record>
+<record>
+  <date>2021-05-11T08:58:02.636909400Z</date>
+  <millis>1620723482636</millis>
+  <nanos>909400</nanos>
+  <sequence>1</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>jdbc.JDBCManager</class>
+  <method>connect</method>
+  <thread>1</thread>
+  <message>Se ha establecido la conexión con la BD</message>
+</record>
+<record>
+  <date>2021-05-11T08:58:11.543388800Z</date>
+  <millis>1620723491543</millis>
+  <nanos>388800</nanos>
+  <sequence>2</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>interfaz.MenuServidor</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>El usuario elige 14</message>
+</record>
+<record>
+  <date>2021-05-11T08:58:15.668583200Z</date>
+  <millis>1620723495668</millis>
+  <nanos>583200</nanos>
+  <sequence>3</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>interfaz.MenuServidor</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>El usuario elige 2</message>
+</record>

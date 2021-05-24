@@ -59,7 +59,7 @@ public class UsuarioManager implements ManagerJPA{
 	public Rol getRolById(int rolId) {
 		Query q = em.createNativeQuery("SELECT * FROM Roles WHERE id = ?", Rol.class);
 		q.setParameter(1, rolId);
-		return (Rol) q.getSingleResult();//Tener cuidado si la id seleccionada no existe
+		return (Rol) q.getSingleResult();
 	}
 
 	@Override

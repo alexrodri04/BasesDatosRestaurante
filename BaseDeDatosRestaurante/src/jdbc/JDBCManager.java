@@ -549,7 +549,7 @@ public class JDBCManager implements DBManager{
 		}
 	}
 	public void actualizarCliente(String nombre, String email, int telefono) {
-		String sql1 = "UPDATE Cliente SET Email =?, Telefono=? WHERE Nombre =?";
+		String sql1 = "UPDATE Clientes SET Email =?, Telefono=? WHERE Nombre =?";
 		PreparedStatement prep;
 		try {
 			prep = c.prepareStatement(sql1);

@@ -119,7 +119,7 @@ public class menu {
 					if(usuario.getRol().getNombre().equalsIgnoreCase("admin")) {
 						MenuServidor.main(null);
 					} else if (usuario.getRol().getNombre().equalsIgnoreCase("usuario")) {
-						MenuCliente.main(null);
+						MenuCliente.main(cliente);
 					} else {
 						LOGGER.warning("Rol incorrecto");
 					}
